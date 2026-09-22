@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-cta">
+      <h3>Прямий зв'язок</h3>
+      <div class="footer-buttons">
+        {{ with .Site.Params.telegram }}
+          <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener">Telegram</a>
+        {{ end }}
+        {{ with .Site.Params.whatsapp }}
+          <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp</a>
+        {{ end }}
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><small>Матеріали сайту та соматичні протоколи мають освітній характер і не замінюють очного медичного обстеження чи екстреної допомоги.</small></p>
+      <p>© {{ now.Format "2006" }} {{ .Site.Params.author }}. Платформа побудована на базі Quantum Physical Culture.</p>
+    </div>
+  </div>
+</footer>
