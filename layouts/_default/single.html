@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article class="container post-single">
+  <header class="post-header">
+    {{ with .Params.categories }}
+      <div class="post-categories">
+        {{ range . }}
+          <span class="badge">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <span class="reading-time">Час читання: ~{{ .ReadingTime }} хв</span>
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="cta-box">
+      <h3>Потрібна індивідуальна діагностика?</h3>
+      <p>Розбір компенсацій та робота з больовими патернами доступні у форматі закритого супроводу на 8 сесій.</p>
+      <a href="/mentorship/" class="btn btn-primary">Подати анкету на супровід</a>
+    </div>
+  </footer>
+</article>
+{{ end }}
