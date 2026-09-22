@@ -1,0 +1,52 @@
+baseURL = "https://somaticarchitect.github.io/"
+languageCode = "uk-ua"
+title = "Quantum Physical Culture | Somatic Architecture"
+theme = "somatic-theme"
+
+# Таксономії для каталогізації статей
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Головне меню сайту
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Статті"
+    url = "/blog/"
+    weight = 10
+  [[menu.main]]
+    identifier = "mentorship"
+    name = "Супровід"
+    url = "/mentorship/"
+    weight = 20
+  [[menu.main]]
+    identifier = "shop"
+    name = "Матеріали"
+    url = "/shop/"
+    weight = 30
+  [[menu.main]]
+    identifier = "contact"
+    name = "Контакти"
+    url = "/contact/"
+    weight = 40
+
+# Кастомні параметри бренду, контактів та медіа
+[params]
+  author = "Julia"
+  tagline = "Somatic Architect & Physical Therapist"
+  bio = "Клінічна фізична терапія, біомеханіка, квантова соматика та фреймворк Quantum Physical Culture."
+  
+  # Прямі канали для супроводу
+  telegram = "https://t.me/your_telegram"
+  whatsapp = "https://wa.me/your_whatsapp_number"
+  
+  # Медійні платформи
+  threads = "https://www.threads.net/@your_threads"
+  youtube = "https://www.youtube.com/@your_youtube"
+
+# Налаштування розмітки Markdown (безпечні HTML-ембеди)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Дозволяє використання iframe та скриптів для кнопок оплат/віджетів
