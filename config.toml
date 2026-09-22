@@ -1,52 +1,92 @@
-baseURL = "https://somaticarchitect.github.io/"
-languageCode = "uk-ua"
-title = "Quantum Physical Culture | Somatic Architecture"
+baseURL = "https://<your-username>.github.io/"
 theme = "somatic-theme"
 
-# Таксономії для каталогізації статей
+defaultContentLanguage = "uk"
+defaultContentLanguageInSubdir = false
+
 [taxonomies]
   category = "categories"
   tag = "tags"
 
-# Головне меню сайту
-[menu]
-  [[menu.main]]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# =========================
+# УКРАЇНСЬКА ВЕРСІЯ (UK)
+# =========================
+[languages.uk]
+  languageCode = "uk-ua"
+  languageName = "UA"
+  weight = 1
+  title = "Quantum Physical Culture | Somatic Architecture"
+  
+  [languages.uk.params]
+    author = "Julia"
+    tagline = "Somatic Architect & Physical Therapist"
+    bio = "Клінічна фізична терапія, біомеханіка, квантова соматика та фреймворк Quantum Physical Culture."
+    telegram = "https://t.me/your_telegram"
+    whatsapp = "https://wa.me/your_whatsapp_number"
+    threads = "https://www.threads.net/@your_threads"
+    youtube = "https://www.youtube.com/@your_youtube"
+
+  [[languages.uk.menu.main]]
     identifier = "blog"
     name = "Статті"
     url = "/blog/"
     weight = 10
-  [[menu.main]]
+  [[languages.uk.menu.main]]
     identifier = "mentorship"
     name = "Супровід"
     url = "/mentorship/"
     weight = 20
-  [[menu.main]]
+  [[languages.uk.menu.main]]
     identifier = "shop"
     name = "Матеріали"
     url = "/shop/"
     weight = 30
-  [[menu.main]]
+  [[languages.uk.menu.main]]
     identifier = "contact"
     name = "Контакти"
     url = "/contact/"
     weight = 40
 
-# Кастомні параметри бренду, контактів та медіа
-[params]
-  author = "Julia"
-  tagline = "Somatic Architect & Physical Therapist"
-  bio = "Клінічна фізична терапія, біомеханіка, квантова соматика та фреймворк Quantum Physical Culture."
+# =========================
+# АНГЛІЙСЬКА ВЕРСІЯ (EN)
+# =========================
+[languages.en]
+  languageCode = "en-us"
+  languageName = "EN"
+  weight = 2
+  title = "Quantum Physical Culture | Somatic Architecture"
   
-  # Прямі канали для супроводу
-  telegram = "https://t.me/your_telegram"
-  whatsapp = "https://wa.me/your_whatsapp_number"
-  
-  # Медійні платформи
-  threads = "https://www.threads.net/@your_threads"
-  youtube = "https://www.youtube.com/@your_youtube"
+  [languages.en.params]
+    author = "Julia"
+    tagline = "Somatic Architect & Physical Therapist"
+    bio = "Clinical physical therapy, biomechanics, quantum somatics, and the Quantum Physical Culture framework."
+    telegram = "https://t.me/your_telegram"
+    whatsapp = "https://wa.me/your_whatsapp_number"
+    threads = "https://www.threads.net/@your_threads"
+    youtube = "https://www.youtube.com/@your_youtube"
 
-# Налаштування розмітки Markdown (безпечні HTML-ембеди)
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true  # Дозволяє використання iframe та скриптів для кнопок оплат/віджетів
+  [[languages.en.menu.main]]
+    identifier = "blog"
+    name = "Articles"
+    url = "/en/blog/"
+    weight = 10
+  [[languages.en.menu.main]]
+    identifier = "mentorship"
+    name = "Mentorship"
+    url = "/en/mentorship/"
+    weight = 20
+  [[languages.en.menu.main]]
+    identifier = "shop"
+    name = "Guides"
+    url = "/en/shop/"
+    weight = 30
+  [[languages.en.menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/en/contact/"
+    weight = 40
