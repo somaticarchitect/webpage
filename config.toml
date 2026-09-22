@@ -1,5 +1,4 @@
-baseURL = "https://<your-username>.github.io/"
-
+baseURL = "https://somaticarchitect.github.io/webpage/"
 defaultContentLanguage = "uk"
 defaultContentLanguageInSubdir = false
 
