@@ -1,5 +1,4 @@
 baseURL = "https://<your-username>.github.io/"
-theme = "somatic-theme"
 
 defaultContentLanguage = "uk"
 defaultContentLanguageInSubdir = false
