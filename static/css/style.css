@@ -1,21 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
 :root {
-  /* Твоя палітра та розширення */
-  --color-primary: #450C3F;
-  --color-primary-hover: #6B1761;
-  --color-sage-dark: #8FA852;
-  --color-sage: #B9D175;
-  --color-sage-soft: #D9EFBD;
-  --color-sage-light: #F5FBDA;
-  --color-bg: #FAFCF2;
-  --color-card-bg: #FFFFFF;
-  --color-border: #E2EBC8;
-  
-  /* Текст */
-  --color-text-main: #1C051A;
-  --color-text-muted: #60525E;
-  
-  /* Шрифти */
-  --font-heading: 'Syne', sans-serif;
+  /* Нова колірна система з Figma */
+  --color-milk: #F6F4EB;
+  --color-olive: #434438;
+  --color-plum: #7B527E;
+  --color-eggplant: #2E1830;
+  --color-fresh: #98B51B;
+  --color-lavender: #E2E2E6;
+  --color-white: #FFFFFF;
+
+  /* Семантичний мапінг (60 / 30 / 10) */
+  --bg-main: var(--color-milk);
+  --text-main: var(--color-olive);
+  --text-muted: #6B6C5F;
+  --card-bg: var(--color-white);
+  --card-alt: var(--color-lavender);
+  --border-subtle: rgba(67, 68, 56, 0.15);
+
+  --accent-cta: var(--color-plum);
+  --accent-badge: var(--color-fresh);
+  --dark-contrast: var(--color-eggplant);
+
+  /* Типографіка */
+  --font-display: 'Syne', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -26,8 +34,8 @@
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text-main);
+  background-color: var(--bg-main);
+  color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.65;
   font-size: 16px;
@@ -40,182 +48,82 @@ body {
   padding: 0 24px;
 }
 
-/* Header & Nav */
-.site-header {
-  border-bottom: 1px solid var(--color-border);
-  background-color: rgba(250, 252, 242, 0.9);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--color-primary);
+/* Типографіка заголовків */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  color: var(--text-main);
   letter-spacing: -0.02em;
-}
-
-.logo span {
-  color: var(--color-sage-dark);
-}
-
-.main-nav {
-  display: flex;
-  gap: 28px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: var(--color-text-muted);
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.main-nav a:hover {
-  color: var(--color-primary);
-}
-
-.social-links {
-  display: flex;
-  gap: 16px;
-}
-
-.social-links a {
-  text-decoration: none;
-  color: var(--color-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 20px;
-  background-color: var(--color-sage-light);
-  transition: all 0.2s ease;
-}
-
-.social-links a:hover {
-  background-color: var(--color-sage-soft);
-  transform: translateY(-1px);
-}
-
-/* Hero Section */
-.hero-section {
-  padding: 80px 24px 60px;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background-color: var(--color-sage-soft);
-  color: var(--color-primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 30px;
-  margin-bottom: 24px;
-}
-
-.hero-title {
-  font-family: var(--font-heading);
-  font-size: 2.75rem;
-  line-height: 1.15;
-  font-weight: 800;
-  color: var(--color-primary);
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
-}
-
-.hero-body {
-  font-size: 1.15rem;
-  color: var(--color-text-muted);
-  margin-bottom: 40px;
-}
-
-.hero-body h1, .hero-body h2, .hero-body h3 {
-  display: none; /* приховуємо повторний h1 з markdown */
-}
-
-.hero-body ul {
-  list-style: none;
-  text-align: left;
-  margin: 24px auto;
-  max-width: 620px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.hero-body li {
-  padding: 12px 18px;
-  background-color: var(--color-card-bg);
-  border-left: 4px solid var(--color-sage);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(69, 12, 63, 0.03);
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
 /* Кнопки */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 28px;
   border-radius: 12px;
+  font-family: var(--font-body);
   font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--accent-cta);
   color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(123, 82, 126, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  box-shadow: 0 6px 16px rgba(69, 12, 63, 0.18);
+  background-color: #69436C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(123, 82, 126, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1.5px solid var(--text-main);
+}
+
+.btn-outline:hover {
+  background: var(--color-lavender);
   transform: translateY(-2px);
 }
 
-.btn-secondary {
-  background-color: var(--color-sage-soft);
-  color: var(--color-primary);
+/* Бейджі / Мітки */
+.badge-lime {
+  display: inline-block;
+  background-color: var(--accent-badge);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 20px;
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-sage);
-  transform: translateY(-2px);
+.badge-subtle {
+  display: inline-block;
+  background-color: var(--color-lavender);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
 }
 
-/* Footer */
-.site-footer {
-  border-top: 1px solid var(--color-border);
-  padding: 40px 0;
-  margin-top: 80px;
-  background-color: var(--color-sage-light);
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  text-align: center;
+/* Темні преміальні блоки (підвал / ексклюзивний курс) */
+.dark-section {
+  background-color: var(--dark-contrast);
+  color: var(--color-milk);
+  border-radius: 18px;
+  padding: 48px;
+}
+
+.dark-section h2, .dark-section h3 {
+  color: var(--color-milk);
 }
