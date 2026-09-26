@@ -2,6 +2,12 @@ baseURL = "https://somaticarchitect.github.io/webpage/"
 defaultContentLanguage = "uk"
 defaultContentLanguageInSubdir = false
 
+[images.placeholders]
+  hero_image = "https://placehold.co/600x800"
+  about_image = "https://placehold.co/560x700"
+  article_preview = "https://placehold.co/400x225"
+  client_avatar = "https://placehold.co/64x64"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
