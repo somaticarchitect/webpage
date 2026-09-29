@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Categories on QPC.Soma — Квантова Фізична Культура</title>
+		<link>http://localhost:1313/webpage/categories/</link>
+		<description>Recent content in Categories on QPC.Soma — Квантова Фізична Культура</description>
+		<generator>Hugo</generator>
+		<language>uk-ua</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/webpage/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Fitness-Basics</title>
+				<link>http://localhost:1313/webpage/categories/fitness-basics/</link>
+				<pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/webpage/categories/fitness-basics/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

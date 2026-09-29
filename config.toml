@@ -18,79 +18,97 @@ defaultContentLanguageInSubdir = false
       unsafe = true
 
 # =========================
-# УКРАЇНСЬКА ВЕРСІЯ (UK)
+# Ukrainian Version (UA)
 # =========================
 [languages.uk]
   languageCode = "uk-ua"
   languageName = "UA"
   weight = 1
-  title = "Quantum Physical Culture | Somatic Architecture"
+  title = "QPC.Soma — Квантова Фізична Культура"
   
   [languages.uk.params]
     author = "Julia"
     tagline = "Somatic Architect & Physical Therapist"
     bio = "Клінічна фізична терапія, біомеханіка, квантова соматика та фреймворк Quantum Physical Culture."
-    telegram = "https://t.me/your_telegram"
-    whatsapp = "https://wa.me/your_whatsapp_number"
-    threads = "https://www.threads.net/@your_threads"
+    telegram = "https://t.me/JuliestJu"
+    whatsapp = "https://wa.me/380932612725"
+    threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
 
   [[languages.uk.menu.main]]
-    identifier = "blog"
-    name = "Статті"
-    url = "/blog/"
+    identifier = "about"
+    name = "Про метод"
+    url = "#about"
     weight = 10
+
   [[languages.uk.menu.main]]
-    identifier = "mentorship"
-    name = "Супровід"
-    url = "/mentorship/"
+    identifier = "services"
+    name = "Послуги"
+    url = "#services"
     weight = 20
+
   [[languages.uk.menu.main]]
-    identifier = "shop"
-    name = "Матеріали"
-    url = "/shop/"
+    identifier = "articles"
+    name = "Статті"
+    url = "/articles/"
     weight = 30
+
+  [[languages.uk.menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "#faq"
+    weight = 40
+
   [[languages.uk.menu.main]]
     identifier = "contact"
     name = "Контакти"
-    url = "/contact/"
-    weight = 40
+    url = "#contact"
+    weight = 50
 
 # =========================
-# АНГЛІЙСЬКА ВЕРСІЯ (EN)
+# English Version (EN)
 # =========================
 [languages.en]
   languageCode = "en-us"
   languageName = "EN"
   weight = 2
-  title = "Quantum Physical Culture | Somatic Architecture"
+  title = "QPC.Soma — Quantum Physical Culture"
   
   [languages.en.params]
     author = "Julia"
     tagline = "Somatic Architect & Physical Therapist"
     bio = "Clinical physical therapy, biomechanics, quantum somatics, and the Quantum Physical Culture framework."
-    telegram = "https://t.me/your_telegram"
-    whatsapp = "https://wa.me/your_whatsapp_number"
-    threads = "https://www.threads.net/@your_threads"
+    telegram = "https://t.me/JuliestJu"
+    whatsapp = "https://wa.me/380932612725"
+    threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
 
   [[languages.en.menu.main]]
-    identifier = "blog"
-    name = "Articles"
-    url = "/en/blog/"
+    identifier = "about"
+    name = "About Method"
+    url = "#about"
     weight = 10
+
   [[languages.en.menu.main]]
-    identifier = "mentorship"
-    name = "Mentorship"
-    url = "/en/mentorship/"
+    identifier = "services"
+    name = "Services"
+    url = "#services"
     weight = 20
+
   [[languages.en.menu.main]]
-    identifier = "shop"
-    name = "Guides"
-    url = "/en/shop/"
+    identifier = "articles"
+    name = "Articles"
+    url = "/en/articles/"
     weight = 30
+
+  [[languages.en.menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "#faq"
+    weight = 40
+
   [[languages.en.menu.main]]
     identifier = "contact"
     name = "Contact"
-    url = "/en/contact/"
-    weight = 40
+    url = "#contact"
+    weight = 50
