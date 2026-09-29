@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container list-section">
+  <header class="list-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="list-description">{{ . }}</div>
+    {{ end }}
+  </header>
+
+  <div class="posts-grid">
+    {{ range .Pages }}
+      <article class="post-card">
+        <span class="post-card-date">{{ .Date.Format "02.01.2006" }}</span>
+        <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="post-card-summary">{{ .Summary | truncate 140 }}</p>
+        <span class="reading-time">~{{ .ReadingTime }} хв читання</span>
+      </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
