@@ -1,0 +1,98 @@
+<section class="contact-section dark-block" id="contact">
+  <div class="container">
+    <div class="contact-card-dark">
+      
+      <!-- Заголовок темного блоку -->
+      <div class="contact-header text-center">
+        <span class="badge badge-light">START YOUR PRACTICE</span>
+        <h2>
+          {{ if eq .Site.Language.Lang "en" }}
+            Ready for structural transformation and bodily coherence?
+          {{ else }}
+            Готові до якісної трансформації тіла та глибокої когерентності?
+          {{ end }}
+        </h2>
+        <p>
+          {{ if eq .Site.Language.Lang "en" }}
+            Book a 15-minute intro call or write directly in convenient messengers.
+          {{ else }}
+            Запишіться на 15-хвилинну знайомчу консультацію або напишіть у зручний для вас месенджер.
+          {{ end }}
+        </p>
+      </div>
+
+      <!-- Основний контент: Месенджери + Форма -->
+      <div class="contact-grid">
+        
+        <!-- Колонка 1: Прямий зв'язок через месенджери -->
+        <div class="direct-contacts">
+          <h4>
+            {{ if eq .Site.Language.Lang "en" }}Direct Messaging{{ else }}Прямий зв'язок{{ end }}
+          </h4>
+          <p class="contacts-desc">
+            {{ if eq .Site.Language.Lang "en" }}
+              Fastest way to get a response regarding session availability:
+            {{ else }}
+              Найшвидший спосіб отримати відповідь щодо вільного часу:
+            {{ end }}
+          </p>
+
+          <div class="messenger-actions">
+            <a href="{{ .Site.Params.telegram }}" target="_blank" class="btn btn-telegram btn-lg btn-full">
+              <svg class="icon"><use href="#icon-telegram"></use></svg> Telegram Direct
+            </a>
+            <a href="{{ .Site.Params.whatsapp }}" target="_blank" class="btn btn-whatsapp btn-lg btn-full">
+              <svg class="icon"><use href="#icon-whatsapp"></use></svg> WhatsApp Direct
+            </a>
+          </div>
+        </div>
+
+        <!-- Колонка 2: Форма введення контактів -->
+        <div class="contact-form-wrapper">
+          <form action="#" method="POST" class="contact-form-dark">
+            <div class="form-group">
+              <label for="contact-name">
+                {{ if eq .Site.Language.Lang "en" }}Your Name{{ else }}Ваше ім'я{{ end }}
+              </label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                placeholder="{{ if eq .Site.Language.Lang "en" }}e.g. Julia{{ else }}напр. Юлія{{ end }}" 
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-handle">
+                {{ if eq .Site.Language.Lang "en" }}Telegram handle or phone{{ else }}Telegram @username або телефон{{ end }}
+              </label>
+              <input 
+                type="text" 
+                id="contact-handle" 
+                name="contact" 
+                placeholder="@username / +380..." 
+                required>
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-full">
+              {{ if eq .Site.Language.Lang "en" }}Submit Request{{ else }}Надіслати заявку{{ end }}
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Юридичний та медичний дисклеймер -->
+      <div class="disclaimer-text text-center">
+        <p>
+          {{ if eq .Site.Language.Lang "en" }}
+            <strong>Disclaimer:</strong> The materials and somatic sessions offered are educational, self-regulatory, and developmental in nature and are not a substitute for clinical medical diagnosis, surgery, or pharmaceutical treatment.
+          {{ else }}
+            <strong>Дисклеймер:</strong> Матеріали та соматичні сесії мають освітньо-корекційний та сомато-регуляторний характер і не замінюють клінічну медичну діагностику, хірургічне чи медикаментозне лікування.
+          {{ end }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

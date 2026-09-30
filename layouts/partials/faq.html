@@ -1,0 +1,144 @@
+<section class="faq-section" id="faq">
+  <div class="container">
+    
+    <!-- Заголовок секції -->
+    <div class="section-header text-center">
+      <span class="badge">FREQUENTLY ASKED QUESTIONS</span>
+      <h2>
+        {{ if eq .Site.Language.Lang "en" }}
+          Frequently Asked Questions
+        {{ else }}
+          Часті запитання та відповіді
+        {{ end }}
+      </h2>
+      <p class="section-subtitle">
+        {{ if eq .Site.Language.Lang "en" }}
+          Clear answers regarding session formats, onboarding, and the somatic methodology.
+        {{ else }}
+          Відповіді на популярні запитання про формат занять, підготовку та соматичний підхід.
+        {{ end }}
+      </p>
+    </div>
+
+    <!-- Список запитань (Аккордеон) -->
+    <div class="faq-accordion">
+      
+      <!-- Запитання 1 -->
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              How does the 15-minute intro call work and how do I book?
+            {{ else }}
+              Як проходить запис та перша 15-хвилинна знайомча консультація?
+            {{ end }}
+          </span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            {{ if eq .Site.Language.Lang "en" }}
+              You leave a request on the website or message directly via Telegram/WhatsApp. We agree on a convenient time for a short 15-minute online call to discuss your request, current symptoms, and determine if this somatic framework is right for you.
+            {{ else }}
+              Ви залишаєте заявку у формі на сайті або пишете напряму в Telegram чи WhatsApp. Ми узгоджуємо час для короткої 15-хвилинної онлайн-розмови, де обговорюємо ваш запит, наявні затиски або біль, та визначаємо оптимальний формат роботи.
+            {{ end }}
+          </p>
+        </div>
+      </details>
+
+      <!-- Запитання 2 -->
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              What do I need to prepare for an online somatic session?
+            {{ else }}
+              Що потрібно підготувати для онлайн-тренування?
+            {{ end }}
+          </span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            {{ if eq .Site.Language.Lang "en" }}
+              You need comfortable clothing that allows free movement, a yoga/fitness mat, a stable internet connection, and a device (laptop, tablet, or phone) with a working camera positioned so you are visible full-length.
+            {{ else }}
+              Вам знадобиться зручний одяг, що не сковує рухів, килимок для фітнесу/йоги, стабільне інтернет-з'єднання та пристрій (ноутбук, планшет або телефон) із працюючою камерою, встановлений так, щоб вас було видно в повний зріст.
+            {{ end }}
+          </p>
+        </div>
+      </details>
+
+      <!-- Запитання 3 -->
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              Is this approach suitable for chronic back pain, herniated discs, or protrusions?
+            {{ else }}
+              Чи можна займатися при протрузіях, грижах або хронічному болю в спині?
+            {{ end }}
+          </span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            {{ if eq .Site.Language.Lang "en" }}
+              Yes. Somatic practice is specifically designed for safe, gentle neuromuscular retraining and removing compensatory spasms around damaged areas. However, if you are in an acute severe medical emergency or intense inflammation, medical clearance is required first.
+            {{ else }}
+              Так, соматична робота орієнтована саме на безпечне нейром'язове перенавчання та зняття глибокого компенсаторного спазму, який часто супроводжує грижі та протрузії. Проте, якщо ви перебуваєте в гострому запальному стані, спочатку необхідно зняти гострий біль за рекомендацією лікаря.
+            {{ end }}
+          </p>
+        </div>
+      </details>
+
+      <!-- Запитання 4 -->
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              How does somatic practice differ from regular fitness or stretching?
+            {{ else }}
+              Чим соматична практика відрізняється від звичайного фітнесу або стретчингу?
+            {{ end }}
+          </span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            {{ if eq .Site.Language.Lang "en" }}
+              We do not force muscles through aggressive stretching or heavy weight resistance. Instead, we work with nervous system regulation, biomechanics, and body awareness to restore natural alignment without trauma or fatigue.
+            {{ else }}
+              Ми не змушуємо м'язи працювати через силу, силові виснажливі навантаження чи болісне механічне розтягування. Робота будується на нейром'язовій саморегуляції, біомеханіці та відновленні природного центрування тіла без втоми й травматизації.
+            {{ end }}
+          </p>
+        </div>
+      </details>
+
+      <!-- Запитання 5 -->
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              How many sessions are needed to feel a lasting result?
+            {{ else }}
+              Скільки сесій потрібно для відчутного та стійкого результату?
+            {{ end }}
+          </span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            {{ if eq .Site.Language.Lang "en" }}
+              Initial decompression and a sense of lightness are often felt during the very first "Quantum Alignment" session. To permanently rebuild gait patterns, posture, and systemic movement habits, a full 10-session course is recommended.
+            {{ else }}
+              Миттєве зняття напруги та нове відчуття центральної осі нервова система фіксує вже під час першої сесії «Квантового вирівнювання». Для закріплення нових рухових патернів та стійкої перебудови біомеханіки рекомендовано пройти системний курс з 10 занять.
+            {{ end }}
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+</section>
