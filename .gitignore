@@ -1,0 +1,28 @@
+# Hugo generated site
+/public/
+
+# Hugo cache
+/resources/
+
+# Hugo build/cache files
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Node dependencies (if used)
+node_modules/
+
+# Environment / local config
+.env
+.env.*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
