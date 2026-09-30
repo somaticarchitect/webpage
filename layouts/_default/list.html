@@ -1,21 +1,62 @@
 {{ define "main" }}
-<div class="container list-section">
-  <header class="list-header">
-    <h1 class="page-title">{{ .Title }}</h1>
-    {{ with .Content }}
-      <div class="list-description">{{ . }}</div>
-    {{ end }}
-  </header>
+<section class="articles-list-page">
+  <div class="container">
+    
+    <!-- Заголовок сторінки -->
+    <div class="section-header text-center">
+      <span class="badge">RESEARCH & MATERIALS</span>
+      <h1>{{ .Title }}</h1>
+      <p class="section-subtitle">{{ .Description }}</p>
+    </div>
 
-  <div class="posts-grid">
-    {{ range .Pages }}
-      <article class="post-card">
-        <span class="post-card-date">{{ .Date.Format "02.01.2006" }}</span>
-        <h2 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <p class="post-card-summary">{{ .Summary | truncate 140 }}</p>
-        <span class="reading-time">~{{ .ReadingTime }} хв читання</span>
-      </article>
-    {{ end }}
+    <!-- Класичні кнопки-посилання на категорії -->
+    <div class="article-tags-filter text-center">
+      <!-- Кнопка "Усі" -->
+      <a href="{{ if eq .Site.Language.Lang "en" }}/en/articles/{{ else }}/articles/{{ end }}" 
+         class="tag-btn {{ if and (eq .Section "articles") (not .Data.Term) }}active{{ end }}">
+        {{ if eq .Site.Language.Lang "en" }}All{{ else }}Усі{{ end }}
+      </a>
+      
+      <!-- Кнопка "Квантова ФК" -->
+      <a href="{{ if eq .Site.Language.Lang "en" }}/en/categories/qpc/{{ else }}/categories/qpc/{{ end }}" 
+         class="tag-btn {{ if eq .Data.Term "qpc" }}active{{ end }}">
+        {{ if eq .Site.Language.Lang "en" }}Quantum Physical Culture{{ else }}Квантова ФК{{ end }}
+      </a>
+      
+      <!-- Кнопка "Тренування" -->
+      <a href="{{ if eq .Site.Language.Lang "en" }}/en/categories/training/{{ else }}/categories/training/{{ end }}" 
+         class="tag-btn {{ if eq .Data.Term "training" }}active{{ end }}">
+        {{ if eq .Site.Language.Lang "en" }}General Training{{ else }}Тренування{{ end }}
+      </a>
+    </div>
+
+    <!-- Сітка карток статей -->
+    <div class="articles-grid">
+      {{ range .Pages }}
+        <article class="article-card">
+          <div class="article-card-header">
+            <span class="article-category">
+              {{ with .Params.category }}
+                {{ if eq . "qpc" }}QPC.SOMA{{ else if eq . "training" }}TRAINING{{ else }}{{ . }}{{ end }}
+              {{ else }}
+                QPC.SOMA
+              {{ end }}
+            </span>
+            <span class="article-read-time">{{ .ReadingTime }} min read</span>
+          </div>
+          <h3 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="article-summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 130 }}{{ end }}</p>
+          <a href="{{ .RelPermalink }}" class="article-link">
+            {{ if eq $.Site.Language.Lang "en" }}Read article →{{ else }}Читати статтю →{{ end }}
+          </a>
+        </article>
+      {{ else }}
+        <p class="no-articles text-center" style="grid-column: 1 / -1; padding: 2rem 0;">
+          {{ if eq .Site.Language.Lang "en" }}No articles published in this section yet.{{ else }}У цьому розділі поки немає опублікованих статей.{{ end }}
+        </p>
+      {{ end }}
+    </div>
+
   </div>
-</div>
+</section>
 {{ end }}

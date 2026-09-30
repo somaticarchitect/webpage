@@ -1,19 +1,71 @@
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-cta">
-      <h3>Прямий зв'язок</h3>
-      <div class="footer-buttons">
-        {{ with .Site.Params.telegram }}
-          <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener">Telegram</a>
-        {{ end }}
-        {{ with .Site.Params.whatsapp }}
-          <a href="{{ . }}" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp</a>
-        {{ end }}
+  <div class="container footer-container">
+    
+    <!-- Верхній блок футера: 3 колонки -->
+    <div class="footer-grid">
+      
+      <!-- Колонка 1: Логотип та позиціонування -->
+      <div class="footer-brand">
+        <a href="{{ site.Home.RelPermalink }}" class="footer-logo">
+          <span class="logo-text">QPC.Soma</span>
+        </a>
+        <p class="footer-bio">
+          {{ if eq .Site.Language.Lang "en" }}
+            Scientific somatic framework combining biomechanics, clinical physical therapy, and neurological self-regulation.
+          {{ else }}
+            Науковий соматичний підхід, що поєднує біомеханіку, клінічну фізичну терапію та нейрорегуляцію.
+          {{ end }}
+        </p>
+      </div>
+
+      <!-- Колонка 2: Навігація по сайту -->
+      <div class="footer-nav-col">
+        <h4>{{ if eq .Site.Language.Lang "en" }}Navigation{{ else }}Навігація{{ end }}</h4>
+        <ul class="footer-links">
+          {{ range .Site.Menus.main }}
+            {{ $link := .URL }}
+            {{ if and (hasPrefix .URL "#") (not $.IsHome) }}
+              {{ $link = printf "%s%s" site.Home.RelPermalink .URL }}
+            {{ end }}
+            <li><a href="{{ $link }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Колонка 3: Соцмережі та месенджери -->
+      <div class="footer-social-col">
+        <h4>{{ if eq .Site.Language.Lang "en" }}Socials & Contact{{ else }}Соцмережі та зв'язок{{ end }}</h4>
+        <div class="footer-social-links">
+          {{ with .Site.Params.telegram }}
+            <a href="{{ . }}" target="_blank" class="social-link">Telegram</a>
+          {{ end }}
+          {{ with .Site.Params.whatsapp }}
+            <a href="{{ . }}" target="_blank" class="social-link">WhatsApp</a>
+          {{ end }}
+          {{ with .Site.Params.threads }}
+            <a href="{{ . }}" target="_blank" class="social-link">Threads</a>
+          {{ end }}
+          {{ with .Site.Params.youtube }}
+            <a href="{{ . }}" target="_blank" class="social-link">YouTube</a>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Нижній бар: Копірайт та службові посилання -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {{ now.Format "2006" }} QPC.Soma. 
+        {{ if eq .Site.Language.Lang "en" }}All rights reserved.{{ else }}Усі права захищено.{{ end }}
+      </p>
+      <div class="footer-legal">
+        <a href="{{ if eq .Site.Language.Lang "en" }}/en/privacy/{{ else }}/privacy/{{ end }}">
+          {{ if eq .Site.Language.Lang "en" }}Privacy Policy{{ else }}Політика конфіденційності{{ end }}
+        </a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
-    <div class="footer-disclaimer">
-      <p><small>Матеріали сайту та соматичні протоколи мають освітній характер і не замінюють очного медичного обстеження чи екстреної допомоги.</small></p>
-      <p>© {{ now.Format "2006" }} {{ .Site.Params.author }}. Платформа побудована на базі Quantum Physical Culture.</p>
-    </div>
+
   </div>
 </footer>

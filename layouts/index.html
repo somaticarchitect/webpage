@@ -1,15 +1,23 @@
 {{ define "main" }}
-<div class="container hero-section">
-  <div class="hero-content">
-    <span class="badge">Somatic Architecture & Biomechanics</span>
-    <h1 class="hero-title">{{ .Title }}</h1>
-    <div class="hero-body">
-      {{ .Content }}
-    </div>
-    <div class="hero-actions">
-      <a href="/mentorship/" class="btn btn-primary">Персональний супровід</a>
-      <a href="/blog/" class="btn btn-secondary">База знань</a>
-    </div>
-  </div>
-</div>
+  <!-- 1. Hero Секція із закликом та швидкою формою -->
+  {{ partial "hero.html" . }}
+
+  <!-- 2. Секція "Для кого цей метод" (Who this is for) -->
+  {{ partial "who_is_this_for.html" . }}
+
+  <!-- 3. Секція "Послуги та Пробне заняття" -->
+  {{ partial "services.html" . }}
+
+  <!-- 4. Відгуки та досвід клієнтів -->
+  {{ partial "testimonials.html" . }}
+
+  <!-- 5. Статті та дослідження (Прев'ю матеріалів) -->
+  {{ partial "articles_preview.html" . }}
+
+  <!-- 6. Часті запитання (FAQ) -->
+  {{ partial "faq.html" . }}
+
+  <!-- 7. Темний блок консультації та форма запису -->
+  {{ partial "contact_section.html" . }}
 {{ end }}
+

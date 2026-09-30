@@ -1,29 +1,56 @@
 <header class="site-header">
-  <div class="container header-inner">
-    <a href="{{ .Site.Home.RelPermalink }}" class="logo">QPC<span>.Soma</span></a>
+  <div class="container header-container">
     
-    <nav class="main-nav">
-      {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+    <!-- 1. Логотип бренду -->
+    <a href="{{ site.Home.RelPermalink }}" class="site-logo">
+      <span class="logo-text">QPC.Soma</span>
+    </a>
+
+    <!-- 2. Навігаційне меню -->
+    <nav class="nav-menu" id="nav-menu">
+      {{ range site.Menus.main }}
+        {{ $link := .URL }}
+        {{ if and (hasPrefix .URL "#") (not $.IsHome) }}
+          {{ $link = printf "%s%s" site.Home.RelPermalink .URL }}
+        {{ end }}
+        <a href="{{ $link }}" class="nav-link">{{ .Name }}</a>
       {{ end }}
     </nav>
-    
-    <div class="header-right">
-      <!-- Перемикач мов -->
-      <div class="lang-switch">
-        {{ range .AllTranslations }}
-          <a href="{{ .RelPermalink }}" class="lang-link">{{ .Language.LanguageName }}</a>
+
+    <!-- 3. Права частина: Мови + Кнопка Telegram + Мобільна кнопка -->
+    <div class="header-actions">
+      
+      <!-- Перемикач мов (UA | EN) -->
+      <div class="lang-switcher">
+        {{ if .IsTranslated }}
+          {{ range .AllTranslations }}
+            <a href="{{ .RelPermalink }}" class="lang-link {{ if eq .Lang site.Language.Lang }}active{{ end }}">
+              {{ .Language.LanguageName }}
+            </a>
+          {{ end }}
+        {{ else }}
+          {{ range site.Sites }}
+            <a href="{{ .Home.RelPermalink }}" class="lang-link {{ if eq .Language.Lang site.Language.Lang }}active{{ end }}">
+              {{ .Language.LanguageName }}
+            </a>
+          {{ end }}
         {{ end }}
       </div>
 
-      <div class="social-links">
-        {{ with .Site.Params.threads }}
-          <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Threads">Threads</a>
-        {{ end }}
-        {{ with .Site.Params.youtube }}
-          <a href="{{ . }}" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
-        {{ end }}
-      </div>
+      <!-- Кнопка швидкого запису в Telegram -->
+      <a href="{{ site.Params.telegram }}" target="_blank" class="btn btn-telegram btn-sm header-cta">
+        <svg class="icon"><use href="#icon-telegram"></use></svg>
+        <span>{{ if eq site.Language.Lang "en" }}Write on Telegram{{ else }}Записатися в Telegram{{ end }}</span>
+      </a>
+
+      <!-- Кнопка перемикання мобільного меню -->
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('nav-menu').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
+
   </div>
 </header>
