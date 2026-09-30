@@ -54,6 +54,7 @@
   --shadow-card: 0 4px 24px rgba(67, 68, 56, 0.04);
   --shadow-accent-btn: 0 6px 20px rgba(123, 82, 126, 0.25);
   --shadow-badge: 0 8px 24px rgba(46, 24, 48, 0.18);
+  
 }
 
 /* ========================================================
@@ -322,114 +323,213 @@ section {
 }
 
 /* ========================================================
-   1. HERO SECTION
+   1. HERO SECTION (СТРОГО ЗА МАКЕТАМИ)
    ======================================================== */
 .hero-section {
-  padding: 80px 0 60px 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-bg);
+  overflow: hidden;
 }
 
-.hero-grid,
 .hero-container {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr; /* Точно 50% на 50% */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
 }
 
-/* FAQ тримаємо зручним для читання по центру */
-.faq-accordion {
-  max-width: 900px;
-  margin: 0 auto;
+/* Ліва колонка: вирівняна по лівій лінії логотипа шапки */
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: max(24px, calc((100vw - 1200px) / 2 + 24px));
+  padding-right: 48px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 520px; /* Точна ширина текстового блоку за макетом */
+}
+
+.hero-badge {
+  margin-bottom: 20px;
+}
+
+.badge-hero {
+  display: inline-block;
+  padding: 6px 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
-  margin-top: 16px;
-  margin-bottom: 20px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
   line-height: 1.1;
-}
-
-.hero-title span {
-  color: var(--color-accent-berry);
-}
-
-.hero-subtitle,
-.hero-description {
-  font-size: 1.1rem;
-  color: var(--color-text-muted);
-  margin-bottom: 32px;
-  line-height: 1.6;
-}
-
-.hero-messengers {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.messengers-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-text-dim);
-}
-
-.messenger-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.hero-form-card {
-  background-color: var(--color-surface-white);
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-xl);
-  padding: 36px;
-  box-shadow: var(--shadow-card);
-}
-
-.hero-form-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
-.hero-form-card p {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-}
-
-.form-group {
+  letter-spacing: -0.03em;
+  color: var(--color-text-main);
   margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.hero-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
 }
 
-.form-group label {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-text-main);
+.hero-actions .btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
-.form-group input {
-  padding: 14px 16px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background-color: var(--color-surface-white);
+.hero-divider {
+  width: 100%;
+  max-width: 440px;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 24px 0;
+}
+
+.hero-features-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.feature-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+.feature-desc {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.35;
 }
 
-.form-group input::placeholder {
-  color: var(--color-text-dim);
+/* Права колонка: Фото рівно на 50% екрана без радіуса та відступів */
+.hero-media {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.form-group input:focus {
-  border-color: var(--color-accent-berry);
-  box-shadow: 0 0 0 3px var(--color-accent-berry-subtle);
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* Прибрано радіуси повністю! */
+  overflow: hidden;
+  background-color: var(--color-surface-white);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0; /* Прямі кути! */
+}
+
+/* Фіолетова плашка внизу фото */
+.hero-floating-badge {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  right: 32px;
+  background-color: var(--color-dark-plum);
+  color: #FFFFFF;
+  padding: 20px 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: var(--shadow-badge);
+  border: 1px solid var(--color-dark-plum-border);
+}
+
+.badge-tagline {
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.badge-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left-col {
+    padding: 32px 24px;
+  }
+
+  .hero-media {
+    height: 480px;
+  }
+
+  .hero-features-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-floating-badge {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 16px 20px;
+  }
 }
 
 /* ========================================================
