@@ -1,60 +1,81 @@
 <section class="hero-section" id="hero">
   <div class="hero-container">
-    
-    <!-- Ліва колонка: Текст, кнопки, лінія та 3 метрики -->
+
+    <!-- Ліва колонка -->
     <div class="hero-left-col">
       <div class="hero-content">
-        
-        <!-- Оливковий бейдж -->
+
+        <!-- Badge -->
         <div class="hero-badge">
           <span class="badge-hero">
+            <span class="badge-dot"></span>
             {{ if eq site.Language.Lang "en" }}
-              CLINICAL BIOMECHANICS &bull; SOMATIC ARCHITECTURE
+            CLINICAL BIOMECHANICS · SOMATIC ARCHITECTURE
             {{ else }}
-              КЛІНІЧНА БІОМЕХАНІКА &bull; СОМАТИЧНА АРХІТЕКТУРА
+            КЛІНІЧНА БІОМЕХАНІКА · СОМАТИЧНА АРХІТЕКТУРА
             {{ end }}
           </span>
         </div>
 
-        <!-- Заголовок H1 -->
+        <!-- Title -->
         <h1 class="hero-title">
           {{ if eq site.Language.Lang "en" }}
-            A space for body recovery — for those tired of cookie-cutter fitness
+          A space for body recovery — for those tired of cookie-cutter fitness
           {{ else }}
-            Простір відновлення тіла для тих, хто втомився від шаблонного фітнесу
+          Простір відновлення тіла для тих, хто втомився від шаблонного фітнесу
           {{ end }}
         </h1>
 
-        <!-- Підзаголовок -->
+        <!-- Subtitle -->
         <p class="hero-subtitle">
           {{ if eq site.Language.Lang "en" }}
-            Practice at the intersection of biomechanics, fascial conduction, and somatosensory self-regulation of the nervous system. Movement without exhaustion, strain, and pain.
+          Practice at the intersection of biomechanics, fascial conduction, and somatosensory self-regulation of the
+          nervous system. Movement without exhaustion, strain, and pain.
           {{ else }}
-            Практика на стику біомеханіки, фасціальної провідності та соматосенсорної саморегуляції нервової системи. Рух без виснаження, насильства та болю.
+          Практика на стику біомеханіки, фасціальної провідності та соматосенсорної саморегуляції нервової системи. Рух
+          без виснаження, насильства та болю.
           {{ end }}
         </p>
 
-        <!-- Дві кнопки (одна під одною) -->
+        <!-- Buttons -->
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary btn-lg btn-full">
-            <span>{{ if eq site.Language.Lang "en" }}Schedule 15-min Intro Call{{ else }}Узгодити 15-хв знайомство{{ end }}</span>
+            <span>
+              {{ if eq site.Language.Lang "en" }}
+              Schedule 15-min Intro Call
+              {{ else }}
+              Узгодити 15-хв знайомство
+              {{ end }}
+            </span>
           </a>
+
           <a href="#articles" class="btn btn-outline btn-lg btn-full">
-            <span>{{ if eq site.Language.Lang "en" }}Read Knowledge Base &darr;{{ else }}Читати базу знань &darr;{{ end }}</span>
+            <span>
+              {{ if eq site.Language.Lang "en" }}
+              Read Knowledge Base &darr;
+              {{ else }}
+              Читати базу знань &darr;
+              {{ end }}
+            </span>
           </a>
         </div>
 
-        <!-- Тонка розділова лінія -->
+        <!-- Divider -->
         <div class="hero-divider"></div>
 
-        <!-- 3 колонки метрик -->
+        <!-- Metrics -->
         <div class="hero-features-row">
+
           <div class="feature-col">
             <strong class="feature-title">
               {{ if eq site.Language.Lang "en" }}0.1 Hz{{ else }}0.1 Гц{{ end }}
             </strong>
             <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}Breath-heart coherence target{{ else }}Синхронізація дихання та ритму{{ end }}
+              {{ if eq site.Language.Lang "en" }}
+              Breath-heart coherence target
+              {{ else }}
+              Синхронізація дихання та ритму
+              {{ end }}
             </span>
           </div>
 
@@ -63,7 +84,11 @@
               {{ if eq site.Language.Lang "en" }}10+{{ else }}10+{{ end }}
             </strong>
             <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}Years clinical practice{{ else }}Років клінічної практики{{ end }}
+              {{ if eq site.Language.Lang "en" }}
+              Years clinical practice
+              {{ else }}
+              Років клінічної практики
+              {{ end }}
             </span>
           </div>
 
@@ -72,9 +97,14 @@
               {{ if eq site.Language.Lang "en" }}3 lines{{ else }}3 лінії{{ end }}
             </strong>
             <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}Fascial meridians addressed{{ else }}Фасціальні меридіани{{ end }}
+              {{ if eq site.Language.Lang "en" }}
+              Fascial meridians addressed
+              {{ else }}
+              Фасціальні меридіани
+              {{ end }}
             </span>
           </div>
+
         </div>
 
       </div>
@@ -83,22 +113,19 @@
     <!-- Права колонка: Фото рівно 50% екрана (без закруглень кутів, без відступів) -->
     <div class="hero-media">
       <div class="hero-image-wrapper">
-        <img 
-          src="{{ with site.Params.images.placeholders.hero_image }}{{ . }}{{ else }}https://placehold.co/900x1200{{ end }}" 
-          alt="{{ if eq site.Language.Lang "en" }}Somatic Architecture Practice{{ else }}Соматична практика та біомеханіка{{ end }}" 
-          class="hero-image"
-          loading="eager"
-          width="900"
-          height="1200"
-        />
-        
+        <img
+          src="{{ with site.Params.images.placeholders.hero_image }}{{ . }}{{ else }}https://placehold.co/900x1200{{ end }}"
+          alt="{{ if eq site.Language.Lang " en" }}Somatic Architecture Practice{{ else }}Соматична практика та
+          біомеханіка{{ end }}" class="hero-image" loading="eager" width="900" height="1200" />
+
         <!-- Темна сливова плашка поверх фото -->
         <div class="hero-floating-badge">
           <span class="badge-tagline">
             {{ if eq site.Language.Lang "en" }}CURRENT FOCUS{{ else }}СОМАТИЧНА РЕГУЛЯЦІЯ{{ end }}
           </span>
           <h4 class="badge-title">
-            {{ if eq site.Language.Lang "en" }}Fascial decompression & nervous system retraining{{ else }}Відновлення природної архітектури тіла{{ end }}
+            {{ if eq site.Language.Lang "en" }}Fascial decompression & nervous system retraining{{ else }}Відновлення
+            природної архітектури тіла{{ end }}
           </h4>
         </div>
 

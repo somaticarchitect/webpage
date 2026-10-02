@@ -347,48 +347,75 @@ section {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 48px;
-  padding-bottom: 48px;
-  padding-left: 120px;  /* Відступ від лівого краю екрана */
-  padding-right: 32px; /* Невеликий акуратний зазор перед фотографією */
+  justify-content: center; /* Вирівнювання по центру висоти */
+  align-items: center; 
   box-sizing: border-box;
 }
-
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 100%;
+  max-width: 620px;
+  gap: 32px;
 }
 
+/* ========================================================
+   БЕЙДЖ HERO (ЗЕЛЕНА КРАПКА, СІРИЙ ТЕКСТ, НАПІВПРОЗОРИЙ ФОН)
+   ======================================================== */
 .hero-badge {
-  margin-bottom: 20px;
-}
-
-.badge-hero {
-  display: inline-block;
-  padding: 6px 18px;
-  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 14px;
+  margin: 0;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: var(--radius-pill);
-  background-color: transparent;
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-border);
+  
+  /* Легке затінення (напівпрозоре), замість суцільної сірої ляпки */
+  background-color: rgba(67, 68, 56, 0.03); 
+  backdrop-filter: blur(4px);
+  
+  /* Чіткий контур, як на макеті */
+  border: 1px solid rgba(67, 68, 56, 0.15); 
+  
+  /* Колір тексту */
+  color: var(--color-text-dim);
+  width: fit-content;
+}
+
+/* Зелена крапка-індикатор перед текстом */
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent-lime);
+  margin-right: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  
+  /* Ховаємо текстовий символ "•", щоб він не виштовхував кружок */
+  font-size: 0;
+  color: transparent;
+  line-height: 0;
+  
+  /* Оптичне центрування відносно великих літер тексту */
+  transform: translateY(-1px);
 }
 
 .hero-title {
+  width: calc(100% + 22%);
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--color-text-main);
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .hero-subtitle {
@@ -396,29 +423,31 @@ section {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--color-text-muted);
-  margin-bottom: 28px;
+  margin: 0; /* Обнуляємо margin */
 }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 12px;               
   width: 100%;
-  max-width: 440px;
+  margin: 0;
 }
 
-.btn,
 .hero-actions .btn {
-  border-radius: var(--radius-pill) !important; /* або 9999px */
-  padding: 16px 32px;
+  width: 320px; /* Суворо фіксована ширина (можете поставити 280px, 300px чи будь-яке інше значення) */
+  border-radius: var(--radius-pill) !important;
+  padding: 16px 24px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .hero-divider {
   width: 100%;
-  max-width: 100%;
   height: 1px;
   background-color: var(--color-border);
-  margin: 24px 0;
+  margin: 0; /* Обнуляємо margin, оскільки зверху й знизу працює gap: 48px */
 }
 
 .hero-features-row {
@@ -426,7 +455,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   width: 100%;
-  max-width: 100%;
+  margin: 0;
 }
 
 .feature-col {
