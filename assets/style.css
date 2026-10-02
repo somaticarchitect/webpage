@@ -579,9 +579,8 @@ section {
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
-
   align-items: center;
 }
 
