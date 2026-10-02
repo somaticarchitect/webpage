@@ -1,55 +1,198 @@
-<section class="about-section" id="about">
-  <div class="container about-container">
-    
-    <!-- Ліва колонка: Фото з бейджем синхронізації -->
+<section id="about" class="about-section">
+  <div class="about-container">
+
+    <!-- Ліва колонка: зображення + floating card -->
     <div class="about-media">
       <div class="about-image-wrapper">
-        <img src="https://placehold.co/560x700" alt="About Quantum Physical Culture Method" class="about-image" loading="lazy" width="560" height="700" />
-        
+
+        <img
+          src="{{ site.Params.images.placeholders.about_image }}"
+          alt="{{ if eq site.Language.Lang "en" }}About Method{{ else }}Про метод{{ end }}"
+          class="about-image"
+          width="560"
+          height="700"
+          loading="lazy"
+        >
+
         <div class="about-floating-card">
-          <strong class="floating-value">0.1 Hz</strong>
-          <span class="floating-label">Breath-heart synchronization protocol</span>
+          <span class="floating-value">0.1 Hz</span>
+
+          <span class="floating-label">
+            {{ if eq site.Language.Lang "en" }}
+              Breath-heart synchronization protocol
+            {{ else }}
+              Протокол синхронізації дихання та серця
+            {{ end }}
+          </span>
         </div>
+
       </div>
     </div>
 
-    <!-- Права колонка: Інформаційний контент та переваги методу -->
+
+    <!-- Права колонка: контент -->
     <div class="about-content">
-      <div class="about-header">
-        <span class="badge">ABOUT METHOD</span>
-        <h2 class="about-title">Restoring resource instead of exhaustion.</h2>
-      </div>
 
+      <!-- Заголовок -->
+      <header class="about-header">
+
+        <span class="badge">
+          {{ if eq site.Language.Lang "en" }}
+            ABOUT METHOD
+          {{ else }}
+            ПРО МЕТОД
+          {{ end }}
+        </span>
+
+        <h2 class="about-title">
+          {{ if eq site.Language.Lang "en" }}
+            Restoring resource instead of exhaustion.
+          {{ else }}
+            Відновлення ресурсу замість виснаження.
+          {{ end }}
+        </h2>
+
+      </header>
+
+
+      <!-- Опис -->
       <div class="about-description">
-        <p>My clinical background clarified a persistent problem: conventional training creates dysfunction as often as it resolves it. Pumping isolated muscles while ignoring the nervous system's protective responses produces fatigue — not resilience.</p>
-        <p>The Quantum Physical Culture method works directly with fascial lines, breath mechanics, and autonomic regulation. At its core: synchronizing breath and heart rhythm at 0.1 Hz restores tissue fluidity and fluid-dynamic balance throughout the body — without any mechanical force applied under neurological stress.</p>
+
+        {{ if eq site.Language.Lang "en" }}
+
+          <p>
+            My clinical background clarified a persistent problem:
+            conventional training creates dysfunction as often as it resolves it.
+            Pumping isolated muscles while ignoring the nervous system's
+            protective responses produces fatigue — not resilience.
+          </p>
+
+          <p>
+            The Quantum Physical Culture method works directly with fascial lines,
+            breath mechanics, and autonomic regulation. At its core:
+            synchronizing breath and heart rhythm at 0.1 Hz restores tissue
+            fluidity and fluid-dynamic balance throughout the body —
+            without any mechanical force applied under neurological stress.
+          </p>
+
+        {{ else }}
+
+          <p>
+            Мій клінічний досвід виявив постійну проблему:
+            конвенційні тренування створюють дисфункції так само часто,
+            як і усувають їх. «Закачування» ізольованих м'язів без урахування
+            захисних реакцій нервової системи призводить лише до втоми,
+            а не до стійкості.
+          </p>
+
+          <p>
+            Метод квантової фізичної культури працює безпосередньо
+            з фасціальними лініями, біомеханікою дихання та автономною
+            регуляцією. В його основі лежить синхронізація серцевого ритму
+            й дихання на частоті 0.1 Гц, що повертає плинність тканин
+            та рідинний баланс по всьому тілу — без механічного навантаження
+            в стані неврологічного стресу.
+          </p>
+
+        {{ end }}
+
       </div>
 
+
+      <!-- Переваги методу -->
       <ul class="about-features">
+
+        <!-- 01 -->
         <li class="about-feature-item">
-          <span class="status-icon icon-check">✓</span>
+
+          <span class="status-icon" aria-hidden="true">✓</span>
+
           <div class="feature-text">
-            <h3 class="feature-title">Neurological safety</h3>
-            <p class="feature-description">Movement strictly within a pain-free range without triggering protective spasms or hypervigilance.</p>
+
+            <h3 class="feature-title">
+              {{ if eq site.Language.Lang "en" }}
+                Neurological safety
+              {{ else }}
+                Неврологічна безпека
+              {{ end }}
+            </h3>
+
+            <p class="feature-description">
+              {{ if eq site.Language.Lang "en" }}
+                Movement strictly within a pain-free range without triggering
+                protective spasms or hypervigilance.
+              {{ else }}
+                Рух виключно в безболісному діапазоні без запуску
+                захисних спазмів або гіпернапруги.
+              {{ end }}
+            </p>
+
           </div>
+
         </li>
 
+
+        <!-- 02 -->
         <li class="about-feature-item">
-          <span class="status-icon icon-check">✓</span>
+
+          <span class="status-icon" aria-hidden="true">✓</span>
+
           <div class="feature-text">
-            <h3 class="feature-title">Tensegrity and wholeness</h3>
-            <p class="feature-description">Balancing tension across the entire fascial web — instead of isolating and overloading individual muscles.</p>
+
+            <h3 class="feature-title">
+              {{ if eq site.Language.Lang "en" }}
+                Tensegrity and wholeness
+              {{ else }}
+                Тенсегриті та цілісність
+              {{ end }}
+            </h3>
+
+            <p class="feature-description">
+              {{ if eq site.Language.Lang "en" }}
+                Balancing tension across the entire fascial web —
+                instead of isolating and overloading individual muscles.
+              {{ else }}
+                Балансування натягу по всій фасціальній мережі
+                замість ізоляції та перевантаження окремих м'язів.
+              {{ end }}
+            </p>
+
           </div>
+
         </li>
 
+
+        <!-- 03 -->
         <li class="about-feature-item">
-          <span class="status-icon icon-check">✓</span>
+
+          <span class="status-icon" aria-hidden="true">✓</span>
+
           <div class="feature-text">
-            <h3 class="feature-title">Individual screening</h3>
-            <p class="feature-description">Testing baseline condition and neurological reactivity before applying any mechanical load to the body.</p>
+
+            <h3 class="feature-title">
+              {{ if eq site.Language.Lang "en" }}
+                Individual screening
+              {{ else }}
+                Індивідуальний скринінг
+              {{ end }}
+            </h3>
+
+            <p class="feature-description">
+              {{ if eq site.Language.Lang "en" }}
+                Testing baseline condition and neurological reactivity
+                before applying any mechanical load to the body.
+              {{ else }}
+                Тестування вихідного стану та неврологічної реактивності
+                перед застосуванням будь-якого навантаження на тіло.
+              {{ end }}
+            </p>
+
           </div>
+
         </li>
+
       </ul>
+
     </div>
 
   </div>
