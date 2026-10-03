@@ -17,6 +17,7 @@
   /* Глибокий відтінок для футера */
   --color-dark-plum-border: #432446;
   --color-text-main: #434438;
+  --color-text-neutral: #6F706A;
   /* Темна холодна олива */
   --color-text-muted: #5F7053;
   --color-text-dim: #777974;
@@ -594,14 +595,33 @@ section {
 
 .about-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
 }
 
+.about-kicker {
+  display: inline-block;
+
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-lime);
+
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
 
 /* --------------------------------------------------------
    LEFT — IMAGE
@@ -710,7 +730,7 @@ section {
 
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
 }
 
 /* --------------------------------------------------------
@@ -721,7 +741,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 14px;
 }
 
 .about-title {
@@ -746,6 +766,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: var(--color-text-dim);
 }
 
 .about-description p {
@@ -768,12 +789,10 @@ section {
 
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 4px;
 
   margin: 0;
   padding: 0;
-
-  border-top: 1px solid var(--color-border);
 }
 
 .about-feature-item {
@@ -781,9 +800,7 @@ section {
   align-items: flex-start;
   gap: 16px;
 
-  padding: 20px 0;
-
-  border-bottom: 1px solid var(--color-border);
+  padding: 14px 0;
 }
 
 .about-feature-item .status-icon {
@@ -814,7 +831,7 @@ section {
   font-size: 0.88rem;
   line-height: 1.5;
 
-  color: var(--color-text-muted);
+  color: var(--color-text-dim);
 }
 
 
