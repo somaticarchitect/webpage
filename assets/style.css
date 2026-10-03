@@ -1136,9 +1136,9 @@ section {
   margin-bottom: 18px;
 
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 2.8vw, 2.7rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
   letter-spacing: -0.03em;
 
   color: var(--color-text-main);
@@ -1213,7 +1213,8 @@ section {
 
   font-family: var(--font-body);
   font-size: 0.76rem;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 0;
   line-height: 1.2;
 
   border-radius: var(--radius-pill);
@@ -1379,12 +1380,13 @@ section {
    -------------------------------------------------------- */
 
 .services-intro {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  gap: 72px;
 
-  padding: 36px 40px;
+  min-height: 260px;
+  padding: 48px 56px;
 
   background-color: var(--color-dark-plum);
   color: var(--color-surface-white);
@@ -1393,37 +1395,59 @@ section {
   border-radius: var(--radius-xl);
 }
 
+
+/* --------------------------------------------------------
+   INTRO CONTENT
+   -------------------------------------------------------- */
+
 .services-intro-content {
-  flex: 1;
+  max-width: 760px;
 }
 
 .services-intro-eyebrow {
   display: inline-block;
 
-  padding: 6px 16px;
+  padding: 0;
+  margin: 0 0 16px;
 
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  border: 1px solid var(--color-dark-plum-border);
-  border-radius: var(--radius-pill);
+  background: none;
+  border: 0;
+  border-radius: 0;
 
-  background-color: var(--color-accent-berry-subtle);
-  color: var(--color-surface-white);
+  color: var(--color-accent-lime);
 }
 
 .services-intro-content h3 {
-  margin: 12px 0 8px;
+  max-width: 680px;
+
+  margin: 0 0 16px;
 
   font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+
   color: var(--color-surface-white);
 }
 
 .services-intro-content p {
-  color: var(--color-surface-muted);
+  max-width: 660px;
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: var(--color-text-on-dark-muted);
 }
 
 
@@ -1433,8 +1457,10 @@ section {
 
 .services-intro-actions {
   display: flex;
+  flex-direction: column;
   gap: 12px;
 
+  width: 240px;
   flex-shrink: 0;
 }
 
@@ -1443,42 +1469,59 @@ section {
   align-items: center;
   justify-content: center;
 
-  padding: 14px 28px;
+  width: 100%;
+  min-height: 50px;
+
+  padding: 13px 24px;
 
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.2;
 
-  border: 1px solid transparent;
-  border-radius: var(--radius-md);
-
-  color: var(--color-surface-white);
+  border-radius: var(--radius-pill);
 
   cursor: pointer;
   text-decoration: none;
 
   transition:
     background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
     transform 0.2s ease;
 }
 
+
+/* Telegram — primary action */
+
 .services-intro-button--telegram {
-  background-color: var(--color-brand-telegram);
+  background-color: var(--color-accent-berry);
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-accent-berry);
 }
 
 .services-intro-button--telegram:hover {
-  background-color: var(--color-brand-telegram-hover);
+  background-color: var(--color-accent-berry-hover);
+  border-color: var(--color-accent-berry-hover);
+
+  transform: translateY(-1px);
 }
 
+
+/* WhatsApp — secondary action */
+
 .services-intro-button--whatsapp {
-  background-color: var(--color-brand-whatsapp);
+  background-color: transparent;
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-dark-plum-border);
 }
 
 .services-intro-button--whatsapp:hover {
-  background-color: var(--color-brand-whatsapp-hover);
+  background-color: var(--color-dark-plum-card);
+  border-color: var(--color-accent-berry);
 }
-
 
 /* --------------------------------------------------------
    TABLET / MOBILE
@@ -1486,26 +1529,24 @@ section {
 
 @media (max-width: 900px) {
 
-  .services-container {
-    padding: 0 24px;
-  }
-
-  .services-grid {
+  .services-intro {
     grid-template-columns: 1fr;
     gap: 32px;
+
+    min-height: auto;
+    padding: 40px 32px;
   }
 
-  .services-intro {
-    flex-direction: column;
-    text-align: center;
+  .services-intro-content {
+    max-width: none;
   }
 
   .services-intro-actions {
-    justify-content: center;
+    width: 100%;
+    max-width: 320px;
   }
 
 }
-
 
 /* --------------------------------------------------------
    SMALL MOBILE
@@ -1513,25 +1554,16 @@ section {
 
 @media (max-width: 600px) {
 
-  .services-container {
-    padding: 0 20px;
-  }
-
-  .service-card {
-    padding: 32px 24px;
-  }
-
   .services-intro {
     padding: 32px 24px;
   }
 
-  .services-intro-actions {
-    width: 100%;
-    flex-direction: column;
+  .services-intro-content h3 {
+    font-size: 1.75rem;
   }
 
-  .services-intro-button {
-    width: 100%;
+  .services-intro-actions {
+    max-width: none;
   }
 
 }
