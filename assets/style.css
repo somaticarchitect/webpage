@@ -570,14 +570,13 @@ section {
 .about-section {
   width: 100%;
   padding: 120px 48px;
-  background-color: var(--color-bg);
+  background-color: var(--color-surface-white);
 }
 
 .about-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -598,20 +597,16 @@ section {
   width: 100%;
   max-width: 560px;
   margin: 0 auto;
-
   overflow: hidden;
   border-radius: var(--radius-xl);
-
   background-color: var(--color-surface-white);
 }
 
 .about-image {
   display: block;
-
   width: 100%;
   height: auto;
   aspect-ratio: 560 / 700;
-
   object-fit: cover;
 }
 
