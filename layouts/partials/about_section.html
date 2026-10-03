@@ -3,12 +3,14 @@
 
     <!-- Ліва колонка: зображення + floating card -->
     <div class="about-media">
-      <div class="about-image-wrapper">
+      <div class="about-image-shell">
 
-        <img
-          src="{{ with site.Params.images.placeholders.about_image }}{{ . }}{{ else }}https://placehold.co/560x700{{ end }}"
-          alt="{{ if eq site.Language.Lang " en" }}About Method{{ else }}Про метод{{ end }}" class="about-image"
-          width="560" height="700" loading="lazy" />
+        <div class="about-image-wrapper">
+          <img
+            src="{{ with site.Params.images.placeholders.about_image }}{{ . }}{{ else }}https://placehold.co/560x700{{ end }}"
+            alt="{{ if eq site.Language.Lang " en" }}About Method{{ else }}Про метод{{ end }}" class="about-image"
+            width="560" height="700" loading="lazy" />
+        </div>
 
         <div class="about-floating-card">
           <span class="floating-value">0.1 Hz</span>
