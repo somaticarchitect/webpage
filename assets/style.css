@@ -1571,7 +1571,47 @@ section {
 /* ========================================================
    4. TESTIMONIALS (CLIENT EXPERIENCE)
    ======================================================== */
-.testimonials-grid {
+.testimonials-section {
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+.testimonials-header {
+  margin-bottom: 72px;
+  text-align: left;
+}
+
+.testimonials-eyebrow {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-lime);
+}
+
+.testimonials-title {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+
+  color: var(--color-text-main);
+}
+
+   .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
