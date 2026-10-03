@@ -595,12 +595,13 @@ section {
 
 .about-container {
   width: 100%;
-  max-width: 1600px;
+  max-width: none;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 60px;
+  grid-template-columns: 40% 1fr;
+  column-gap: 72px;
+
   align-items: center;
 }
 
@@ -745,14 +746,13 @@ section {
 }
 
 .about-title {
-  max-width: 680px;
-
+  max-width: 650px;
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(2rem, 2.25vw, 2.6rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -0.03em;
 
   color: var(--color-text-main);
