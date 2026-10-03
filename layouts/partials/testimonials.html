@@ -11,73 +11,124 @@
       </h2>
     </div>
 
-    <!-- Сітка відгуків (3 картки) -->
-    <div class="testimonials-grid">
+    <!-- Testimonials carousel -->
+    <div class="testimonials-carousel">
+      <div class="testimonials-viewport">
+        <div class="testimonials-track">
 
-      <!-- Відгук 1: Поперек та таз -->
-      <div class="testimonial-card">
-        <div class="testimonial-tag">
-          {{ if eq .Site.Language.Lang "en" }}Lower back spasm & pelvic alignment{{ else }}Спазм у попереку та перекіс
-          тазу{{ end }}
-        </div>
-        <blockquote class="testimonial-text">
-          {{ if eq .Site.Language.Lang "en" }}
-          “After months of constant aching in my lower back, I felt an immediate shift during the first session. For the
-          first time in years, my pelvis felt centered and my steps light.”
-          {{ else }}
-          «Після місяців постійної тягнучої напруги в попереку я відчула зміну вже під час першої сесії. Уперше за
-          кілька років з'явилося відчуття опори в стопах і центрування в тазу.»
-          {{ end }}
-        </blockquote>
-        <div class="testimonial-author">
-          <strong>{{ if eq .Site.Language.Lang "en" }}Olena, 34{{ else }}Олена, 34 роки{{ end }}</strong>
-          <span>{{ if eq .Site.Language.Lang "en" }}Quantum Alignment Session{{ else }}Сесія квантового вирівнювання{{
-            end }}</span>
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <div class="testimonial-tag">
+              {{ if eq .Site.Language.Lang "en" }}
+                Lower back spasm & pelvic alignment
+              {{ else }}
+                Спазм у попереку та перекіс тазу
+              {{ end }}
+            </div>
+
+            <blockquote class="testimonial-text">
+              {{ if eq .Site.Language.Lang "en" }}
+                “After months of constant aching in my lower back, I felt an immediate shift during the first session. For the first time in years, my pelvis felt centered and my steps light.”
+              {{ else }}
+                «Після місяців постійної тягнучої напруги в попереку я відчула зміну вже під час першої сесії. Уперше за кілька років з'явилося відчуття опори в стопах і центрування в тазу.»
+              {{ end }}
+            </blockquote>
+
+            <div class="testimonial-author">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                  Olena, 34
+                {{ else }}
+                  Олена, 34 роки
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                  Quantum Alignment Session
+                {{ else }}
+                  Сесія квантового вирівнювання
+                {{ end }}
+              </span>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <div class="testimonial-tag">
+              {{ if eq .Site.Language.Lang "en" }}
+                Neck tension & respiratory freedom
+              {{ else }}
+                Затиск у шиї та скутість дихання
+              {{ end }}
+            </div>
+
+            <blockquote class="testimonial-text">
+              {{ if eq .Site.Language.Lang "en" }}
+                “Working with the diaphragm and neck biomechanics removed my chronic headaches. I learned to feel my body as a connected system rather than fighting tension.”
+              {{ else }}
+                «Робота з діафрагмою та біомеханікою шиї усунула мої щоденні фонові головні болі. Я вперше відчула тіло як єдину цілісну систему, а не набір окремих проблемних зон.»
+              {{ end }}
+            </blockquote>
+
+            <div class="testimonial-author">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                  Mykhailo, 41
+                {{ else }}
+                  Михайло, 41 рік
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                  10-Session Course
+                {{ else }}
+                  Курс з 10 тренувань
+                {{ end }}
+              </span>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <div class="testimonial-tag">
+              {{ if eq .Site.Language.Lang "en" }}
+                Postural balance & effortless gait
+              {{ else }}
+                Відновлення постави та ходи
+              {{ end }}
+            </div>
+
+            <blockquote class="testimonial-text">
+              {{ if eq .Site.Language.Lang "en" }}
+                “I used to force my shoulders back, which only created more pain. Through somatic practice, my alignment changed naturally without tension or fatigue.”
+              {{ else }}
+                «Раніше я насильно «тримала спину рівно», що лише додавало втоми. Завдяки соматичним вправам рівна осанка стала природним станом без будь-якого зусилля.»
+              {{ end }}
+            </blockquote>
+
+            <div class="testimonial-author">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                  Iryna, 29
+                {{ else }}
+                  Ірина, 29 років
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                  10-Session Course
+                {{ else }}
+                  Курс з 10 тренувань
+                {{ end }}
+              </span>
+            </div>
+          </article>
+
         </div>
       </div>
-
-      <!-- Відгук 2: Шия та дихання -->
-      <div class="testimonial-card">
-        <div class="testimonial-tag">
-          {{ if eq .Site.Language.Lang "en" }}Neck tension & respiratory freedom{{ else }}Затиск у шиї та скутість
-          дихання{{ end }}
-        </div>
-        <blockquote class="testimonial-text">
-          {{ if eq .Site.Language.Lang "en" }}
-          “Working with the diaphragm and neck biomechanics removed my chronic headaches. I learned to feel my body as a
-          connected system rather than fighting tension.”
-          {{ else }}
-          «Робота з діафрагмою та біомеханікою шиї усунула мої щоденні фонові головні болі. Я вперше відчула тіло як
-          єдину цілісну систему, а не набір окремих проблемних зон.»
-          {{ end }}
-        </blockquote>
-        <div class="testimonial-author">
-          <strong>{{ if eq .Site.Language.Lang "en" }}Mykhailo, 41{{ else }}Михайло, 41 рік{{ end }}</strong>
-          <span>{{ if eq .Site.Language.Lang "en" }}10-Session Course{{ else }}Курс з 10 тренувань{{ end }}</span>
-        </div>
-      </div>
-
-      <!-- Відгук 3: Постава та хода -->
-      <div class="testimonial-card">
-        <div class="testimonial-tag">
-          {{ if eq .Site.Language.Lang "en" }}Postural balance & effortless gait{{ else }}Відновлення постави та ходи{{
-          end }}
-        </div>
-        <blockquote class="testimonial-text">
-          {{ if eq .Site.Language.Lang "en" }}
-          “I used to force my shoulders back, which only created more pain. Through somatic practice, my alignment
-          changed naturally without tension or fatigue.”
-          {{ else }}
-          «Раніше я насильно «тримала спину рівно», що лише додавало втоми. Завдяки соматичним вправам рівна осанка
-          стала природним станом без будь-якого зусилля.»
-          {{ end }}
-        </blockquote>
-        <div class="testimonial-author">
-          <strong>{{ if eq .Site.Language.Lang "en" }}Iryna, 29{{ else }}Ірина, 29 років{{ end }}</strong>
-          <span>{{ if eq .Site.Language.Lang "en" }}10-Session Course{{ else }}Курс з 10 тренувань{{ end }}</span>
-        </div>
-      </div>
-
     </div>
 
   </div>

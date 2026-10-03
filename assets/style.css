@@ -1571,10 +1571,15 @@ section {
 /* ========================================================
    4. TESTIMONIALS (CLIENT EXPERIENCE)
    ======================================================== */
+
 .testimonials-section {
   padding-top: 150px;
   padding-bottom: 160px;
 }
+
+/* --------------------------------------------------------
+   SECTION HEADER
+   -------------------------------------------------------- */
 
 .testimonials-header {
   margin-bottom: 72px;
@@ -1609,48 +1614,110 @@ section {
   color: var(--color-text-main);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* --------------------------------------------------------
+   CAROUSEL
+   -------------------------------------------------------- */
+
+.testimonials-carousel {
+  width: 100%;
+}
+
+.testimonials-viewport {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials-track {
+  display: flex;
+  align-items: stretch;
   gap: 24px;
 }
 
+/* Desktop: 3 cards visible */
+
+.testimonials-track .testimonial-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* --------------------------------------------------------
+   TESTIMONIAL CARD
+   -------------------------------------------------------- */
+
 .testimonial-card {
-  background-color: var(--color-surface-white);
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding: 32px;
+
+  background-color: var(--color-surface-white);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-card);
 }
+
+/* --------------------------------------------------------
+   CARD TAG
+   -------------------------------------------------------- */
 
 .testimonial-tag {
   display: inline-block;
+  width: fit-content;
+
+  margin-bottom: 16px;
   padding: 4px 12px;
+
   font-size: 0.78rem;
   font-weight: 700;
+
   border-radius: var(--radius-pill);
+
   background-color: var(--color-accent-lime-bg);
   color: var(--color-accent-lime-text);
-  margin-bottom: 16px;
-  width: fit-content;
 }
+
+/* --------------------------------------------------------
+   TESTIMONIAL TEXT
+   -------------------------------------------------------- */
 
 .testimonial-text,
 .testimonial-quote {
-  font-style: italic;
-  color: var(--color-text-main);
   margin-bottom: 24px;
+
+  font-style: italic;
   line-height: 1.6;
+
+  color: var(--color-text-main);
 }
 
+/* --------------------------------------------------------
+   AUTHOR
+   -------------------------------------------------------- */
+
 .testimonial-author {
-  border-top: 1px solid var(--color-border);
-  padding-top: 16px;
   display: flex;
   flex-direction: column;
+
+  padding-top: 16px;
+
+  border-top: 1px solid var(--color-border);
 }
 
 .testimonial-author strong {
@@ -1661,6 +1728,32 @@ section {
 .testimonial-author span {
   font-size: 0.82rem;
   color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------
+   TABLET
+   2 cards visible
+   -------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .testimonials-track .testimonial-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+/* --------------------------------------------------------
+   MOBILE
+   1 card visible
+   -------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .testimonials-track {
+    gap: 16px;
+  }
+
+  .testimonials-track .testimonial-card {
+    flex-basis: 100%;
+  }
 }
 
 /* ========================================================
