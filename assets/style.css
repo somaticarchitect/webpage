@@ -1583,7 +1583,6 @@ section {
 
 .testimonials-eyebrow {
   display: block;
-
   margin-bottom: 24px;
 
   font-family: var(--font-body);
@@ -1599,7 +1598,6 @@ section {
 
 .testimonials-title {
   max-width: 650px;
-
   margin: 0;
 
   font-family: var(--font-heading);
@@ -1611,7 +1609,7 @@ section {
   color: var(--color-text-main);
 }
 
-   .testimonials-grid {
+.testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
