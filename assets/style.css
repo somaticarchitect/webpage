@@ -597,7 +597,7 @@ section {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr;
   gap: 80px;
   align-items: center;
 }
@@ -706,7 +706,7 @@ section {
 
 .about-content {
   width: 100%;
-  max-width: 620px;
+  max-width: 680px;
 
   display: flex;
   flex-direction: column;
@@ -725,19 +725,18 @@ section {
 }
 
 .about-title {
-  max-width: 600px;
+  max-width: 680px;
 
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
   letter-spacing: -0.03em;
 
   color: var(--color-text-main);
 }
-
 
 /* --------------------------------------------------------
    DESCRIPTION
