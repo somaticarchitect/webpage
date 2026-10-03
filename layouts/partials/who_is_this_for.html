@@ -10,6 +10,7 @@
         ДЛЯ КОГО ЦЕЙ ПІДХІД
         {{ end }}
       </span>
+
       <h2 class="who-title">
         {{ if eq .Site.Language.Lang "en" }}
         Who this somatic approach is for (and who it is not for)
@@ -22,10 +23,9 @@
     <!-- Дві порівняльні картки -->
     <div class="who-grid">
 
-      <!-- Блок: Кому підходить (Зелені галочки) -->
+      <!-- Блок: Кому підходить -->
       <div class="who-card who-card-fit">
         <div class="card-header">
-          <span class="status-icon icon-check">✓</span>
           <h3>
             {{ if eq .Site.Language.Lang "en" }}
             My approach is for you if:
@@ -34,49 +34,114 @@
             {{ end }}
           </h3>
         </div>
+
         <ul class="who-list">
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Scientific approach:{{ else }}Науковий підхід:{{ end }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness
-            trends.
-            {{ else }}
-            Ви шукаєте глибоке розуміння біомеханіки та фізичної терапії замість поверхневих фітнес-трендів.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Scientific approach:
+                {{ else }}
+                Науковий підхід:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness
+                trends.
+                {{ else }}
+                Ви шукаєте глибоке розуміння біомеханіки та фізичної терапії замість поверхневих фітнес-трендів.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Root cause focus:{{ else }}Робота з причиною:{{ end }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just mask
-            symptoms.
-            {{ else }}
-            Маєте хронічні затиски, біль у спині чи шиї і прагнете усунути причину, а не лише маскувати симптоми.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Root cause focus:
+                {{ else }}
+                Робота з причиною:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just
+                mask symptoms.
+                {{ else }}
+                Маєте хронічні затиски, біль у спині чи шиї і прагнете усунути причину, а не лише маскувати симптоми.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Systemic practice:{{ else }}Системна практика:{{ end }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You are ready for neurological self-regulation, somatic discipline, and conscious movement habits.
-            {{ else }}
-            Готові до нейром'язового перенавчання, соматичної дисципліни та усвідомленої роботи з тілом.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
+
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Systemic practice:
+                {{ else }}
+                Системна практика:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You are ready for neurological self-regulation, somatic discipline, and conscious movement habits.
+                {{ else }}
+                Готові до нейром'язового перенавчання, соматичної дисципліни та усвідомленої роботи з тілом.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Long-term vitality:{{ else }}Довгостроковий результат:{{ end
-              }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            Your goal is internal bodily coherence, structural balance, and effortless movement in daily life.
-            {{ else }}
-            Ваша мета — відновлення внутрішньої когерентності, структурного балансу та легкості руху.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Long-term vitality:
+                {{ else }}
+                Довгостроковий результат:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                Your goal is internal bodily coherence, structural balance, and effortless movement in daily life.
+                {{ else }}
+                Ваша мета — відновлення внутрішньої когерентності, структурного балансу та легкості руху.
+                {{ end }}
+              </span>
+            </div>
           </li>
+
         </ul>
       </div>
 
-      <!-- Блок: Кому НЕ підходить (Сірі хрестики) -->
+      <!-- Блок: Кому НЕ підходить -->
       <div class="who-card who-card-not-fit">
         <div class="card-header">
-          <span class="status-icon icon-cross">✕</span>
           <h3>
             {{ if eq .Site.Language.Lang "en" }}
             This format is NOT for you if:
@@ -85,44 +150,107 @@
             {{ end }}
           </h3>
         </div>
+
         <ul class="who-list">
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Magic pills:{{ else }}Шукаєте «магічну таблетку»:{{ end
-              }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You expect a single magic session to instantly fix years of structural compensation without your active
-            participation.
-            {{ else }}
-            Очікуєте, що один сеанс миттєво виправить роки компенсаторних затисків без вашої активної участі.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Magic pills:
+                {{ else }}
+                Шукаєте «магічну таблетку»:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You expect a single magic session to instantly fix years of structural compensation without your active
+                participation.
+                {{ else }}
+                Очікуєте, що один сеанс миттєво виправить роки компенсаторних затисків без вашої активної участі.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Exhausting workouts:{{ else }}Виснажливий фітнес:{{ end
-              }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps.
-            {{ else }}
-            Вам потрібен інтенсивний фітнес, виснажливі кардіонавантаження чи марафони швидкого схуднення.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Exhausting workouts:
+                {{ else }}
+                Виснажливий фітнес:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps.
+                {{ else }}
+                Вам потрібен інтенсивний фітнес, виснажливі кардіонавантаження чи марафони швидкого схуднення.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Acute medical emergencies:{{ else }}Гострі медичні стани:{{ end
-              }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment.
-            {{ else }}
-            Ви перебуваєте в гострому стані, що потребує термінової медикаментозної чи хірургічної допомоги.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Acute medical emergencies:
+                {{ else }}
+                Гострі медичні стани:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment.
+                {{ else }}
+                Ви перебуваєте в гострому стані, що потребує термінової медикаментозної чи хірургічної допомоги.
+                {{ end }}
+              </span>
+            </div>
           </li>
-          <li>
-            <strong>{{ if eq .Site.Language.Lang "en" }}Esoteric rituals:{{ else }}Містичні ритуали:{{ end }}</strong>
-            {{ if eq .Site.Language.Lang "en" }}
-            You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and
-            biomechanics.
-            {{ else }}
-            Очікуєте езотерики замість чітких законів фізіології, біомеханіки та аналітичного підходу.
-            {{ end }}
+
+          <li class="who-item">
+            <span class="who-item-icon" aria-hidden="true">
+              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
+            </span>
+
+            <div class="who-item-text">
+              <strong>
+                {{ if eq .Site.Language.Lang "en" }}
+                Esoteric rituals:
+                {{ else }}
+                Містичні ритуали:
+                {{ end }}
+              </strong>
+
+              <span>
+                {{ if eq .Site.Language.Lang "en" }}
+                You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and
+                biomechanics.
+                {{ else }}
+                Очікуєте езотерики замість чітких законів фізіології, біомеханіки та аналітичного підходу.
+                {{ end }}
+              </span>
+            </div>
           </li>
+
         </ul>
       </div>
 
