@@ -2289,15 +2289,63 @@ section {
 
 }
 
+
 /* ========================================================
    6. FAQ ACCORDION
    ======================================================== */
+.faq-content {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 72px;
+
+  text-align: left;
+}
+
+.faq-eyebrow {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-lime);
+}
+
+.faq-title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  color: var(--color-text-main);
+}
+
 .faq-accordion {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 840px;
-  margin: 0 auto;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .faq-item {
