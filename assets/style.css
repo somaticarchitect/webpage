@@ -808,6 +808,221 @@ section {
 }
 
 /* ========================================================
+   HERO — MOBILE
+   ======================================================== */
+
+@media (max-width: 600px) {
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+
+  /* --------------------------------------------------------
+     LEFT CONTENT
+     -------------------------------------------------------- */
+
+  .hero-left-col {
+    width: 100%;
+
+    padding: 28px 20px 40px;
+
+    display: block;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+  }
+
+
+  /* --------------------------------------------------------
+     BADGE
+     -------------------------------------------------------- */
+
+  .hero-badge {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 12px 16px;
+    margin: 0 0 24px;
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .badge-hero {
+    display: block;
+
+    width: 100%;
+  }
+
+  .badge-dot {
+    margin-right: 6px;
+  }
+
+
+  /* --------------------------------------------------------
+     TITLE
+     -------------------------------------------------------- */
+
+  .hero-title {
+    width: 100%;
+
+    margin: 0 0 20px;
+
+    font-size: clamp(2.6rem, 11vw, 3.4rem);
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+  }
+
+
+  /* --------------------------------------------------------
+     SUBTITLE
+     -------------------------------------------------------- */
+
+  .hero-subtitle {
+    width: 100%;
+
+    margin: 0 0 28px;
+
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+  /* --------------------------------------------------------
+     ACTIONS
+     -------------------------------------------------------- */
+
+  .hero-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 0 28px;
+  }
+
+  .hero-actions .btn {
+    width: min(100%, 360px);
+
+    padding: 15px 22px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+  }
+
+
+  /* --------------------------------------------------------
+     DIVIDER
+     -------------------------------------------------------- */
+
+  .hero-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 0 0 28px;
+
+    background-color: var(--color-border);
+  }
+
+
+  /* --------------------------------------------------------
+     FEATURES
+     -------------------------------------------------------- */
+
+  .hero-features-row {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin: 0;
+  }
+
+  .feature-col {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .feature-title {
+    font-size: 1.05rem;
+  }
+
+  .feature-desc {
+    max-width: 280px;
+
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+
+  /* --------------------------------------------------------
+     IMAGE
+     -------------------------------------------------------- */
+
+  .hero-media {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+  }
+
+
+  /* --------------------------------------------------------
+     FLOATING BADGE
+     -------------------------------------------------------- */
+
+  .hero-floating-badge {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+
+    padding: 16px 20px;
+  }
+
+}
+
+/* ========================================================
    2. ABOUT METHOD
    ======================================================== */
 
