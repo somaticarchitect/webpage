@@ -1,59 +1,115 @@
 {{ define "main" }}
 <section class="articles-list-page">
   <div class="container">
-    
+
     <!-- Заголовок сторінки -->
     <div class="section-header text-center">
       <span class="badge">RESEARCH & MATERIALS</span>
+
       <h1>{{ .Title }}</h1>
-      <p class="section-subtitle">{{ .Description }}</p>
+
+      {{ with .Description }}
+      <p class="section-subtitle">{{ . }}</p>
+      {{ end }}
     </div>
 
-    <!-- Класичні кнопки-посилання на категорії -->
+    <!-- Канонічне джерело статей та сторінка архіву -->
+    {{ $articlePages := where .Site.RegularPages "Section" "articles" }}
+    {{ $articlesPage := .Site.GetPage "section" "articles" }}
+
+    <!-- Динамічний список тегів тільки зі статей -->
+    {{ $articleTags := slice }}
+    {{ range $articlePages }}
+      {{ range .Params.tags }}
+        {{ $articleTags = $articleTags | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $articleTags = sort (uniq $articleTags) }}
+
+    <!-- Фільтри / taxonomy links -->
     <div class="article-tags-filter text-center">
-      <!-- Кнопка "Усі" -->
-      <a href="{{ if eq .Site.Language.Lang "en" }}/en/articles/{{ else }}/articles/{{ end }}" 
-         class="tag-btn {{ if and (eq .Section "articles") (not .Data.Term) }}active{{ end }}">
-        {{ if eq .Site.Language.Lang "en" }}All{{ else }}Усі{{ end }}
+
+      {{ with $articlesPage }}
+      <a href="{{ .RelPermalink }}"
+         class="tag-btn {{ if and (eq $.Section "articles") (not $.Data.Term) }}active{{ end }}">
+        {{ if eq $.Site.Language.Lang "en" }}All{{ else }}Усі{{ end }}
       </a>
-      
-      <!-- Кнопка "Квантова ФК" -->
-      <a href="{{ if eq .Site.Language.Lang "en" }}/en/categories/qpc/{{ else }}/categories/qpc/{{ end }}" 
-         class="tag-btn {{ if eq .Data.Term "qpc" }}active{{ end }}">
-        {{ if eq .Site.Language.Lang "en" }}Quantum Physical Culture{{ else }}Квантова ФК{{ end }}
-      </a>
-      
-      <!-- Кнопка "Тренування" -->
-      <a href="{{ if eq .Site.Language.Lang "en" }}/en/categories/training/{{ else }}/categories/training/{{ end }}" 
-         class="tag-btn {{ if eq .Data.Term "training" }}active{{ end }}">
-        {{ if eq .Site.Language.Lang "en" }}General Training{{ else }}Тренування{{ end }}
-      </a>
+      {{ end }}
+
+      {{ range $articleTags }}
+        {{ $tag := . }}
+        {{ $tagSlug := $tag | urlize }}
+
+        {{ with $.Site.GetPage (printf "/tags/%s" $tagSlug) }}
+        <a href="{{ .RelPermalink }}"
+           class="tag-btn {{ if eq $.Data.Term $tagSlug }}active{{ end }}">
+          {{ $tag }}
+        </a>
+        {{ end }}
+      {{ end }}
+
     </div>
 
-    <!-- Сітка карток статей -->
+    <!-- Список статей:
+         - /articles/ показує всі статті секції;
+         - /tags/<tag>/ показує тільки сторінки поточного tag term. -->
+    {{ $pages := .Pages }}
+    {{ if eq .Section "articles" }}
+      {{ $pages = $articlePages }}
+    {{ end }}
+    {{ $pages = sort $pages "Date" "desc" }}
+
     <div class="articles-grid">
-      {{ range .Pages }}
+      {{ range $pages }}
         <article class="article-card">
+
           <div class="article-card-header">
             <span class="article-category">
               {{ with .Params.category }}
-                {{ if eq . "qpc" }}QPC.SOMA{{ else if eq . "training" }}TRAINING{{ else }}{{ . }}{{ end }}
+                {{ . }}
               {{ else }}
-                QPC.SOMA
+                Research
               {{ end }}
             </span>
-            <span class="article-read-time">{{ .ReadingTime }} min read</span>
+
+            <span class="article-read-time">
+              {{ .ReadingTime }} min read
+            </span>
           </div>
-          <h3 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p class="article-summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 130 }}{{ end }}</p>
+
+          <h3 class="article-title">
+            <a href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+          </h3>
+
+          <p class="article-summary">
+            {{ with .Description }}
+              {{ . }}
+            {{ else }}
+              {{ .Summary | plainify | truncate 130 }}
+            {{ end }}
+          </p>
+
           <a href="{{ .RelPermalink }}" class="article-link">
-            {{ if eq $.Site.Language.Lang "en" }}Read article →{{ else }}Читати статтю →{{ end }}
+            {{ if eq $.Site.Language.Lang "en" }}
+              Read article →
+            {{ else }}
+              Читати статтю →
+            {{ end }}
           </a>
+
         </article>
       {{ else }}
-        <p class="no-articles text-center" style="grid-column: 1 / -1; padding: 2rem 0;">
-          {{ if eq .Site.Language.Lang "en" }}No articles published in this section yet.{{ else }}У цьому розділі поки немає опублікованих статей.{{ end }}
+
+        <p class="no-articles text-center">
+          {{ if eq .Site.Language.Lang "en" }}
+            No articles published in this section yet.
+          {{ else }}
+            У цьому розділі поки немає опублікованих статей.
+          {{ end }}
         </p>
+
       {{ end }}
     </div>
 
