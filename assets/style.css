@@ -548,18 +548,15 @@ section {
      HAMBURGER → CLOSE
      -------------------------------------------------------- */
 
-  .header-container:has(.nav-menu.active)
-  .mobile-menu-toggle span:nth-child(1) {
+  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
 
-  .header-container:has(.nav-menu.active)
-  .mobile-menu-toggle span:nth-child(2) {
+  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(2) {
     opacity: 0;
   }
 
-  .header-container:has(.nav-menu.active)
-  .mobile-menu-toggle span:nth-child(3) {
+  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
@@ -2167,127 +2164,127 @@ section {
   }
 
 }
-  /* --------------------------------------------------------
+
+/* --------------------------------------------------------
      HEADER
      -------------------------------------------------------- */
 
-  .who-header {
-    width: 100%;
+.who-header {
+  width: 100%;
 
-    margin-bottom: 36px;
-  }
+  margin-bottom: 36px;
+}
 
-  .who-eyebrow {
-    font-size: 0.74rem;
-  }
+.who-eyebrow {
+  font-size: 0.74rem;
+}
 
-  .who-title {
-    width: 100%;
-    max-width: none;
+.who-title {
+  width: 100%;
+  max-width: none;
 
-    margin-top: 12px;
-    margin-bottom: 0;
+  margin-top: 12px;
+  margin-bottom: 0;
 
-    font-size: 2rem;
-    line-height: 1.08;
-  }
+  font-size: 2rem;
+  line-height: 1.08;
+}
 
 
-  /* --------------------------------------------------------
+/* --------------------------------------------------------
      CARDS GRID
      -------------------------------------------------------- */
 
-  .who-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr;
 
-    width: 100%;
+  width: 100%;
 
-    gap: 20px;
-  }
+  gap: 20px;
+}
 
 
-  /* --------------------------------------------------------
+/* --------------------------------------------------------
      CARDS
      -------------------------------------------------------- */
 
-  .who-card,
-  .who-card-not,
-  .who-card-not-fit {
-    width: 100%;
+.who-card,
+.who-card-not,
+.who-card-not-fit {
+  width: 100%;
 
-    padding: 28px 24px;
+  padding: 28px 24px;
 
-    border-radius: var(--radius-lg);
-  }
+  border-radius: var(--radius-lg);
+}
 
 
-  /* --------------------------------------------------------
+/* --------------------------------------------------------
      CARD HEADER
      -------------------------------------------------------- */
 
-  .who-card .card-header {
-    width: 100%;
+.who-card .card-header {
+  width: 100%;
 
-    margin-bottom: 24px;
-  }
+  margin-bottom: 24px;
+}
 
-  .who-card .card-header h3 {
-    margin: 0;
+.who-card .card-header h3 {
+  margin: 0;
 
-    font-size: 1.35rem;
-    line-height: 1.15;
-  }
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
 
 
-  /* --------------------------------------------------------
+/* --------------------------------------------------------
      LIST
      -------------------------------------------------------- */
 
-  .who-list {
-    width: 100%;
+.who-list {
+  width: 100%;
 
-    gap: 24px;
-  }
-
-  .who-item {
-    width: 100%;
-
-    display: flex;
-    align-items: flex-start;
-
-    gap: 14px;
-
-    font-size: 0.95rem;
-  }
-
-  .who-item-icon {
-    width: 24px;
-    height: 24px;
-
-    flex: 0 0 24px;
-
-    margin-top: 2px;
-  }
-
-  .who-item-text {
-    min-width: 0;
-    flex: 1;
-  }
-
-  .who-item-text strong {
-    display: inline;
-
-    font-weight: 600;
-  }
-
-  .who-item-text span {
-    display: inline;
-
-    line-height: 1.6;
-  }
-
+  gap: 24px;
 }
+
+.who-item {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+
+  font-size: 0.95rem;
+}
+
+.who-item-icon {
+  width: 24px;
+  height: 24px;
+
+  flex: 0 0 24px;
+
+  margin-top: 2px;
+}
+
+.who-item-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.who-item-text strong {
+  display: inline;
+
+  font-weight: 600;
+}
+
+.who-item-text span {
+  display: inline;
+
+  line-height: 1.6;
+}
+
 
 /* ========================================================
    4. TESTIMONIALS (CLIENT EXPERIENCE)
