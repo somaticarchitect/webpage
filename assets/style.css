@@ -369,16 +369,23 @@ section {
     width: 100%;
   }
 
+
+  /* --------------------------------------------------------
+     HEADER LAYOUT
+     -------------------------------------------------------- */
+
   .header-container {
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
     width: 100%;
-    height: 64px;
+    height: auto;
+    min-height: 64px;
 
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
 
-    gap: 12px;
+    gap: 0;
   }
 
 
@@ -387,8 +394,10 @@ section {
      -------------------------------------------------------- */
 
   .site-logo {
+    order: 1;
+
     min-width: 0;
-    flex-shrink: 1;
+    flex: 1 1 auto;
   }
 
   .logo-text {
@@ -402,6 +411,11 @@ section {
      -------------------------------------------------------- */
 
   .header-actions {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+
     margin-left: auto;
 
     gap: 8px;
@@ -410,7 +424,7 @@ section {
   }
 
 
-  /* Telegram CTA is moved out of the compact mobile bar */
+  /* Telegram CTA hidden in compact mobile header */
   .header-cta {
     display: none;
   }
@@ -421,7 +435,13 @@ section {
      -------------------------------------------------------- */
 
   .lang-switcher {
+    display: flex;
+
     padding: 2px;
+
+    background-color: var(--color-border);
+
+    border-radius: var(--radius-pill);
   }
 
   .lang-link {
@@ -432,11 +452,43 @@ section {
 
 
   /* --------------------------------------------------------
-     MOBILE MENU BUTTON
+     HAMBURGER BUTTON
      -------------------------------------------------------- */
 
   .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
     display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin: 2.5px 0;
+
+    background-color: var(--color-text-main);
+
+    border-radius: var(--radius-pill);
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
   }
 
 
@@ -445,43 +497,43 @@ section {
      -------------------------------------------------------- */
 
   .nav-menu {
-    position: absolute;
+    order: 3;
 
-    top: 64px;
-    left: 0;
-    right: 0;
-
-    z-index: 110;
+    position: static;
 
     display: none;
     flex-direction: column;
     align-items: stretch;
 
+    width: 100%;
+    flex-basis: 100%;
+
     gap: 0;
 
-    width: 100%;
-
-    padding: 12px 20px 20px;
+    padding: 16px 0 20px;
 
     background-color: var(--color-bg);
-
-    border-bottom: 1px solid var(--color-border);
   }
 
   .nav-menu.active {
     display: flex;
   }
 
+
+  /* --------------------------------------------------------
+     NAV LINKS
+     -------------------------------------------------------- */
+
   .nav-link {
     display: flex;
     align-items: center;
 
     width: 100%;
-    min-height: 52px;
+    min-height: 56px;
 
-    padding: 12px 0;
+    padding: 14px 0;
 
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.3;
 
     border-bottom: 1px solid var(--color-border);
@@ -496,20 +548,19 @@ section {
      HAMBURGER → CLOSE
      -------------------------------------------------------- */
 
-  .mobile-menu-toggle:has(+ *) {
-    position: relative;
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
   }
 
-  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(1) {
-    transform: translateY(6.5px) rotate(45deg);
-  }
-
-  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(2) {
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(2) {
     opacity: 0;
   }
 
-  .header-container:has(.nav-menu.active) .mobile-menu-toggle span:nth-child(3) {
-    transform: translateY(-6.5px) rotate(-45deg);
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
 }
