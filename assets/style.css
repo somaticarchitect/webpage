@@ -18,6 +18,7 @@
   --color-dark-plum-border: #432446;
   --color-text-main: #434438;
   --color-text-neutral: #6F706A;
+  --color-border-on-dark: rgba(246, 244, 235, 0.10);
   /* Темна холодна олива */
   --color-text-muted: #5F7053;
   --color-text-dim: #777974;
@@ -2898,127 +2899,226 @@ section {
 /* ========================================================
    8. FOOTER
    ======================================================== */
+
 .site-footer {
-  background-color: var(--color-dark-plum-footer);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-dark-plum);
   color: var(--color-surface-muted);
-  padding: 60px 0 30px 0;
-  font-size: 0.9rem;
+
+  border-top: 1px solid var(--color-border-on-dark);
 }
 
-.footer-grid {
+.footer-container {
+  width: 100%;
+
+  margin: 0;
+  padding: 72px 40px 56px;
+}
+
+
+/* --------------------------------------------------------
+   TOP ROW
+   -------------------------------------------------------- */
+
+.footer-top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 40px;
+  grid-template-columns: minmax(0, 1fr) auto;
+
+  align-items: start;
+
+  gap: 80px;
+
+  width: 100%;
+}
+
+
+/* --------------------------------------------------------
+   BRAND
+   -------------------------------------------------------- */
+
+.footer-brand {
+  width: 100%;
+  max-width: 620px;
+}
+
+.footer-logo {
+  display: inline-flex;
+
+  margin: 0 0 24px;
+
+  text-decoration: none;
 }
 
 .footer-logo .logo-text {
-  color: var(--color-surface-white);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-bg);
 }
 
-.footer-bio {
-  margin-top: 12px;
-  font-size: 0.88rem;
-  color: var(--color-text-dim);
-  max-width: 320px;
+.footer-disclaimer {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: rgba(246, 244, 235, 0.32);
 }
 
-.footer-nav-col h4,
-.footer-social-col h4 {
-  color: var(--color-surface-white);
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
 
-.footer-links {
-  list-style: none;
+/* --------------------------------------------------------
+   LINKS ROW
+   -------------------------------------------------------- */
+
+.footer-links-row {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links a:hover,
-.social-link:hover {
-  color: var(--color-accent-lime);
-}
-
-.footer-social-links {
-  display: flex;
-  gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
+
+  gap: 34px;
+
+  margin: 8px 0 0;
 }
+
+.footer-links-row a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: rgba(246, 244, 235, 0.32);
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links-row a:hover {
+  color: var(--color-bg);
+}
+
+
+/* --------------------------------------------------------
+   DIVIDER
+   -------------------------------------------------------- */
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 56px 0 28px;
+}
+
+.contact-divider,
+.footer-divider {
+  background-color: var(--color-border-on-dark);
+}
+
+
+/* --------------------------------------------------------
+   BOTTOM
+   -------------------------------------------------------- */
 
 .footer-bottom {
-  border-top: 1px solid var(--color-dark-plum-border);
-  padding-top: 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
-  color: var(--color-text-dim);
+  justify-content: flex-start;
+
+  width: 100%;
 }
 
-.footer-legal {
-  display: flex;
-  gap: 20px;
+.footer-copyright {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: rgba(246, 244, 235, 0.30);
 }
 
-.footer-legal a:hover {
-  color: var(--color-accent-lime);
-}
 
-/* ========================================================
-   9. ARTICLES LIST PAGE (/articles/)
-   ======================================================== */
-.articles-list-page {
-  padding-top: 60px;
-}
+/* --------------------------------------------------------
+   TABLET
+   -------------------------------------------------------- */
 
-.category-block {
-  margin-bottom: 48px;
-}
+@media (max-width: 1024px) {
 
-.category-title {
-  font-size: 1.5rem;
-  margin-bottom: 24px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--color-border);
-}
+  .footer-container {
+    padding: 64px 32px 48px;
+  }
 
-/* ========================================================
-   MOBILE RESPONSIVENESS
-   ======================================================== */
-@media (max-width: 900px) {
-
-  .hero-grid,
-  .hero-container,
-  .who-grid,
-  .contact-grid,
-  .footer-grid {
+  .footer-top {
     grid-template-columns: 1fr;
-    gap: 32px;
+
+    gap: 48px;
   }
 
-  .testimonials-grid,
-  .articles-grid {
-    grid-template-columns: 1fr;
+  .footer-links-row {
+    justify-content: flex-start;
+
+    margin-top: 0;
   }
 
-  .nav-menu {
-    display: none;
+  .footer-divider {
+    margin-top: 48px;
   }
 
-  .mobile-menu-toggle {
-    display: flex;
+}
+
+
+/* --------------------------------------------------------
+   MOBILE
+   -------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+  .footer-container {
+    padding: 56px 20px 40px;
   }
 
-  .dark-block {
-    padding: 40px 24px;
+  .footer-logo {
+    margin-bottom: 20px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
+  .footer-logo .logo-text {
+    font-size: 1.7rem;
   }
+
+  .footer-disclaimer {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .footer-links-row {
+    align-items: flex-start;
+
+    gap: 20px 26px;
+  }
+
+  .footer-links-row a {
+    font-size: 0.9rem;
+  }
+
+  .footer-divider {
+    margin: 40px 0 24px;
+  }
+
+  .footer-copyright {
+    font-size: 0.88rem;
+  }
+
 }

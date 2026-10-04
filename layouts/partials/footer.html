@@ -1,70 +1,66 @@
 <footer class="site-footer">
-  <div class="container footer-container">
-    
-    <!-- Верхній блок футера: 3 колонки -->
-    <div class="footer-grid">
-      
-      <!-- Колонка 1: Логотип та позиціонування -->
+  <div class="footer-container">
+
+    <!-- Top row -->
+    <div class="footer-top">
+
+      <!-- Brand + disclaimer -->
       <div class="footer-brand">
         <a href="{{ site.Home.RelPermalink }}" class="footer-logo">
           <span class="logo-text">QPC.Soma</span>
         </a>
-        <p class="footer-bio">
+
+        <p class="footer-disclaimer">
           {{ if eq .Site.Language.Lang "en" }}
-            Scientific somatic framework combining biomechanics, clinical physical therapy, and neurological self-regulation.
+            Practices, materials, and consultations are educational and somatic self-regulation tools only. They do not constitute medical service, treatment, diagnosis, or a substitute for medical doctor examination.
           {{ else }}
-            Науковий соматичний підхід, що поєднує біомеханіку, клінічну фізичну терапію та нейрорегуляцію.
+            Практики, матеріали та консультації мають освітній і сомато-регуляторний характер. Вони не є медичною послугою, лікуванням, діагностикою чи заміною огляду лікаря.
           {{ end }}
         </p>
       </div>
 
-      <!-- Колонка 2: Навігація по сайту -->
-      <div class="footer-nav-col">
-        <h4>{{ if eq .Site.Language.Lang "en" }}Navigation{{ else }}Навігація{{ end }}</h4>
-        <ul class="footer-links">
-          {{ range .Site.Menus.main }}
-            {{ $link := .URL }}
-            {{ if and (hasPrefix .URL "#") (not $.IsHome) }}
-              {{ $link = printf "%s%s" site.Home.RelPermalink .URL }}
-            {{ end }}
-            <li><a href="{{ $link }}">{{ .Name }}</a></li>
+      <!-- Legal + socials -->
+      <nav class="footer-links-row" aria-label="Footer">
+        <a href="{{ if eq .Site.Language.Lang "en" }}/en/privacy/{{ else }}/privacy/{{ end }}">
+          {{ if eq .Site.Language.Lang "en" }}
+            Privacy Policy
+          {{ else }}
+            Політика конфіденційності
           {{ end }}
-        </ul>
-      </div>
+        </a>
 
-      <!-- Колонка 3: Соцмережі та месенджери -->
-      <div class="footer-social-col">
-        <h4>{{ if eq .Site.Language.Lang "en" }}Socials & Contact{{ else }}Соцмережі та зв'язок{{ end }}</h4>
-        <div class="footer-social-links">
-          {{ with .Site.Params.telegram }}
-            <a href="{{ . }}" target="_blank" class="social-link">Telegram</a>
-          {{ end }}
-          {{ with .Site.Params.whatsapp }}
-            <a href="{{ . }}" target="_blank" class="social-link">WhatsApp</a>
-          {{ end }}
-          {{ with .Site.Params.threads }}
-            <a href="{{ . }}" target="_blank" class="social-link">Threads</a>
-          {{ end }}
-          {{ with .Site.Params.youtube }}
-            <a href="{{ . }}" target="_blank" class="social-link">YouTube</a>
-          {{ end }}
-        </div>
-      </div>
+        <a href="/sitemap.xml">
+          Sitemap
+        </a>
+
+        {{ with .Site.Params.threads }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            Threads
+          </a>
+        {{ end }}
+
+        {{ with .Site.Params.youtube }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+            YouTube
+          </a>
+        {{ end }}
+      </nav>
 
     </div>
 
-    <!-- Нижній бар: Копірайт та службові посилання -->
+    <!-- Divider -->
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <!-- Bottom row -->
     <div class="footer-bottom">
-      <p class="copyright">
-        © {{ now.Format "2006" }} QPC.Soma. 
-        {{ if eq .Site.Language.Lang "en" }}All rights reserved.{{ else }}Усі права захищено.{{ end }}
+      <p class="footer-copyright">
+        © {{ now.Format "2006" }} QPC.Soma.
+        {{ if eq .Site.Language.Lang "en" }}
+          All rights reserved.
+        {{ else }}
+          Усі права захищено.
+        {{ end }}
       </p>
-      <div class="footer-legal">
-        <a href="{{ if eq .Site.Language.Lang "en" }}/en/privacy/{{ else }}/privacy/{{ end }}">
-          {{ if eq .Site.Language.Lang "en" }}Privacy Policy{{ else }}Політика конфіденційності{{ end }}
-        </a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </div>
     </div>
 
   </div>
