@@ -1987,22 +1987,137 @@ section {
 
 }
 
-/* --------------------------------------------------------
-   SMALL MOBILE
-   -------------------------------------------------------- */
+/* ========================================================
+   WHO IS THIS FOR — MOBILE
+   ======================================================== */
 
 @media (max-width: 600px) {
 
-  .services-intro {
-    padding: 32px 24px;
+  .who-section {
+    width: 100%;
+
+    padding: 72px 0;
   }
 
-  .services-intro-content h3 {
-    font-size: 1.75rem;
+
+  /* --------------------------------------------------------
+     HEADER
+     -------------------------------------------------------- */
+
+  .who-header {
+    width: 100%;
+
+    margin-bottom: 36px;
   }
 
-  .services-intro-actions {
+  .who-eyebrow {
+    font-size: 0.74rem;
+  }
+
+  .who-title {
+    width: 100%;
     max-width: none;
+
+    margin-top: 12px;
+    margin-bottom: 0;
+
+    font-size: 2rem;
+    line-height: 1.08;
+  }
+
+
+  /* --------------------------------------------------------
+     CARDS GRID
+     -------------------------------------------------------- */
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: 20px;
+  }
+
+
+  /* --------------------------------------------------------
+     CARDS
+     -------------------------------------------------------- */
+
+  .who-card,
+  .who-card-not,
+  .who-card-not-fit {
+    width: 100%;
+
+    padding: 28px 24px;
+
+    border-radius: var(--radius-lg);
+  }
+
+
+  /* --------------------------------------------------------
+     CARD HEADER
+     -------------------------------------------------------- */
+
+  .who-card .card-header {
+    width: 100%;
+
+    margin-bottom: 24px;
+  }
+
+  .who-card .card-header h3 {
+    margin: 0;
+
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+
+
+  /* --------------------------------------------------------
+     LIST
+     -------------------------------------------------------- */
+
+  .who-list {
+    width: 100%;
+
+    gap: 24px;
+  }
+
+  .who-item {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    font-size: 0.95rem;
+  }
+
+  .who-item-icon {
+    width: 24px;
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    margin-top: 2px;
+  }
+
+  .who-item-text {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .who-item-text strong {
+    display: inline;
+
+    font-weight: 600;
+  }
+
+  .who-item-text span {
+    display: inline;
+
+    line-height: 1.6;
   }
 
 }
