@@ -1,124 +1,216 @@
 <section class="articles-section" id="articles">
-    <div class="container">
+  <div class="container articles-container">
 
-        <!-- Заголовок секції -->
-        <div class="section-header text-center">
-            <span class="badge">RESEARCH & FIELD MATERIALS</span>
+    <!-- =====================================================
+         SECTION HEADER
+         ===================================================== -->
 
-            <h2>
-                {{ if eq .Site.Language.Lang "en" }}
-                Research, Biomechanics & Somatic Articles
-                {{ else }}
-                Дослідження, біомеханіка та соматичні статті
-                {{ end }}
-            </h2>
+    <header class="articles-header">
+      <span class="articles-eyebrow">
+        RESEARCH & FIELD MATERIALS
+      </span>
 
-            <p class="section-subtitle">
-                {{ if eq .Site.Language.Lang "en" }}
-                Analytical insights, physiological laws, and practical guides for conscious bodily work.
-                {{ else }}
-                Аналітичні матеріали про квантову фізичну культуру, біомеханіку та системну роботу з тілом.
-                {{ end }}
-            </p>
-        </div>
-
-        <!-- Єдине джерело статей: content/articles/ -->
-        {{ $pages := where .Site.RegularPages "Section" "articles" }}
-        {{ $articlesPage := .Site.GetPage "section" "articles" }}
-
-        <!-- Динамічний список тегів тільки зі статей -->
-        {{ $articleTags := slice }}
-        {{ range $pages }}
-            {{ range .Params.tags }}
-                {{ $articleTags = $articleTags | append . }}
-            {{ end }}
+      <h2 class="articles-title">
+        {{ if eq .Site.Language.Lang "en" }}
+          Research, Biomechanics & Somatic Articles
+        {{ else }}
+          Дослідження, біомеханіка та соматичні статті
         {{ end }}
-        {{ $articleTags = sort (uniq $articleTags) }}
+      </h2>
 
-        <!-- Фільтри / taxonomy links -->
-        <div class="article-tags-filter">
+      <p class="articles-subtitle">
+        {{ if eq .Site.Language.Lang "en" }}
+          Analytical insights, physiological laws, and practical guides for conscious bodily work.
+        {{ else }}
+          Аналітичні матеріали про квантову фізичну культуру, біомеханіку та системну роботу з тілом.
+        {{ end }}
+      </p>
+    </header>
 
-            {{ with $articlesPage }}
-                <a href="{{ .RelPermalink }}" class="tag-btn active">
-                    {{ if eq $.Site.Language.Lang "en" }}
-                    All
-                    {{ else }}
-                    Усі
-                    {{ end }}
-                </a>
-            {{ end }}
 
-            {{ range $articleTags }}
-                {{ $tag := . }}
+    <!-- =====================================================
+         DATA SOURCE
+         content/articles/
+         ===================================================== -->
 
-                {{ with $.Site.GetPage (printf "/tags/%s" ($tag | urlize)) }}
-                    <a href="{{ .RelPermalink }}" class="tag-btn">
-                        {{ $tag }}
-                    </a>
-                {{ end }}
-            {{ end }}
+    {{ $pages := where .Site.RegularPages "Section" "articles" }}
+    {{ $pages = sort $pages "Date" "desc" }}
 
-        </div>
+    {{ $articlesPage := .Site.GetPage "section" "articles" }}
 
-        <!-- Три найновіші статті -->
-        <div class="articles-grid">
-            {{ $recent := first 3 (sort $pages "Date" "desc") }}
 
-            {{ range $recent }}
-            <article class="article-card">
+    <!-- =====================================================
+         DYNAMIC TAG COLLECTION
+         ===================================================== -->
 
-                <div class="article-card-header">
-                    <span class="article-category">
-                        {{ with .Params.category }}
-                        {{ . }}
-                        {{ else }}
-                        Research
-                        {{ end }}
-                    </span>
+    {{ $articleTags := slice }}
 
-                    <span class="article-read-time">
-                        {{ .ReadingTime }} min read
-                    </span>
-                </div>
+    {{ range $pages }}
+      {{ range .Params.tags }}
+        {{ $articleTags = $articleTags | append . }}
+      {{ end }}
+    {{ end }}
 
-                <h3 class="article-title">
-                    <a href="{{ .RelPermalink }}">
-                        {{ .Title }}
-                    </a>
-                </h3>
+    {{ $articleTags = sort (uniq $articleTags) }}
 
-                <p class="article-summary">
-                    {{ with .Description }}
-                    {{ . }}
-                    {{ else }}
-                    {{ .Summary | plainify | truncate 130 }}
-                    {{ end }}
-                </p>
 
-                <a href="{{ .RelPermalink }}" class="article-link">
-                    {{ if eq $.Site.Language.Lang "en" }}
-                    Read full article →
-                    {{ else }}
-                    Читати повністю →
-                    {{ end }}
-                </a>
+    <!-- =====================================================
+         FILTER PILLS
+         ===================================================== -->
 
-            </article>
-            {{ end }}
-        </div>
+    <div
+      class="article-tags-filter"
+      aria-label="{{ if eq .Site.Language.Lang "en" }}Filter articles by topic{{ else }}Фільтрувати статті за темою{{ end }}"
+    >
 
-        <!-- Перехід до повного архіву статей -->
-        <div class="articles-action text-center">
-            {{ with $articlesPage }}
-                <a href="{{ .RelPermalink }}" class="btn btn-outline">
-                    {{ if eq $.Site.Language.Lang "en" }}
-                    View All Materials
-                    {{ else }}
-                    Переглянути всі матеріали
-                    {{ end }}
-                </a>
-            {{ end }}
-        </div>
+      <button
+        type="button"
+        class="tag-btn is-active"
+        data-filter="all"
+        aria-pressed="true"
+      >
+        {{ if eq .Site.Language.Lang "en" }}
+          All
+        {{ else }}
+          Усі
+        {{ end }}
+      </button>
+
+      {{ range $articleTags }}
+        {{ $tag := . }}
+        {{ $tagSlug := $tag | urlize }}
+
+        <button
+          type="button"
+          class="tag-btn"
+          data-filter="{{ $tagSlug }}"
+          aria-pressed="false"
+        >
+          {{ $tag }}
+        </button>
+      {{ end }}
 
     </div>
+
+
+    <!-- =====================================================
+         ARTICLES CAROUSEL
+         ===================================================== -->
+
+    <div
+      class="articles-carousel"
+      data-articles-carousel
+    >
+
+      <div class="articles-viewport">
+        <div class="articles-track">
+
+          {{ range $pages }}
+
+            <!-- Build normalized machine-readable tag list -->
+            {{ $cardTags := slice }}
+
+            {{ range .Params.tags }}
+              {{ $tagSlug := . | urlize }}
+              {{ $cardTags = $cardTags | append $tagSlug }}
+            {{ end }}
+
+            <article
+              class="article-card"
+              data-tags="{{ delimit $cardTags " " }}"
+              aria-hidden="false"
+            >
+
+              <!-- Card header -->
+
+              <div class="article-card-header">
+
+                <span class="article-card-tag">
+                  {{ with .Params.category }}
+                    {{ . }}
+                  {{ else }}
+                    Research
+                  {{ end }}
+                </span>
+
+                <span class="article-read-time">
+                  {{ .ReadingTime }} min read
+                </span>
+
+              </div>
+
+
+              <!-- Title -->
+
+              <h3 class="article-title">
+                <a href="{{ .RelPermalink }}">
+                  {{ .Title }}
+                </a>
+              </h3>
+
+
+              <!-- Summary -->
+
+              <p class="article-summary">
+                {{ with .Description }}
+                  {{ . }}
+                {{ else }}
+                  {{ .Summary | plainify | truncate 130 }}
+                {{ end }}
+              </p>
+
+
+              <!-- CTA -->
+
+              <a
+                href="{{ .RelPermalink }}"
+                class="article-link"
+              >
+                {{ if eq $.Site.Language.Lang "en" }}
+                  Read full article →
+                {{ else }}
+                  Читати повністю →
+                {{ end }}
+              </a>
+
+            </article>
+
+          {{ end }}
+
+        </div>
+      </div>
+
+
+      <!-- JS builds pagination dots here -->
+
+      <div
+        class="articles-dots"
+        aria-label="{{ if eq .Site.Language.Lang "en" }}Article carousel pages{{ else }}Сторінки каруселі статей{{ end }}"
+      ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         VIEW ALL
+         ===================================================== -->
+
+    <div class="articles-action">
+
+      {{ with $articlesPage }}
+        <a
+          href="{{ .RelPermalink }}"
+          class="btn btn-outline articles-view-all"
+        >
+          {{ if eq $.Site.Language.Lang "en" }}
+            View All Materials
+          {{ else }}
+            Переглянути всі матеріали
+          {{ end }}
+        </a>
+      {{ end }}
+
+    </div>
+
+  </div>
 </section>
