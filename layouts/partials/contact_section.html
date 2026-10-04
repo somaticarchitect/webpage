@@ -1,96 +1,133 @@
-<section class="contact-section dark-block" id="contact">
-  <div class="container">
-    <div class="contact-card-dark">
-      
-      <!-- Заголовок темного блоку -->
-      <div class="contact-header text-center">
-        <span class="badge badge-light">START YOUR PRACTICE</span>
-        <h2>
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-content">
+
+      <!-- Intro -->
+      <div class="contact-intro">
+        <h2 class="contact-title">
           {{ if eq .Site.Language.Lang "en" }}
-            Ready for structural transformation and bodily coherence?
+            Ready to restore bodily coherence and authentic strength?
           {{ else }}
-            Готові до якісної трансформації тіла та глибокої когерентності?
+            Готові відновити тілесну когерентність та автентичну силу?
           {{ end }}
         </h2>
-        <p>
+
+        <p class="contact-subtitle">
           {{ if eq .Site.Language.Lang "en" }}
-            Book a 15-minute intro call or write directly in convenient messengers.
+            Write a short message about your current physical state and we'll schedule your introductory call.
           {{ else }}
-            Запишіться на 15-хвилинну знайомчу консультацію або напишіть у зручний для вас месенджер.
+            Напишіть коротке повідомлення про свій поточний фізичний стан — і ми домовимося про вступну консультацію.
           {{ end }}
         </p>
       </div>
 
-      <!-- Основний контент: Месенджери + Форма -->
-      <div class="contact-grid">
-        
-        <!-- Колонка 1: Прямий зв'язок через месенджери -->
-        <div class="direct-contacts">
-          <h4>
-            {{ if eq .Site.Language.Lang "en" }}Direct Messaging{{ else }}Прямий зв'язок{{ end }}
-          </h4>
-          <p class="contacts-desc">
+      <!-- Direct messengers -->
+      <div class="contact-messenger-actions">
+        <a
+          href="{{ .Site.Params.telegram }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-messenger-btn contact-messenger-btn--telegram"
+        >
+          <img
+            src="{{ "icons/telegram_logo.svg" | relURL }}"
+            alt=""
+            class="contact-messenger-icon"
+            aria-hidden="true"
+          >
+
+          <span>
             {{ if eq .Site.Language.Lang "en" }}
-              Fastest way to get a response regarding session availability:
+              Write on Telegram
             {{ else }}
-              Найшвидший спосіб отримати відповідь щодо вільного часу:
+              Написати в Telegram
             {{ end }}
-          </p>
+          </span>
+        </a>
 
-          <div class="messenger-actions">
-            <a href="{{ .Site.Params.telegram }}" target="_blank" class="btn btn-telegram btn-lg btn-full">
-              <svg class="icon"><use href="#icon-telegram"></use></svg> Telegram Direct
-            </a>
-            <a href="{{ .Site.Params.whatsapp }}" target="_blank" class="btn btn-whatsapp btn-lg btn-full">
-              <svg class="icon"><use href="#icon-whatsapp"></use></svg> WhatsApp Direct
-            </a>
-          </div>
-        </div>
+        <a
+          href="{{ .Site.Params.whatsapp }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-messenger-btn contact-messenger-btn--whatsapp"
+        >
+          <img
+            src="{{ "icons/watsapp_logo.svg" | relURL }}"
+            alt=""
+            class="contact-messenger-icon"
+            aria-hidden="true"
+          >
 
-        <!-- Колонка 2: Форма введення контактів -->
-        <div class="contact-form-wrapper">
-          <form action="#" method="POST" class="contact-form-dark">
-            <div class="form-group">
-              <label for="contact-name">
-                {{ if eq .Site.Language.Lang "en" }}Your Name{{ else }}Ваше ім'я{{ end }}
-              </label>
-              <input 
-                type="text" 
-                id="contact-name" 
-                name="name" 
-                placeholder="{{ if eq .Site.Language.Lang "en" }}e.g. Julia{{ else }}напр. Юлія{{ end }}" 
-                required>
-            </div>
-
-            <div class="form-group">
-              <label for="contact-handle">
-                {{ if eq .Site.Language.Lang "en" }}Telegram handle or phone{{ else }}Telegram @username або телефон{{ end }}
-              </label>
-              <input 
-                type="text" 
-                id="contact-handle" 
-                name="contact" 
-                placeholder="@username / +380..." 
-                required>
-            </div>
-
-            <button type="submit" class="btn btn-accent btn-full">
-              {{ if eq .Site.Language.Lang "en" }}Submit Request{{ else }}Надіслати заявку{{ end }}
-            </button>
-          </form>
-        </div>
-
+          <span>
+            {{ if eq .Site.Language.Lang "en" }}
+              Write on WhatsApp
+            {{ else }}
+              Написати у WhatsApp
+            {{ end }}
+          </span>
+        </a>
       </div>
 
-      <!-- Юридичний та медичний дисклеймер -->
-      <div class="disclaimer-text text-center">
-        <p>
+      <!-- Divider -->
+      <div class="contact-divider" aria-hidden="true"></div>
+
+      <!-- Compact contact form -->
+      <div class="contact-form-block">
+        <p class="contact-form-eyebrow">
           {{ if eq .Site.Language.Lang "en" }}
-            <strong>Disclaimer:</strong> The materials and somatic sessions offered are educational, self-regulatory, and developmental in nature and are not a substitute for clinical medical diagnosis, surgery, or pharmaceutical treatment.
+            Or leave your details and I'll reach out
           {{ else }}
-            <strong>Дисклеймер:</strong> Матеріали та соматичні сесії мають освітньо-корекційний та сомато-регуляторний характер і не замінюють клінічну медичну діагностику, хірургічне чи медикаментозне лікування.
+            Або залиште свої дані — і я зв’яжуся з вами
           {{ end }}
         </p>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="contact-field">
+            <label for="contact-name" class="contact-field-label">
+              {{ if eq .Site.Language.Lang "en" }}
+                Your name
+              {{ else }}
+                Ваше ім'я
+              {{ end }}
+            </label>
+
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+              placeholder="{{ if eq .Site.Language.Lang "en" }}Your name{{ else }}Ваше ім'я{{ end }}"
+              required
+            >
+          </div>
+
+          <div class="contact-field">
+            <label for="contact-handle" class="contact-field-label">
+              {{ if eq .Site.Language.Lang "en" }}
+                Telegram handle or phone
+              {{ else }}
+                Telegram або телефон
+              {{ end }}
+            </label>
+
+            <input
+              type="text"
+              id="contact-handle"
+              name="contact"
+              autocomplete="tel"
+              placeholder="{{ if eq .Site.Language.Lang "en" }}Telegram handle or phone{{ else }}Telegram або телефон{{ end }}"
+              required
+            >
+          </div>
+
+          <button type="submit" class="contact-submit">
+            {{ if eq .Site.Language.Lang "en" }}
+              Submit Request
+            {{ else }}
+              Надіслати заявку
+            {{ end }}
+          </button>
+        </form>
       </div>
 
     </div>
