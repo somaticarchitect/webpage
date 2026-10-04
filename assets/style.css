@@ -1671,6 +1671,14 @@ section {
   border-radius: 20px;
 
   box-shadow: var(--shadow-card);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border);
 }
 
 /* --------------------------------------------------------
