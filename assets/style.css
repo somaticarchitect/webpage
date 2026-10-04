@@ -3580,25 +3580,33 @@ section {
      -------------------------------------------------------- */
 
   .contact-messenger-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-    width: 100%;
+  width: 100%;
+  max-width: 360px;
 
-    gap: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 44px;
 
-    margin-bottom: 44px;
-  }
+  gap: 12px;
+}
 
   .contact-messenger-btn {
-    width: 100%;
-    min-height: 52px;
+  width: 100%;
+  min-height: 50px;
 
-    padding: 14px 22px;
+  padding: 13px 24px;
 
-    justify-content: center;
-  }
+  justify-content: center;
+
+  font-size: 0.95rem;
+  line-height: 1.2;
+
+  border-radius: var(--radius-pill);
+}
 
 
   /* --------------------------------------------------------
