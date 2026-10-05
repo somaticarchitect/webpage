@@ -156,7 +156,7 @@
 @media (max-width: 1024px) {
 
   .footer-container {
-    padding: 64px 32px 48px;
+    padding: var(--space-16) var(--space-8) var(--space-12);
   }
 
   .footer-top {
@@ -185,7 +185,7 @@
 @media (max-width: 640px) {
 
   .footer-container {
-    padding: 56px 20px 40px;
+    padding: var(--space-14) var(--space-5) var(--space-10);
   }
 
   .footer-logo {

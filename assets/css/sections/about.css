@@ -291,7 +291,7 @@
 @media (max-width: 900px) {
 
   .about-section {
-    padding: 80px 24px;
+    padding: var(--space-20) var(--space-6);
   }
 
   .about-container {
@@ -331,7 +331,7 @@
 @media (max-width: 600px) {
 
   .about-section {
-    padding: 64px 20px;
+    padding: var(--space-16) var(--space-5);
   }
 
   .about-container {

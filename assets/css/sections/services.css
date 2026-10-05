@@ -334,7 +334,7 @@
 
   min-height: 260px;
 
-  padding: 48px 56px;
+  padding: var(--space-12) var(--space-14);
 
   background-color: var(--color-dark-plum);
   color: var(--color-surface-white);
@@ -497,7 +497,7 @@
 
     min-height: auto;
 
-    padding: 40px 32px;
+    padding: var(--space-10) var(--space-8);
   }
 
   .services-intro-content {
@@ -651,7 +651,7 @@
 
     min-height: auto;
 
-    padding: 32px 24px;
+    padding: var(--space-8) var(--space-6);
   }
 
   .services-intro-content {
