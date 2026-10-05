@@ -33,7 +33,7 @@ section {
   margin-top: 12px;
   margin-bottom: 16px;
 
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: var(--text-section-title);
 }
 
 .section-subtitle {

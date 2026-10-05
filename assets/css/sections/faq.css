@@ -39,7 +39,7 @@
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-size: var(--text-section-title);
   font-weight: 600;
   line-height: 1.08;
 
