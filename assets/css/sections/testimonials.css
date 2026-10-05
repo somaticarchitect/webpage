@@ -207,53 +207,10 @@
 /* --------------------------------------------------------
    CAROUSEL DOTS
    -------------------------------------------------------- */
-
+   
 .testimonials-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 10px;
-
   margin-top: var(--space-8);
 }
-
-.testimonials-dot {
-  width: 8px;
-  height: 8px;
-
-  padding: 0;
-
-  border: 0;
-  border-radius: 50%;
-
-  background-color: var(--color-border);
-
-  cursor: pointer;
-
-  transition:
-    width var(--motion-fast),
-    background-color var(--motion-fast),
-    opacity var(--motion-fast);
-}
-
-.testimonials-dot:hover {
-  background-color: var(--color-text-muted);
-}
-
-.testimonials-dot.is-active {
-  width: 22px;
-
-  border-radius: var(--radius-pill);
-
-  background-color: var(--color-accent-lime);
-}
-
-.testimonials-dot:focus-visible {
-  outline: 2px solid var(--color-accent-lime);
-  outline-offset: 4px;
-}
-
 
 /* ========================================================
    TABLET — 2 CARDS
@@ -266,7 +223,6 @@
   }
 
 }
-
 
 /* ========================================================
    MOBILE — 1 CARD

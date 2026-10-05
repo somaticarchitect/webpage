@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const dot = document.createElement("button");
 
         dot.type = "button";
-        dot.className = "testimonials-dot";
+        dot.className = "testimonials-dot carousel-dot";
 
         dot.setAttribute(
           "aria-label",
