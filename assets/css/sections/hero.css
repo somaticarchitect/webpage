@@ -127,7 +127,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-lg);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
 
   color: var(--color-text-muted);
 }
@@ -418,7 +418,7 @@
     margin: 0 0 28px;
 
     font-size: var(--text-base);
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
 

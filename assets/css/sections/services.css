@@ -79,7 +79,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
 
   color: var(--color-text-muted);
 }
@@ -555,7 +555,7 @@
     max-width: none;
 
     font-size: var(--text-base);
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
 
@@ -675,7 +675,7 @@
     max-width: none;
 
     font-size: 0.98rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
   .services-intro-actions {

@@ -393,7 +393,7 @@
     max-width: none;
 
     font-size: var(--text-base);
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
 

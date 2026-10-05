@@ -73,7 +73,7 @@
   font-family: var(--font-body);
   font-size: 0.98rem;
   font-weight: var(--weight-regular);
-  line-height: 1.6;
+  line-height: var(--leading-normal);
 
   color: var(--color-text-on-dark-faint);
 }
@@ -198,7 +198,7 @@
 
   .footer-disclaimer {
     font-size: 0.92rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
   .footer-links-row {

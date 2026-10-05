@@ -290,7 +290,7 @@
   .who-item-text span {
     display: inline;
 
-    line-height: 1.6;
+    line-height: var(--leading-normal);
   }
 
 }
