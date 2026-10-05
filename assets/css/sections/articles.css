@@ -455,7 +455,7 @@
     flex-basis: 100%;
   }
 
-  .articles-section .article-card {
+  .articles-section {
     min-height: 330px;
 
     padding: 28px 24px 26px;
