@@ -1,0 +1,348 @@
+/* ========================================================
+   HEADER & NAVIGATION
+   ======================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  background-color: var(--color-bg);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 72px;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  line-height: 1;
+}
+
+.site-logo img,
+.site-logo svg {
+  width: auto;
+  height: 34px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: 0.02em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+
+  color: var(--color-text-main);
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent-berry);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.lang-switcher {
+  display: flex;
+
+  padding: 3px;
+
+  background-color: var(--color-border);
+
+  border-radius: var(--radius-pill);
+}
+
+.lang-link {
+  padding: 6px 14px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  border-radius: var(--radius-pill);
+
+  color: var(--color-text-main);
+}
+
+.lang-link.active {
+  background-color: var(--color-text-main);
+  color: var(--color-surface-white);
+}
+
+.header-cta {
+  padding: 8px 20px;
+
+  font-weight: 500;
+
+  border-radius: var(--radius-pill);
+}
+
+
+/* --------------------------------------------------------
+   MOBILE MENU BUTTON
+   -------------------------------------------------------- */
+
+.mobile-menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  background: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+
+/* ========================================================
+   MOBILE HEADER
+   ======================================================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    width: 100%;
+  }
+
+
+  /* --------------------------------------------------------
+     HEADER LAYOUT
+     -------------------------------------------------------- */
+
+  .header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+
+    padding: 0 20px;
+
+    gap: 0;
+  }
+
+
+  /* --------------------------------------------------------
+     LOGO
+     -------------------------------------------------------- */
+
+  .site-logo {
+    order: 1;
+
+    min-width: 0;
+
+    flex: 1 1 auto;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+
+    white-space: nowrap;
+  }
+
+
+  /* --------------------------------------------------------
+     HEADER ACTIONS
+     -------------------------------------------------------- */
+
+  .header-actions {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+
+  /* --------------------------------------------------------
+     LANGUAGE SWITCHER
+     -------------------------------------------------------- */
+
+  .lang-switcher {
+    display: flex;
+
+    padding: 2px;
+
+    background-color: var(--color-border);
+
+    border-radius: var(--radius-pill);
+  }
+
+  .lang-link {
+    padding: 5px 9px;
+
+    font-size: 0.72rem;
+  }
+
+
+  /* --------------------------------------------------------
+     HAMBURGER BUTTON
+     -------------------------------------------------------- */
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin: 2.5px 0;
+
+    background-color: var(--color-text-main);
+
+    border-radius: var(--radius-pill);
+
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+
+  /* --------------------------------------------------------
+     MOBILE NAVIGATION
+     -------------------------------------------------------- */
+
+  .nav-menu {
+    order: 3;
+
+    position: static;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    width: 100%;
+
+    flex-basis: 100%;
+
+    gap: 0;
+
+    padding: 16px 0 20px;
+
+    background-color: var(--color-bg);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+
+  /* --------------------------------------------------------
+     NAV LINKS
+     -------------------------------------------------------- */
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 56px;
+
+    padding: 14px 0;
+
+    font-size: 1rem;
+    line-height: 1.3;
+
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-link:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* --------------------------------------------------------
+     HAMBURGER → CLOSE
+     -------------------------------------------------------- */
+
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header-container:has(.nav-menu.active)
+  .mobile-menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+}
