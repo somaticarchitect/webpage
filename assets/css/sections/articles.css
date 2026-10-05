@@ -462,7 +462,7 @@
   }
 
   .articles-action {
-    margin-top: 24px;
+    margin-top: var(--space-6);
   }
 
 }

@@ -544,7 +544,7 @@
   .services-title {
     max-width: none;
 
-    margin-top: 12px;
+    margin-top: var(--space-3);
     margin-bottom: var(--space-4);
 
     font-size: 2rem;

@@ -30,7 +30,7 @@ section {
 }
 
 .section-header h2 {
-  margin-top: 12px;
+  margin-top: var(--space-3);
   margin-bottom: var(--space-4);
 
   font-size: var(--text-section-title);
