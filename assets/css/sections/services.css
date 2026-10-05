@@ -280,7 +280,7 @@
   line-height: 1.2;
 
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
 
   cursor: pointer;
 
