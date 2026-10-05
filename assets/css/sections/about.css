@@ -373,7 +373,7 @@
   }
 
   .about-description p {
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
   }
 
   .about-feature-item {

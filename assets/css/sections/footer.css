@@ -96,7 +96,7 @@
 
 .footer-links-row a {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   font-weight: 400;
   line-height: 1.2;
 
@@ -141,7 +141,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   font-weight: 400;
   line-height: 1.4;
 

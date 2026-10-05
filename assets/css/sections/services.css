@@ -428,7 +428,7 @@
   padding: 13px 24px;
 
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1.2;
 
@@ -601,7 +601,7 @@
   .service-tagline {
     max-width: none;
 
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     line-height: 1.55;
   }
 
@@ -627,7 +627,7 @@
 
   .service-block li,
   .service-block p {
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     line-height: 1.55;
   }
 

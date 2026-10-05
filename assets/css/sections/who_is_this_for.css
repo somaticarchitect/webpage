@@ -263,7 +263,7 @@
 
     gap: 14px;
 
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
   }
 
   .who-item-icon {
