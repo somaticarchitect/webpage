@@ -98,7 +98,7 @@
     --text-sm: 0.95rem;
     --text-base: 1rem;
     --text-lg: 1.05rem;
-    --text-section-title: var(--text-section-title);
+    --text-section-title: clamp(2rem, 3.2vw, 2.75rem);
 
     /* Font weights */
     --weight-regular: 400;
