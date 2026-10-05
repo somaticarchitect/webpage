@@ -14,7 +14,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  margin-bottom: 56px;
+  margin-bottom: var(--space-14);
 
   text-align: left;
 }
@@ -22,7 +22,7 @@
 .faq-eyebrow {
   display: block;
 
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 
   font-family: var(--font-body);
   font-size: 0.8rem;

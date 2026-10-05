@@ -189,7 +189,7 @@
   }
 
   .footer-logo {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-5);
   }
 
   .footer-logo .logo-text {

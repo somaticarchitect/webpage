@@ -30,7 +30,7 @@
 
   max-width: 760px;
 
-  margin-bottom: 56px;
+  margin-bottom: var(--space-14);
 
   text-align: left;
 }
@@ -141,7 +141,7 @@
 
   width: fit-content;
 
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
   padding: 5px 12px;
 
   font-family: var(--font-body);
@@ -545,7 +545,7 @@
     max-width: none;
 
     margin-top: 12px;
-    margin-bottom: 16px;
+    margin-bottom: var(--space-4);
 
     font-size: 2rem;
     line-height: 1.08;
@@ -571,7 +571,7 @@
 
     gap: var(--space-5);
 
-    margin-bottom: 20px;
+    margin-bottom: var(--space-5);
   }
 
   .service-card {
@@ -608,7 +608,7 @@
   .service-body {
     gap: var(--space-5);
 
-    margin-bottom: 24px;
+    margin-bottom: var(--space-6);
   }
 
   .service-block {

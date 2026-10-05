@@ -9,7 +9,7 @@
 
   text-align: left;
 
-  margin-bottom: 48px;
+  margin-bottom: var(--space-12);
 }
 
 .who-eyebrow {
@@ -37,7 +37,7 @@
 
 .who-title {
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 
   font-size: var(--text-section-title);
 }
@@ -86,7 +86,7 @@
 
   gap: var(--space-3);
 
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 }
 
 
@@ -234,7 +234,7 @@
   .who-card .card-header {
     width: 100%;
 
-    margin-bottom: 24px;
+    margin-bottom: var(--space-6);
   }
 
   .who-card .card-header h3 {

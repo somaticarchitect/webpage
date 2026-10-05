@@ -21,7 +21,7 @@
 .testimonials-eyebrow {
   display: block;
 
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 
   font-family: var(--font-body);
   font-size: 0.8rem;

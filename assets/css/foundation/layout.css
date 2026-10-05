@@ -26,12 +26,12 @@ section {
    -------------------------------------------------------- */
 
 .section-header {
-  margin-bottom: 48px;
+  margin-bottom: var(--space-12);
 }
 
 .section-header h2 {
   margin-top: 12px;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 
   font-size: var(--text-section-title);
 }
