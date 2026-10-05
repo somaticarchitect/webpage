@@ -75,7 +75,7 @@
   font-weight: 400;
   line-height: 1.65;
 
-  color: rgba(246, 244, 235, 0.52);
+  color: var(--color-text-on-dark-soft);
 }
 
 
@@ -156,9 +156,8 @@
 }
 
 .contact-messenger-btn--whatsapp:hover {
-  background-color: rgba(255, 255, 255, 0.09);
-
-  border-color: rgba(255, 255, 255, 0.18);
+  background-color: var(--color-surface-on-dark);
+  border: 1px solid var(--color-border-neutral-soft);
 
   transform: translateY(-1px);
 }
@@ -174,7 +173,7 @@
 
   margin: 0 0 46px;
 
-  background-color: rgba(246, 244, 235, 0.10);
+  background-color: var(--color-border-on-dark);
 }
 
 
@@ -199,7 +198,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: rgba(246, 244, 235, 0.32);
+  color: var(--color-text-on-dark-faint);
 }
 
 .contact-form {
@@ -245,9 +244,9 @@
 
   padding: 0 18px;
 
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--color-surface-on-dark);
 
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid var(--color-border-on-dark);
   border-radius: var(--radius-md);
 
   outline: none;
@@ -265,19 +264,19 @@
 }
 
 .contact-field input::placeholder {
-  color: rgba(246, 244, 235, 0.30);
+  color: var(--color-text-on-dark-faint);
 }
 
 .contact-field input:hover {
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: var(--color-border-on-dark-hover);
 }
 
 .contact-field input:focus {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--color-surface-on-dark-hover);
 
   border-color: var(--color-accent-berry);
 
-  box-shadow: 0 0 0 3px rgba(123, 82, 126, 0.18);
+  box-shadow: 0 0 0 3px var(--color-focus-berry-ring);
 }
 
 .contact-submit {
