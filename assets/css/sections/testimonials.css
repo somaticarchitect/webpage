@@ -1,0 +1,285 @@
+/* ========================================================
+   TESTIMONIALS
+   ======================================================== */
+
+.testimonials-section {
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+
+/* --------------------------------------------------------
+   SECTION HEADER
+   -------------------------------------------------------- */
+
+.testimonials-header {
+  margin-bottom: 72px;
+
+  text-align: left;
+}
+
+.testimonials-eyebrow {
+  display: block;
+
+  margin-bottom: 24px;
+
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-accent-lime);
+}
+
+.testimonials-title {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  color: var(--color-text-main);
+}
+
+
+/* --------------------------------------------------------
+   CAROUSEL
+   -------------------------------------------------------- */
+
+.testimonials-carousel {
+  width: 100%;
+}
+
+.testimonials-viewport {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials-track {
+  display: flex;
+  align-items: stretch;
+
+  gap: 24px;
+}
+
+.testimonials-track .testimonial-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+
+  min-width: 0;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+
+/* --------------------------------------------------------
+   TESTIMONIAL CARD
+   -------------------------------------------------------- */
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 370px;
+
+  padding: 34px 36px 32px;
+
+  background-color: var(--color-surface-white);
+
+  border: 1px solid var(--color-border-card);
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-border);
+}
+
+
+/* --------------------------------------------------------
+   CARD TAG
+   -------------------------------------------------------- */
+
+.testimonial-tag {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 26px;
+  padding: 5px 14px;
+
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.35;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+}
+
+
+/* --------------------------------------------------------
+   TESTIMONIAL TEXT
+   -------------------------------------------------------- */
+
+.testimonial-text,
+.testimonial-quote {
+  max-width: 88%;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.72;
+
+  letter-spacing: -0.01em;
+
+  color: var(--color-text-neutral);
+}
+
+
+/* --------------------------------------------------------
+   AUTHOR
+   -------------------------------------------------------- */
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: auto;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonial-author strong {
+  margin-bottom: 3px;
+
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.35;
+
+  color: var(--color-text-main);
+}
+
+.testimonial-author span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  color: var(--color-text-dim);
+}
+
+
+/* --------------------------------------------------------
+   CAROUSEL DOTS
+   -------------------------------------------------------- */
+
+.testimonials-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 32px;
+}
+
+.testimonials-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background-color: var(--color-border);
+
+  cursor: pointer;
+
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.testimonials-dot:hover {
+  background-color: var(--color-text-muted);
+}
+
+.testimonials-dot.is-active {
+  width: 22px;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-accent-lime);
+}
+
+.testimonials-dot:focus-visible {
+  outline: 2px solid var(--color-accent-lime);
+  outline-offset: 4px;
+}
+
+
+/* ========================================================
+   TABLET — 2 CARDS
+   ======================================================== */
+
+@media (max-width: 1024px) {
+
+  .testimonials-track .testimonial-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+}
+
+
+/* ========================================================
+   MOBILE — 1 CARD
+   ======================================================== */
+
+@media (max-width: 640px) {
+
+  .testimonials-track {
+    gap: 16px;
+  }
+
+  .testimonials-track .testimonial-card {
+    flex-basis: 100%;
+  }
+
+}
