@@ -78,7 +78,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--text-base);
   line-height: 1.7;
 
   color: var(--color-text-muted);
@@ -395,7 +395,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--text-base);
   line-height: 1.65;
 
   color: var(--color-text-on-dark);
@@ -554,7 +554,7 @@
   .services-subtitle {
     max-width: none;
 
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1.6;
   }
 

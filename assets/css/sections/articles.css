@@ -73,7 +73,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 400;
   line-height: 1.55;
 
