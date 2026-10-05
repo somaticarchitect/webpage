@@ -46,7 +46,7 @@
 .btn-accent:hover {
   background-color: var(--color-accent-berry-hover);
 
-  transform: translateY(-2px);
+  transform: var(--motion-lift-md);
 }
 
 

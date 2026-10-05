@@ -117,7 +117,7 @@
 }
 
 .testimonial-card:hover {
-  transform: translateY(-2px);
+  transform: var(--motion-lift-md);
 
   border-color: var(--color-border);
 }
