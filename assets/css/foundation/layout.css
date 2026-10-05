@@ -1,0 +1,59 @@
+/* ========================================================
+   GLOBAL LAYOUT
+   ======================================================== */
+
+.container {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding: 0 48px;
+
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+section {
+  padding: 80px 0;
+}
+
+
+/* --------------------------------------------------------
+   SECTION HEADER
+   -------------------------------------------------------- */
+
+.section-header {
+  margin-bottom: 48px;
+}
+
+.section-header h2 {
+  margin-top: 12px;
+  margin-bottom: 16px;
+
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+}
+
+.section-subtitle {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+
+/* --------------------------------------------------------
+   MOBILE
+   -------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 20px;
+  }
+
+}
