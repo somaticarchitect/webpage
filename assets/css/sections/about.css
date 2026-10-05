@@ -132,47 +132,6 @@
   color: var(--color-text-on-dark);
 }
 
-
-/* --------------------------------------------------------
-   FLOATING CARD — RESPONSIVE
-   -------------------------------------------------------- */
-
-@media (max-width: 1100px) {
-
-  .about-floating-card {
-    right: -24px;
-    bottom: -24px;
-
-    width: 220px;
-  }
-
-}
-
-@media (max-width: 900px) {
-
-  .about-floating-card {
-    right: 20px;
-    bottom: 20px;
-
-    width: 220px;
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .about-floating-card {
-    right: 16px;
-    bottom: 16px;
-
-    width: 210px;
-
-    padding: 16px 18px;
-  }
-
-}
-
-
 /* --------------------------------------------------------
    RIGHT — CONTENT
    -------------------------------------------------------- */
@@ -186,7 +145,6 @@
 
   gap: 32px;
 }
-
 
 /* --------------------------------------------------------
    HEADER
@@ -298,10 +256,6 @@
 }
 
 
-/* ========================================================
-   TABLET
-   ======================================================== */
-
 @media (max-width: 1100px) {
 
   .about-section {
@@ -318,6 +272,13 @@
 
   .about-title {
     font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  .about-floating-card {
+    right: -24px;
+    bottom: -24px;
+
+    width: 220px;
   }
 
 }
@@ -353,6 +314,13 @@
     max-width: 560px;
   }
 
+  .about-floating-card {
+    right: 20px;
+    bottom: 20px;
+
+    width: 220px;
+  }
+
 }
 
 
@@ -374,6 +342,8 @@
     left: 16px;
     right: 16px;
     bottom: 16px;
+
+    width: 210px;
 
     padding: 16px 18px;
   }
@@ -413,3 +383,4 @@
   }
 
 }
+
