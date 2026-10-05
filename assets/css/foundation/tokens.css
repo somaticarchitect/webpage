@@ -86,6 +86,6 @@
     /* Elevation / Shadows */
     --shadow-sm: 0 2px 8px rgba(67, 68, 56, 0.04);
     --shadow-card: 0 4px 24px rgba(67, 68, 56, 0.04);
-    --shadow-accent-btn: 0 6px 20px rgba(123, 82, 126, 0.25);
     --shadow-badge: 0 8px 24px rgba(46, 24, 48, 0.18);
+    --shadow-accent: 0 6px 20px rgba(123, 82, 126, 0.25);
 }

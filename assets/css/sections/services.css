@@ -311,7 +311,7 @@
   background-color: var(--color-accent-berry);
   color: var(--color-surface-white);
 
-  box-shadow: 0 4px 14px rgba(123, 82, 126, 0.16);
+  box-shadow: var(--shadow-accent);
 }
 
 .service-cta--primary:hover {
@@ -398,7 +398,7 @@
   font-size: 1rem;
   line-height: 1.65;
 
-  color: var(--color-text-on-dark-muted);
+  color: var(--color-text-on-dark);
 }
 
 

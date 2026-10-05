@@ -35,7 +35,7 @@
   background-color: var(--color-accent-berry);
   color: var(--color-surface-white);
 
-  box-shadow: var(--shadow-accent-btn);
+  box-shadow: var(--shadow-accent);
 }
 
 .btn-primary:hover,
