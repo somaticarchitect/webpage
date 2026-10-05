@@ -75,7 +75,7 @@
   font-weight: 400;
   line-height: 1.6;
 
-  color: rgba(246, 244, 235, 0.32);
+  color: var(--color-text-on-dark-faint);
 }
 
 
@@ -100,7 +100,7 @@
   font-weight: 400;
   line-height: 1.2;
 
-  color: rgba(246, 244, 235, 0.32);
+  color: var(--color-text-on-dark-faint);
 
   text-decoration: none;
 
@@ -149,7 +149,7 @@
   font-weight: 400;
   line-height: 1.4;
 
-  color: rgba(246, 244, 235, 0.30);
+  color: var(--color-text-on-dark-faint);
 }
 
 
