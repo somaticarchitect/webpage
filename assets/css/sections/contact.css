@@ -44,7 +44,7 @@
   width: 100%;
   max-width: 1000px;
 
-  margin: 0 0 56px;
+  margin: 0 0 var(--space-14);
 
   text-align: left;
 }
@@ -380,7 +380,7 @@
     width: 100%;
     max-width: none;
 
-    margin: 0 0 20px;
+    margin: 0 0 var(--space-5);
 
     font-size: clamp(2rem, 9vw, 2.6rem);
     line-height: 1.04;

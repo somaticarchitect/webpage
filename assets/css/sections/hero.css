@@ -373,7 +373,7 @@
     width: 100%;
 
     padding: var(--space-3) var(--space-4);
-    margin: 0 0 24px;
+    margin: 0 0 var(--space-6);
 
     border-radius: var(--radius-pill);
 
@@ -399,7 +399,7 @@
   .hero-title {
     width: 100%;
 
-    margin: 0 0 20px;
+    margin: 0 0 var(--space-5);
 
     font-size: clamp(2.6rem, 11vw, 3.4rem);
     line-height: 1.03;
