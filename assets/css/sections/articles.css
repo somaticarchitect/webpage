@@ -307,7 +307,7 @@
   display: inline-flex;
   align-items: center;
 
-  gap: 8px;
+  gap: var(--space-2);
 
   width: fit-content;
 
@@ -434,7 +434,7 @@
   }
 
   .article-tags-filter {
-    gap: 8px;
+    gap: var(--space-2);
 
     margin-bottom: 34px;
   }

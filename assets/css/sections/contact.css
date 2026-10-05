@@ -215,7 +215,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: var(--space-2);
 
   min-width: 0;
 }
@@ -413,7 +413,7 @@
     margin-right: auto;
     margin-bottom: 44px;
 
-    gap: 12px;
+    gap: var(--space-3);
   }
 
   .contact-messenger-btn {
@@ -449,7 +449,7 @@
   .contact-form {
     grid-template-columns: 1fr;
 
-    gap: 12px;
+    gap: var(--space-3);
   }
 
   .contact-submit {
