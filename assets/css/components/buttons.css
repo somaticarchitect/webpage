@@ -1,0 +1,115 @@
+/* ========================================================
+   BUTTONS
+   ======================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px 28px;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+
+/* --------------------------------------------------------
+   PRIMARY / ACCENT
+   -------------------------------------------------------- */
+
+.btn-primary,
+.btn-accent {
+  background-color: var(--color-accent-berry);
+  color: var(--color-surface-white);
+
+  box-shadow: var(--shadow-accent-btn);
+}
+
+.btn-primary:hover,
+.btn-accent:hover {
+  background-color: var(--color-accent-berry-hover);
+
+  transform: translateY(-2px);
+}
+
+
+/* --------------------------------------------------------
+   OUTLINE
+   -------------------------------------------------------- */
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text-main);
+
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-surface-white);
+
+  border-color: var(--color-text-main);
+}
+
+
+/* --------------------------------------------------------
+   TELEGRAM
+   -------------------------------------------------------- */
+
+.btn-telegram {
+  background-color: var(--color-brand-telegram);
+  color: var(--color-surface-white);
+}
+
+.btn-telegram:hover {
+  background-color: var(--color-brand-telegram-hover);
+}
+
+
+/* --------------------------------------------------------
+   WHATSAPP
+   -------------------------------------------------------- */
+
+.btn-whatsapp {
+  background-color: var(--color-brand-whatsapp);
+  color: var(--color-surface-white);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-brand-whatsapp-hover);
+}
+
+
+/* --------------------------------------------------------
+   SIZES
+   -------------------------------------------------------- */
+
+.btn-sm {
+  padding: 8px 18px;
+
+  font-size: 0.85rem;
+
+  border-radius: var(--radius-pill);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+
+  font-size: 1.05rem;
+}
+
+.btn-full {
+  width: 100%;
+}

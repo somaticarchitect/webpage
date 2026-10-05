@@ -1,0 +1,31 @@
+/* ========================================================
+   BADGES
+   ======================================================== */
+
+.badge {
+  display: inline-block;
+
+  padding: 6px 16px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+}
+
+.badge-light {
+  background-color: var(--color-accent-berry-subtle);
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-dark-plum-border);
+}
+
+.badge-accent {
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+}
