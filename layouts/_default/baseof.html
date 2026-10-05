@@ -8,10 +8,31 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.bio }}{{ end }}">
 
   <!-- Конвеєр ресурсів Hugo (Hugo Pipes) -->
-  {{ $style := resources.Get "style.css" }}
-  {{ with $style }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{ end }}
+  <!-- CSS bundle -->
+  {{ $styles := slice
+  (resources.Get "css/foundation/tokens.css")
+  (resources.Get "css/foundation/reset.css")
+  (resources.Get "css/foundation/typography.css")
+  (resources.Get "css/foundation/layout.css")
+
+  (resources.Get "css/components/badges.css")
+  (resources.Get "css/components/buttons.css")
+
+  (resources.Get "css/sections/header.css")
+  (resources.Get "css/sections/hero.css")
+  (resources.Get "css/sections/about.css")
+  (resources.Get "css/sections/who_is_this_for.css")
+  (resources.Get "css/sections/services.css")
+  (resources.Get "css/sections/testimonials.css")
+  (resources.Get "css/sections/articles.css")
+  (resources.Get "css/sections/faq.css")
+  (resources.Get "css/sections/contact.css")
+  (resources.Get "css/sections/footer.css")
+  }}
+
+  {{ $style := $styles | resources.Concat "css/main.css" }}
+
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
