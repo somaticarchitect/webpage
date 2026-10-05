@@ -69,11 +69,11 @@
 
   border-radius: var(--radius-pill);
 
-  background-color: rgba(67, 68, 56, 0.03);
+  background-color: var(--color-surface-neutral-subtle);
 
   backdrop-filter: blur(4px);
 
-  border: 1px solid rgba(67, 68, 56, 0.15);
+  border: 1px solid var(--color-border-neutral-soft);
 
   color: var(--color-text-dim);
 
@@ -278,7 +278,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--color-text-on-dark);
 }
 
 .badge-title {
