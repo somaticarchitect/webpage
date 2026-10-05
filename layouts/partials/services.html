@@ -104,7 +104,7 @@
         </div>
 
         <div class="service-footer">
-          <a href="#contact" class="service-cta service-cta--outline">
+          <a href="#contact" class="btn service-cta service-cta--outline">
             {{ if eq .Site.Language.Lang "en" }}
             Book Session
             {{ else }}
@@ -193,7 +193,7 @@
         </div>
 
         <div class="service-footer">
-          <a href="#contact" class="service-cta service-cta--primary">
+          <a href="#contact" class="btn service-cta service-cta--primary">
             {{ if eq .Site.Language.Lang "en" }}
             Apply for Course
             {{ else }}
@@ -230,13 +230,13 @@
       </div>
 
       <div class="services-intro-actions">
-        <a href="{{ .Site.Params.telegram }}" target="_blank"
-          class="services-intro-button services-intro-button--telegram">
+        <a href="{{ site.Params.telegram }}" target="_blank" rel="noopener noreferrer"
+          class="btn services-intro-button services-intro-button--telegram">
           Telegram
         </a>
 
-        <a href="{{ .Site.Params.whatsapp }}" target="_blank"
-          class="services-intro-button services-intro-button--whatsapp">
+        <a href="{{ site.Params.whatsapp }}" target="_blank" rel="noopener noreferrer"
+          class="btn services-intro-button services-intro-button--whatsapp">
           WhatsApp
         </a>
       </div>
