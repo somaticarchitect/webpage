@@ -50,7 +50,7 @@
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: var(--weight-bold);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   letter-spacing: 0.02em;
 }

@@ -29,7 +29,7 @@
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: var(--weight-bold);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   letter-spacing: 0.08em;
   text-transform: uppercase;

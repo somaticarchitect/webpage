@@ -147,7 +147,7 @@
   font-family: var(--font-body);
   font-size: 0.76rem;
   font-weight: var(--weight-medium);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   letter-spacing: 0;
 
@@ -209,7 +209,7 @@
   font-family: var(--font-heading);
   font-size: 0.78rem;
   font-weight: var(--weight-bold);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -277,7 +277,7 @@
   font-family: var(--font-body);
   font-size: 0.93rem;
   font-weight: var(--weight-semibold);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   border: 1px solid transparent;
   border-radius: var(--radius-md);
@@ -430,7 +430,7 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  line-height: 1.2;
+  line-height: var(--leading-tight);
 
   border-radius: var(--radius-pill);
 

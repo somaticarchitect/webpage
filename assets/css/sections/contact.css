@@ -425,7 +425,7 @@
     justify-content: center;
 
     font-size: var(--text-sm);
-    line-height: 1.2;
+    line-height: var(--leading-tight);
 
     border-radius: var(--radius-pill);
   }
