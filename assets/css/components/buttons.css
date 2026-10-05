@@ -109,7 +109,7 @@
 }
 
 .btn-lg {
-  padding: 16px 32px;
+  padding: var(--space-4) var(--space-8);
 
   font-size: var(--text-lg);
 }

@@ -422,7 +422,7 @@
 @media (max-width: 640px) {
 
   .articles-section {
-    padding: 80px 0 64px;
+    padding: var(--space-20) 0 var(--space-16);
   }
 
   .articles-header {

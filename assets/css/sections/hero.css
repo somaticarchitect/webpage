@@ -147,7 +147,7 @@
 .hero-actions .btn {
   width: 320px;
 
-  padding: 16px 24px;
+  padding: var(--space-4) var(--space-6);
 
   border-radius: var(--radius-pill);
 
