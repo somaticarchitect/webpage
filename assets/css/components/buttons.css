@@ -34,16 +34,14 @@
    PRIMARY / ACCENT
    -------------------------------------------------------- */
 
-.btn-primary,
-.btn-accent {
+.btn-primary {
   background-color: var(--color-accent-berry);
   color: var(--color-surface-white);
 
   box-shadow: var(--shadow-accent);
 }
 
-.btn-primary:hover,
-.btn-accent:hover {
+.btn-primary:hover {
   background-color: var(--color-accent-berry-hover);
 
   transform: var(--motion-lift-md);
@@ -66,35 +64,6 @@
 
   border-color: var(--color-text-main);
 }
-
-
-/* --------------------------------------------------------
-   TELEGRAM
-   -------------------------------------------------------- */
-
-.btn-telegram {
-  background-color: var(--color-brand-telegram);
-  color: var(--color-surface-white);
-}
-
-.btn-telegram:hover {
-  background-color: var(--color-brand-telegram-hover);
-}
-
-
-/* --------------------------------------------------------
-   WHATSAPP
-   -------------------------------------------------------- */
-
-.btn-whatsapp {
-  background-color: var(--color-brand-whatsapp);
-  color: var(--color-surface-white);
-}
-
-.btn-whatsapp:hover {
-  background-color: var(--color-brand-whatsapp-hover);
-}
-
 
 /* --------------------------------------------------------
    SIZES

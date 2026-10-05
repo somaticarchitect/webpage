@@ -18,17 +18,7 @@
   color: var(--color-accent-lime-text);
 }
 
-.badge-light {
-  background-color: var(--color-accent-berry-subtle);
-  color: var(--color-surface-white);
 
-  border: 1px solid var(--color-dark-plum-border);
-}
-
-.badge-accent {
-  background-color: var(--color-accent-lime-bg);
-  color: var(--color-accent-lime-text);
-}
 
 .pill-tag {
   display: inline-flex;
