@@ -125,7 +125,7 @@
   width: 18px;
   height: 18px;
 
-  transition: transform 0.2s ease;
+  transition: transform var(--motion-fast);
 }
 
 .faq-icon img {

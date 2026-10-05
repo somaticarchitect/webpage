@@ -69,7 +69,7 @@
 
   color: var(--color-text-main);
 
-  transition: color 0.2s ease;
+  transition: color var(--motion-fast);
 }
 
 .nav-link:hover,
@@ -268,8 +268,8 @@
     border-radius: var(--radius-pill);
 
     transition:
-      transform 0.2s ease,
-      opacity 0.2s ease;
+      transform var(--motion-fast),
+      opacity var(--motion-fast);
   }
 
 

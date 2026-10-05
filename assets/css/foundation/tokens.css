@@ -88,4 +88,7 @@
     --shadow-card: 0 4px 24px rgba(67, 68, 56, 0.04);
     --shadow-badge: 0 8px 24px rgba(46, 24, 48, 0.18);
     --shadow-accent: 0 6px 20px rgba(123, 82, 126, 0.25);
+
+    /* Motion */
+    --motion-fast: 0.2s ease;   
 }

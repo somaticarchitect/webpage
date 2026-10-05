@@ -112,8 +112,8 @@
   box-shadow: var(--shadow-card);
 
   transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    border-color var(--motion-fast),
+    transform var(--motion-fast);
 }
 
 .testimonial-card:hover {
@@ -232,9 +232,9 @@
   cursor: pointer;
 
   transition:
-    width 0.2s ease,
-    background-color 0.2s ease,
-    opacity 0.2s ease;
+    width var(--motion-fast),
+    background-color var(--motion-fast),
+    opacity var(--motion-fast);
 }
 
 .testimonials-dot:hover {
