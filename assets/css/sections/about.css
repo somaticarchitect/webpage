@@ -143,7 +143,7 @@
   width: 100%;
   max-width: 680px;
 
-  gap: 32px;
+  gap: var(--space-8);
 }
 
 /* --------------------------------------------------------
@@ -182,7 +182,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 20px;
+  gap: var(--space-5);
 
   color: var(--color-text-dim);
 }
@@ -218,7 +218,7 @@
   display: flex;
   align-items: flex-start;
 
-  gap: 16px;
+  gap: var(--space-4);
 
   padding: 14px 0;
 }
@@ -263,11 +263,11 @@
   }
 
   .about-container {
-    gap: 56px;
+    gap: var(--space-14);
   }
 
   .about-content {
-    gap: 32px;
+    gap: var(--space-8);
   }
 
   .about-title {
@@ -297,7 +297,7 @@
   .about-container {
     grid-template-columns: 1fr;
 
-    gap: 48px;
+    gap: var(--space-12);
   }
 
   .about-media {
@@ -335,7 +335,7 @@
   }
 
   .about-container {
-    gap: 40px;
+    gap: var(--space-10);
   }
 
   .about-floating-card {
@@ -361,7 +361,7 @@
   }
 
   .about-header {
-    gap: 16px;
+    gap: var(--space-4);
   }
 
   .about-title {
@@ -369,7 +369,7 @@
   }
 
   .about-description {
-    gap: 16px;
+    gap: var(--space-4);
   }
 
   .about-description p {

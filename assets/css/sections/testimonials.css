@@ -79,7 +79,7 @@
   display: flex;
   align-items: stretch;
 
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 .testimonials-track .testimonial-card {
@@ -275,7 +275,7 @@
 @media (max-width: 640px) {
 
   .testimonials-track {
-    gap: 16px;
+    gap: var(--space-4);
   }
 
   .testimonials-track .testimonial-card {

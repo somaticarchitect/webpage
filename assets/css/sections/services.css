@@ -191,7 +191,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 24px;
+  gap: var(--space-6);
 
   margin-bottom: 30px;
 }
@@ -493,7 +493,7 @@
   .services-intro {
     grid-template-columns: 1fr;
 
-    gap: 32px;
+    gap: var(--space-8);
 
     min-height: auto;
 
@@ -569,7 +569,7 @@
 
     width: 100%;
 
-    gap: 20px;
+    gap: var(--space-5);
 
     margin-bottom: 20px;
   }
@@ -606,7 +606,7 @@
   }
 
   .service-body {
-    gap: 20px;
+    gap: var(--space-5);
 
     margin-bottom: 24px;
   }

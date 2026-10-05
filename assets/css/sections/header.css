@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
 
-  gap: 32px;
+  gap: var(--space-8);
 }
 
 .nav-link {
@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .lang-switcher {

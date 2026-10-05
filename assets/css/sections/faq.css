@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: space-between;
 
-  gap: 24px;
+  gap: var(--space-6);
 
   padding: 26px 36px;
 

@@ -1599,7 +1599,7 @@ section {
   .who-list {
     width: 100%;
 
-    gap: 24px;
+    gap: var(--space-6);
   }
 
   .who-item {
@@ -1817,7 +1817,7 @@ section {
 .service-body {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-6);
 
   margin-bottom: 30px;
 }
@@ -2368,7 +2368,7 @@ section {
 .testimonials-track {
   display: flex;
   align-items: stretch;
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 /* Desktop: 3 cards visible */
@@ -2725,7 +2725,7 @@ section {
   display: flex;
   align-items: stretch;
 
-  gap: 24px;
+  gap: var(--space-6);
 
   width: 100%;
 }
@@ -3118,7 +3118,7 @@ section {
   align-items: center;
   justify-content: space-between;
 
-  gap: 24px;
+  gap: var(--space-6);
 
   padding: 26px 36px;
 
