@@ -72,7 +72,7 @@
 
   font-family: var(--font-body);
   font-size: 1.08rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.65;
 
   color: var(--color-text-on-dark-soft);
@@ -192,7 +192,7 @@
 
   font-family: var(--font-body);
   font-size: 0.78rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.3;
 
   letter-spacing: 0.04em;
@@ -253,7 +253,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 
   color: var(--color-bg);
 

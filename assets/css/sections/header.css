@@ -65,7 +65,7 @@
 .nav-link {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 
   color: var(--color-text-main);
 

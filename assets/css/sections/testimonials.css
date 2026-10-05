@@ -159,7 +159,7 @@
 
   font-family: var(--font-body);
   font-size: 0.96rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   font-style: italic;
   line-height: 1.72;
 
@@ -197,7 +197,7 @@
 .testimonial-author span {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.4;
 
   color: var(--color-text-dim);

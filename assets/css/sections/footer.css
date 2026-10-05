@@ -72,7 +72,7 @@
 
   font-family: var(--font-body);
   font-size: 0.98rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.6;
 
   color: var(--color-text-on-dark-faint);
@@ -97,7 +97,7 @@
 .footer-links-row a {
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.2;
 
   color: var(--color-text-on-dark-faint);
@@ -142,7 +142,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.4;
 
   color: var(--color-text-on-dark-faint);

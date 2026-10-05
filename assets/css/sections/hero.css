@@ -200,7 +200,7 @@
 .feature-desc {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
   line-height: 1.35;
 
   color: var(--color-text-muted);
@@ -273,7 +273,7 @@
 
 .badge-tagline {
   font-size: 0.72rem;
-  font-weight: 400;
+  font-weight: var(--weight-regular);
 
   text-transform: uppercase;
   letter-spacing: 0.1em;
