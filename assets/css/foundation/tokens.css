@@ -90,5 +90,7 @@
     --shadow-accent: 0 6px 20px rgba(123, 82, 126, 0.25);
 
     /* Motion */
-    --motion-fast: 0.2s ease;   
+    --motion-fast: var(--motion-fast);   
+    --motion-lift-sm: translateY(-1px);
+    --motion-lift-md: translateY(-2px);
 }
