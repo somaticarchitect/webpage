@@ -117,17 +117,6 @@
   color: var(--color-text-main);
 }
 
-.who-item {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 14px;
-
-  font-size: 0.98rem;
-
-  color: var(--color-text-main);
-}
-
 .who-item-icon {
   width: 24px;
   height: 24px;
