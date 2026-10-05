@@ -85,7 +85,7 @@
    FILTER PILLS
    -------------------------------------------------------- */
 
-.articles-section .article-tags-filter {
+.article-tags-filter {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -96,7 +96,7 @@
   margin: 0 0 48px;
 }
 
-.articles-section .tag-btn {
+.tag-btn {
   appearance: none;
 
   display: inline-flex;
@@ -128,17 +128,17 @@
     color 0.2s ease;
 }
 
-.articles-section .tag-btn:hover {
+.tag-btn:hover {
   background-color: var(--color-surface-neutral-hover);
   color: var(--color-text-main);
 }
 
-.articles-section .tag-btn.is-active {
+.tag-btn.is-active {
   background-color: var(--color-text-main);
   color: var(--color-surface-white);
 }
 
-.articles-section .tag-btn:focus-visible {
+.tag-btn:focus-visible {
   outline: 2px solid var(--color-accent-lime);
   outline-offset: 3px;
 }
@@ -192,7 +192,7 @@
    ARTICLE CARD
    -------------------------------------------------------- */
 
-.articles-section .article-card {
+.article-card {
   display: flex;
   flex-direction: column;
 
@@ -212,13 +212,13 @@
     transform 0.2s ease;
 }
 
-.articles-section .article-card:hover {
+.article-card:hover {
   transform: translateY(-2px);
 
   border-color: var(--color-border);
 }
 
-.articles-section .article-card.is-hidden {
+.article-card.is-hidden {
   display: none;
 }
 
@@ -227,7 +227,7 @@
    CARD HEADER
    -------------------------------------------------------- */
 
-.articles-section .article-card-header {
+.article-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -237,7 +237,7 @@
   margin: 0 0 22px;
 }
 
-.articles-section .article-card-tag {
+.article-card-tag {
   display: inline-flex;
   align-items: center;
 
@@ -257,7 +257,7 @@
   line-height: 1.3;
 }
 
-.articles-section .article-read-time {
+.article-read-time {
   flex-shrink: 0;
 
   font-family: var(--font-body);
@@ -273,7 +273,7 @@
    CARD CONTENT
    -------------------------------------------------------- */
 
-.articles-section .article-title {
+.article-title {
   margin: 0 0 22px;
 
   font-family: var(--font-heading);
@@ -286,13 +286,13 @@
   color: var(--color-text-main);
 }
 
-.articles-section .article-title a {
+.article-title a {
   color: inherit;
 
   text-decoration: none;
 }
 
-.articles-section .article-summary {
+.article-summary {
   margin: 0 0 26px;
 
   font-family: var(--font-body);
@@ -303,7 +303,7 @@
   color: var(--color-text-soft);
 }
 
-.articles-section .article-link {
+.article-link {
   display: inline-flex;
   align-items: center;
 
@@ -321,7 +321,7 @@
   color: var(--color-text-main);
 }
 
-.articles-section .article-link:hover {
+.article-link:hover {
   color: var(--color-accent-lime);
 }
 
@@ -433,13 +433,13 @@
     font-size: 2rem;
   }
 
-  .articles-section .article-tags-filter {
+  .article-tags-filter {
     gap: 8px;
 
     margin-bottom: 34px;
   }
 
-  .articles-section .tag-btn {
+  .tag-btn {
     min-height: 40px;
 
     padding: 9px 16px;
