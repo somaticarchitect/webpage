@@ -285,7 +285,7 @@
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: var(--weight-bold);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 
   color: var(--color-surface-white);
 }
