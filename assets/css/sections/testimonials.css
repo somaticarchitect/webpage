@@ -123,8 +123,7 @@
    TESTIMONIAL TEXT
    -------------------------------------------------------- */
 
-.testimonial-text,
-.testimonial-quote {
+.testimonial-text {
   max-width: 88%;
 
   margin: 0;

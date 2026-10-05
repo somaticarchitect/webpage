@@ -117,36 +117,6 @@
 }
 
 
-/* --------------------------------------------------------
-   STATUS ICONS
-   -------------------------------------------------------- */
-
-.status-icon,
-.who-icon-check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 24px;
-  height: 24px;
-
-  flex-shrink: 0;
-
-  background-color: var(--color-status-success-bg);
-  color: var(--color-status-success-icon);
-
-  border-radius: var(--radius-pill);
-
-  font-weight: var(--weight-bold);
-}
-
-.status-icon.icon-cross,
-.who-icon-cross {
-  background-color: var(--color-status-neutral-bg);
-  color: var(--color-status-neutral-icon);
-}
-
-
 /* ========================================================
    MOBILE
    ======================================================== */
