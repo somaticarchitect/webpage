@@ -25,7 +25,7 @@
 
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   line-height: 1.2;
 
   letter-spacing: 0.06em;
@@ -41,7 +41,7 @@
 
   font-family: var(--font-heading);
   font-size: var(--text-section-title);
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   line-height: 1.08;
 
   letter-spacing: -0.035em;
@@ -137,7 +137,7 @@
 
   font-family: var(--font-body);
   font-size: 0.76rem;
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   line-height: 1.35;
 
   border-radius: var(--radius-pill);
@@ -188,7 +188,7 @@
 
   font-family: var(--font-body);
   font-size: 0.94rem;
-  font-weight: 500;
+  font-weight: var(--weight-medium);
   line-height: 1.35;
 
   color: var(--color-text-main);

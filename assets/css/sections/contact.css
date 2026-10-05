@@ -57,7 +57,7 @@
 
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
-  font-weight: 800;
+  font-weight: var(--weight-extrabold);
   line-height: 1.1;
 
   letter-spacing: -0.03em;
@@ -111,7 +111,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   line-height: 1;
 
   color: var(--color-bg);
@@ -292,7 +292,7 @@
 
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
 
   cursor: pointer;
 

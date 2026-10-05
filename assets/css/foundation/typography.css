@@ -24,7 +24,7 @@ h6 {
 
   line-height: 1.15;
   letter-spacing: -0.03em;
-  font-weight: 700;
+  font-weight: var(--weight-bold);
 }
 
 a {

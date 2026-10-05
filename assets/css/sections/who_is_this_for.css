@@ -28,7 +28,7 @@
 
   font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   line-height: 1.2;
 
   letter-spacing: 0.08em;
@@ -284,7 +284,7 @@
   .who-item-text strong {
     display: inline;
 
-    font-weight: 600;
+    font-weight: var(--weight-semibold);
   }
 
   .who-item-text span {

@@ -26,7 +26,7 @@
 
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   line-height: 1.2;
 
   letter-spacing: 0.06em;
@@ -40,7 +40,7 @@
 
   font-family: var(--font-heading);
   font-size: var(--text-section-title);
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   line-height: 1.08;
 
   letter-spacing: -0.035em;
@@ -88,7 +88,7 @@
 
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: var(--weight-semibold);
   line-height: 1.3;
 
   letter-spacing: -0.02em;
