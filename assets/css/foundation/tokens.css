@@ -3,64 +3,89 @@
    ======================================================== */
 
 :root {
-  /* 60% Base / Backgrounds */
-  --color-bg: #F6F4EB;
-  --color-surface-white: #FFFFFF;
-  --color-surface-muted: #E2E2E6;
+    /* 60% Base / Backgrounds */
+    --color-bg: #F6F4EB;
+    --color-surface-white: #FFFFFF;
+    --color-surface-muted: #E2E2E6;
 
-  /* 30% Structure & Dark Surfaces */
-  --color-dark-plum: #2E1830;
-  --color-dark-plum-card: #241326;
-  --color-dark-plum-footer: #1E0F20;
-  --color-dark-plum-border: #432446;
+    /* 30% Structure & Dark Surfaces */
+    --color-dark-plum: #2E1830;
+    --color-dark-plum-card: #241326;
+    --color-dark-plum-footer: #1E0F20;
+    --color-dark-plum-border: #432446;
 
-  --color-text-main: #434438;
-  --color-text-neutral: #6F706A;
-  --color-text-muted: #5F7053;
-  --color-text-dim: #777974;
-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.68);
+    --color-text-main: #434438;
+    --color-text-neutral: #6F706A;
+    --color-text-muted: #5F7053;
+    --color-text-dim: #777974;
 
-  --color-border: #E1E7DB;
-  --color-border-card: #E8E6DF;
-  --color-border-on-dark: rgba(246, 244, 235, 0.10);
+    --color-border: #E1E7DB;
+    --color-border-card: #E8E6DF;
 
-  /* 10% Accents & Functional Highlights */
-  --color-accent-lime: #98B51B;
-  --color-accent-lime-bg: #EAEFD8;
-  --color-accent-lime-text: #506606;
+    /* 10% Accents & Functional Highlights */
+    --color-accent-lime: #98B51B;
+    --color-accent-lime-bg: #EAEFD8;
+    --color-accent-lime-text: #506606;
 
-  --color-accent-berry: #7B527E;
-  --color-accent-berry-hover: #9A699D;
-  --color-accent-berry-subtle: rgba(123, 82, 126, 0.15);
+    --color-accent-berry: #7B527E;
+    --color-accent-berry-hover: #9A699D;
+    --color-accent-berry-subtle: rgba(123, 82, 126, 0.15);
 
-  /* Brand Messengers */
-  --color-brand-telegram: #24A1DE;
-  --color-brand-telegram-hover: #1D8AC3;
+    /* Brand Messengers */
+    --color-brand-telegram: #24A1DE;
+    --color-brand-telegram-hover: #1D8AC3;
 
-  --color-brand-whatsapp: #25D366;
-  --color-brand-whatsapp-hover: #1EBE5A;
+    --color-brand-whatsapp: #25D366;
+    --color-brand-whatsapp-hover: #1EBE5A;
 
-  /* Functional Status */
-  --color-status-success-bg: #EAF3E2;
-  --color-status-success-icon: #769E4B;
+    /* Functional Status */
+    --color-status-success-bg: #EAF3E2;
+    --color-status-success-icon: #769E4B;
 
-  --color-status-neutral-bg: #E5E4E2;
-  --color-status-neutral-icon: #8E8D8A;
+    --color-status-neutral-bg: #E5E4E2;
+    --color-status-neutral-icon: #8E8D8A;
 
-  /* Typography */
-  --font-heading: 'Syne', sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Neutral translucent surfaces */
+    --color-surface-neutral-subtle: rgba(67, 68, 56, 0.03);
+    --color-surface-neutral-hover: rgba(67, 68, 56, 0.10);
 
-  /* Radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-pill: 9999px;
+    /* Neutral translucent text */
+    --color-text-soft: rgba(67, 68, 56, 0.50);
+    --color-text-faint: rgba(67, 68, 56, 0.34);
 
-  /* Elevation / Shadows */
-  --shadow-sm: 0 2px 8px rgba(67, 68, 56, 0.04);
-  --shadow-card: 0 4px 24px rgba(67, 68, 56, 0.04);
-  --shadow-accent-btn: 0 6px 20px rgba(123, 82, 126, 0.25);
-  --shadow-badge: 0 8px 24px rgba(46, 24, 48, 0.18);
+    /* Neutral translucent borders */
+    --color-border-neutral-soft: rgba(67, 68, 56, 0.12);
+
+    /* Text on dark surfaces */
+    --color-text-on-dark: rgba(255, 255, 255, 0.68);
+    --color-text-on-dark-soft: rgba(246, 244, 235, 0.52);
+    --color-text-on-dark-faint: rgba(246, 244, 235, 0.32);
+
+    /* Surfaces on dark backgrounds */
+    --color-surface-on-dark: rgba(255, 255, 255, 0.06);
+    --color-surface-on-dark-hover: rgba(255, 255, 255, 0.09);
+
+    /* Borders on dark backgrounds */
+    --color-border-on-dark: rgba(246, 244, 235, 0.10);
+    --color-border-on-dark-hover: rgba(255, 255, 255, 0.18);
+
+    /* Focus */
+    --color-focus-berry-ring: rgba(123, 82, 126, 0.18);
+
+    /* Typography */
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-pill: 9999px;
+
+    /* Elevation / Shadows */
+    --shadow-sm: 0 2px 8px rgba(67, 68, 56, 0.04);
+    --shadow-card: 0 4px 24px rgba(67, 68, 56, 0.04);
+    --shadow-accent-btn: 0 6px 20px rgba(123, 82, 126, 0.25);
+    --shadow-badge: 0 8px 24px rgba(46, 24, 48, 0.18);
 }
