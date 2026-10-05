@@ -60,7 +60,7 @@
    -------------------------------------------------------- */
 
 .who-card {
-  padding: 40px;
+  padding: var(--space-10);
 
   background-color: var(--color-surface-white);
 
@@ -72,7 +72,7 @@
 
 .who-card-not,
 .who-card-not-fit {
-  padding: 40px;
+  padding: var(--space-10);
 
   background-color: var(--color-surface-muted);
 
