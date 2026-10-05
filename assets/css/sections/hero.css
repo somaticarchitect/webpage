@@ -126,7 +126,7 @@
   margin: 0;
 
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   line-height: 1.6;
 
   color: var(--color-text-muted);
@@ -489,7 +489,7 @@
   }
 
   .feature-title {
-    font-size: 1.05rem;
+    font-size: var(--text-lg);
   }
 
   .feature-desc {

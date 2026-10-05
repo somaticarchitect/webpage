@@ -41,7 +41,7 @@ section {
 
   margin: 0 auto;
 
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   color: var(--color-text-muted);
 }
 

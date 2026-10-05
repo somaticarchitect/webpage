@@ -141,7 +141,7 @@ section {
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   color: var(--color-text-muted);
   max-width: 680px;
   margin: 0 auto;
@@ -239,7 +239,7 @@ section {
 
 .btn-lg {
   padding: 16px 32px;
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
 }
 
 .btn-full {
@@ -658,7 +658,7 @@ section {
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   line-height: 1.6;
   color: var(--color-text-muted);
   margin: 0;
@@ -968,7 +968,7 @@ section {
   }
 
   .feature-title {
-    font-size: 1.05rem;
+    font-size: var(--text-lg);
   }
 
   .feature-desc {
@@ -3084,7 +3084,7 @@ section {
 .faq-question {
   padding: 22px 28px;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   cursor: pointer;
   display: flex;
