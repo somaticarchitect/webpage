@@ -221,23 +221,7 @@
 }
 
 .article-card-tag {
-  display: inline-flex;
-  align-items: center;
-
-  width: fit-content;
   max-width: 72%;
-
-  padding: 5px 13px;
-
-  border-radius: var(--radius-pill);
-
-  background-color: var(--color-accent-lime-bg);
-  color: var(--color-accent-lime);
-
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: var(--weight-medium);
-  line-height: var(--leading-snug);
 }
 
 .article-read-time {

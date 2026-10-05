@@ -116,24 +116,8 @@
    -------------------------------------------------------- */
 
 .testimonial-tag {
-  display: inline-block;
-
-  width: fit-content;
-
   margin-bottom: 26px;
-  padding: 5px 14px;
-
-  font-family: var(--font-body);
-  font-size: 0.76rem;
-  font-weight: var(--weight-medium);
-  line-height: 1.35;
-
-  border-radius: var(--radius-pill);
-
-  background-color: var(--color-accent-lime-bg);
-  color: var(--color-accent-lime-text);
 }
-
 
 /* --------------------------------------------------------
    TESTIMONIAL TEXT
