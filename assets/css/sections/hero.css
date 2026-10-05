@@ -149,7 +149,7 @@
 
   padding: 16px 24px;
 
-  border-radius: var(--radius-pill) !important;
+  border-radius: var(--radius-pill);
 
   text-align: center;
 
