@@ -99,7 +99,7 @@
 
   color: transparent;
 
-  transform: translateY(-1px);
+  transform: var(--motion-lift-sm);
 }
 
 

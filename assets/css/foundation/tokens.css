@@ -91,6 +91,6 @@
 
     /* Motion */
     --motion-fast: var(--motion-fast);   
-    --motion-lift-sm: translateY(-1px);
+    --motion-lift-sm: var(--motion-lift-sm);
     --motion-lift-md: translateY(-2px);
 }

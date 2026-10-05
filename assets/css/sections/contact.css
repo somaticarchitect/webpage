@@ -152,14 +152,14 @@
 .contact-messenger-btn--telegram:hover {
   background-color: var(--color-accent-berry-hover);
 
-  transform: translateY(-1px);
+  transform: var(--motion-lift-sm);
 }
 
 .contact-messenger-btn--whatsapp:hover {
   background-color: var(--color-surface-on-dark-hover);
   border-color: var(--color-border-on-dark-hover);
 
-  transform: translateY(-1px);
+  transform: var(--motion-lift-sm);
 }
 
 
@@ -306,7 +306,7 @@
 .contact-submit:hover {
   background-color: var(--color-accent-berry-hover);
 
-  transform: translateY(-1px);
+  transform: var(--motion-lift-sm);
 }
 
 .contact-submit:focus-visible {

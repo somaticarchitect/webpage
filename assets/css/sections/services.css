@@ -317,7 +317,7 @@
 .service-cta--primary:hover {
   background-color: var(--color-accent-berry-hover);
 
-  transform: translateY(-1px);
+  transform: var(--motion-lift-sm);
 }
 
 
