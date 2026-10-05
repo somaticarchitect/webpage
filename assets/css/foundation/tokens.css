@@ -30,13 +30,6 @@
     --color-accent-berry-hover: #9A699D;
     --color-accent-berry-subtle: rgba(123, 82, 126, 0.15);
 
-    /* Functional Status */
-    --color-status-success-bg: #EAF3E2;
-    --color-status-success-icon: #769E4B;
-
-    --color-status-neutral-bg: #E5E4E2;
-    --color-status-neutral-icon: #8E8D8A;
-
     /* Neutral translucent surfaces */
     --color-surface-neutral-subtle: rgba(67, 68, 56, 0.03);
     --color-surface-neutral-hover: rgba(67, 68, 56, 0.10);
