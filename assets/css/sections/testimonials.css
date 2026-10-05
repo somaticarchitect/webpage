@@ -19,19 +19,7 @@
 }
 
 .testimonials-eyebrow {
-  display: block;
-
   margin-bottom: var(--space-6);
-
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: var(--weight-semibold);
-  line-height: var(--leading-tight);
-
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  color: var(--color-accent-lime);
 }
 
 .testimonials-title {

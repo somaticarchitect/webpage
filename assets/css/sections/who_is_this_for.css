@@ -13,26 +13,7 @@
 }
 
 .who-eyebrow {
-  display: inline-block;
   align-self: flex-start;
-
-  padding: 0;
-  margin: 0;
-
-  background: transparent;
-
-  border: 0;
-  border-radius: 0;
-
-  color: var(--color-accent-lime);
-
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-tight);
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .who-title {
@@ -180,10 +161,6 @@
     width: 100%;
 
     margin-bottom: 36px;
-  }
-
-  .who-eyebrow {
-    font-size: 0.74rem;
   }
 
   .who-title {

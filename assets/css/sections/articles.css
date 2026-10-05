@@ -34,24 +34,7 @@
 }
 
 .articles-eyebrow {
-  display: block;
-
   margin: 0 0 22px;
-  padding: 0;
-
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: var(--weight-bold);
-  line-height: 1;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  color: var(--color-accent-lime);
-
-  background: transparent;
-
-  border: 0;
 }
 
 .articles-title {
