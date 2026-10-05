@@ -121,12 +121,9 @@
   height: 1px;
 
   margin: 56px 0 28px;
-}
 
-.footer-divider {
   background-color: var(--color-border-on-dark);
 }
-
 
 /* --------------------------------------------------------
    BOTTOM
