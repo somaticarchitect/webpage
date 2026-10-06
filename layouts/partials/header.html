@@ -6,54 +6,88 @@
       <span class="logo-text">QPC.Soma</span>
     </a>
 
-    <!-- 2. Навігаційне меню (по центру) -->
+    <!-- 2. Навігаційне меню -->
     <nav class="nav-menu" id="nav-menu">
       {{ range site.Menus.main }}
-      {{ $link := .URL }}
-      {{ if and (hasPrefix .URL "#") (not $.IsHome) }}
-      {{ $link = printf "%s%s" site.Home.RelPermalink .URL }}
-      {{ end }}
-      <a href="{{ $link }}" class="nav-link">{{ .Name }}</a>
+        {{ $link := .URL }}
+
+        {{ if and (hasPrefix .URL "#") (not $.IsHome) }}
+          {{ $link = printf "%s%s" site.Home.RelPermalink .URL }}
+        {{ end }}
+
+        <a href="{{ $link }}" class="nav-link">
+          {{ .Name }}
+        </a>
       {{ end }}
     </nav>
 
-    <!-- 3. Права група дій: Перемикач мов + Кнопка Telegram + Гамбургер -->
+    <!-- 3. Права група дій -->
     <div class="header-actions">
 
-      <!-- Перемикач мов [ UA | EN ] -->
+      <!-- Перемикач мов -->
       <div class="lang-switcher">
         {{ if .IsTranslated }}
-        {{ range .AllTranslations }}
-        <a href="{{ .RelPermalink }}" class="lang-link {{ if eq .Lang site.Language.Lang }}active{{ end }}">
-          {{ .Language.LanguageName }}
-        </a>
-        {{ end }}
+
+          {{ range .AllTranslations }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="lang-link {{ if eq .Lang site.Language.Lang }}active{{ end }}"
+            >
+              {{ .Language.LanguageName }}
+            </a>
+          {{ end }}
+
         {{ else }}
-        {{ range site.Sites }}
-        <a href="{{ .Home.RelPermalink }}"
-          class="lang-link {{ if eq .Language.Lang site.Language.Lang }}active{{ end }}">
-          {{ .Language.LanguageName }}
-        </a>
-        {{ end }}
+
+          {{ range site.Sites }}
+            <a
+              href="{{ .Home.RelPermalink }}"
+              class="lang-link {{ if eq .Language.Lang site.Language.Lang }}active{{ end }}"
+            >
+              {{ .Language.LanguageName }}
+            </a>
+          {{ end }}
+
         {{ end }}
       </div>
 
-      <!-- Швидка кнопка запису в Telegram -->
-      <a href="{{ site.Params.telegram }}" target="_blank" class="btn btn-outline btn-sm header-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <!-- Telegram CTA -->
+      <a
+        href="{{ site.Params.telegram }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline btn-sm header-cta"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
           <path
-            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.89.03-.25.38-.51 1.07-.78 4.2-1.83 7.01-3.04 8.42-3.63 4.01-1.67 4.85-1.96 5.39-1.97.12 0 .38.03.55.17.14.12.19.28.21.4.02.14.02.31-.01.48z" />
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.89.03-.25.38-.51 1.07-.78 4.2-1.83 7.01-3.04 8.42-3.63 4.01-1.67 4.85-1.96 5.39-1.97.12 0 .38.03.55.17.14.12.19.28.21.4.02.14.02.31-.01.48z"
+          />
         </svg>
-        <span>{{ if eq site.Language.Lang "en" }}Write on Telegram{{ else }}Записатися в Telegram{{ end }}</span>
+
+        <span>
+          {{ i18n "header_telegram_cta" }}
+        </span>
       </a>
 
       <!-- Кнопка мобільного меню -->
-      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-menu"
-        aria-expanded="false" onclick="
-    const menu = document.getElementById('nav-menu');
-    const isOpen = menu.classList.toggle('active');
-    this.setAttribute('aria-expanded', isOpen);
-  ">
+      <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-label="{{ i18n "header_mobile_menu" }}"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        onclick="
+          const menu = document.getElementById('nav-menu');
+          const isOpen = menu.classList.toggle('active');
+          this.setAttribute('aria-expanded', isOpen);
+        "
+      >
         <span></span>
         <span></span>
         <span></span>

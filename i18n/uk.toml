@@ -1,3 +1,9 @@
+[header_telegram_cta]
+other = "Записатися в Telegram"
+
+[header_mobile_menu]
+other = "Відкрити або закрити навігацію"
+
 
 [hero_primary_cta]
 other = "Узгодити 15-хв знайомство"
@@ -56,3 +62,23 @@ other = "Усі права захищено."
 [footer_nav_label]
 other = "Навігація у футері"
 
+[articles_filter_label]
+other = "Фільтр статей за темою"
+
+[articles_filter_all]
+other = "Усі"
+
+[articles_read_more]
+other = "Читати повністю"
+
+[articles_carousel_navigation]
+other = "Сторінки каруселі статей"
+
+[articles_view_all]
+other = "Переглянути всі матеріали"
+
+[articles_default_category]
+other = "Дослідження"
+
+[articles_read_time]
+other = "{{ .Count }} хв читання"

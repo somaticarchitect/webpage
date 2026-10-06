@@ -1,3 +1,6 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $articles := $content.articles }}
+
 <section class="articles-section" id="articles">
   <div class="container articles-container">
 
@@ -11,45 +14,30 @@
         {{ $articleTags = $articleTags | append . }}
       {{ end }}
     {{ end }}
+
     {{ $articleTags = sort (uniq $articleTags) }}
 
-
     <!-- HEADER -->
-
     <header class="articles-header">
 
       <span class="articles-eyebrow section-eyebrow">
-        {{ if eq .Site.Language.Lang "en" }}
-          RESEARCH
-        {{ else }}
-          ДОСЛІДЖЕННЯ
-        {{ end }}
+        {{ $articles.eyebrow }}
       </span>
 
       <h2 class="articles-title">
-        {{ if eq .Site.Language.Lang "en" }}
-          Research and Field Materials
-        {{ else }}
-          Дослідження та практичні матеріали
-        {{ end }}
+        {{ $articles.title }}
       </h2>
 
       <p class="articles-subtitle">
-        {{ if eq .Site.Language.Lang "en" }}
-          Biomechanics explained in plain language.
-        {{ else }}
-          Біомеханіка зрозумілою мовою.
-        {{ end }}
+        {{ $articles.subtitle }}
       </p>
 
     </header>
 
-
     <!-- FILTER PILLS -->
-
     <div
       class="article-tags-filter"
-      aria-label="{{ if eq .Site.Language.Lang "en" }}Filter articles by topic{{ else }}Фільтр статей за темою{{ end }}"
+      aria-label="{{ i18n "articles_filter_label" }}"
     >
 
       <button
@@ -58,7 +46,7 @@
         data-filter="all"
         aria-pressed="true"
       >
-        {{ if eq .Site.Language.Lang "en" }}All{{ else }}Усі{{ end }}
+        {{ i18n "articles_filter_all" }}
       </button>
 
       {{ range $articleTags }}
@@ -77,9 +65,7 @@
 
     </div>
 
-
     <!-- CAROUSEL -->
-
     <div
       class="articles-carousel"
       data-articles-carousel
@@ -91,6 +77,7 @@
           {{ range $pages }}
 
             {{ $cardTags := slice }}
+
             {{ range .Params.tags }}
               {{ $cardTags = $cardTags | append (. | urlize) }}
             {{ end }}
@@ -107,7 +94,7 @@
               {{ with .Params.category }}
                 {{ $primaryTag = . }}
               {{ else }}
-                {{ $primaryTag = "Research" }}
+                {{ $primaryTag = i18n "articles_default_category" }}
               {{ end }}
             {{ end }}
 
@@ -124,18 +111,16 @@
                 </span>
 
                 <span class="article-read-time">
-                  {{ .ReadingTime }} min read
+                  {{ i18n "articles_read_time" (dict "Count" .ReadingTime) }}
                 </span>
 
               </div>
-
 
               <h3 class="article-title">
                 <a href="{{ .RelPermalink }}">
                   {{ .Title }}
                 </a>
               </h3>
-
 
               <p class="article-summary">
                 {{ with .Description }}
@@ -145,16 +130,11 @@
                 {{ end }}
               </p>
 
-
               <a
                 href="{{ .RelPermalink }}"
                 class="article-link"
               >
-                {{ if eq $.Site.Language.Lang "en" }}
-                  Read full article
-                {{ else }}
-                  Читати повністю
-                {{ end }}
+                {{ i18n "articles_read_more" }}
 
                 <span aria-hidden="true">→</span>
               </a>
@@ -166,19 +146,15 @@
         </div>
       </div>
 
-
       <!-- JS будує dots тут -->
-
       <div
         class="articles-dots carousel-dots"
-        aria-label="{{ if eq .Site.Language.Lang "en" }}Article carousel pages{{ else }}Сторінки каруселі статей{{ end }}"
+        aria-label="{{ i18n "articles_carousel_navigation" }}"
       ></div>
 
     </div>
 
-
     <!-- VIEW ALL -->
-
     <div class="articles-action">
 
       {{ with $articlesPage }}
@@ -186,11 +162,7 @@
           href="{{ .RelPermalink }}"
           class="btn btn-outline articles-view-all"
         >
-          {{ if eq $.Site.Language.Lang "en" }}
-            View all materials
-          {{ else }}
-            Переглянути всі матеріали
-          {{ end }}
+          {{ i18n "articles_view_all" }}
         </a>
       {{ end }}
 

@@ -1,3 +1,8 @@
+[header_telegram_cta]
+other = "Write on Telegram"
+
+[header_mobile_menu]
+other = "Toggle navigation"
 
 [hero_primary_cta]
 other = "Schedule 15-min Intro Call"
@@ -55,4 +60,26 @@ other = "All rights reserved."
 
 [footer_nav_label]
 other = "Footer"
+
+[articles_filter_label]
+other = "Filter articles by topic"
+
+[articles_filter_all]
+other = "All"
+
+[articles_read_more]
+other = "Read full article"
+
+[articles_carousel_navigation]
+other = "Article carousel pages"
+
+[articles_view_all]
+other = "View all materials"
+
+[articles_default_category]
+other = "Research"
+
+[articles_read_time]
+other = "{{ .Count }} min read"
+
 
