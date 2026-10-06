@@ -20,3 +20,23 @@ other = "Apply for Course"
 [testimonials_navigation]
 other = "Testimonials navigation"
 
+[contact_telegram]
+other = "Write on Telegram"
+
+[contact_whatsapp]
+other = "Write on WhatsApp"
+
+[contact_name_label]
+other = "Your name"
+
+[contact_name_placeholder]
+other = "Your name"
+
+[contact_handle_label]
+other = "Telegram handle or phone"
+
+[contact_handle_placeholder]
+other = "Telegram handle or phone"
+
+[contact_submit]
+other = "Submit Request"

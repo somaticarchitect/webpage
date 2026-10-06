@@ -1,3 +1,9 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $contact := $content.contact }}
+
+{{ $telegramIcon := "icons/telegram_logo.svg" | relURL }}
+{{ $whatsappIcon := "icons/whatsapp_logo.svg" | relURL }}
+
 <section class="contact-section" id="contact">
   <div class="contact-container">
     <div class="contact-content">
@@ -5,24 +11,17 @@
       <!-- Intro -->
       <div class="contact-intro">
         <h2 class="contact-title">
-          {{ if eq .Site.Language.Lang "en" }}
-            Ready to restore bodily coherence and authentic strength?
-          {{ else }}
-            Готові відновити тілесну когерентність та автентичну силу?
-          {{ end }}
+          {{ $contact.title }}
         </h2>
 
         <p class="contact-subtitle">
-          {{ if eq .Site.Language.Lang "en" }}
-            Write a short message about your current physical state and we'll schedule your introductory call.
-          {{ else }}
-            Напишіть коротке повідомлення про свій поточний фізичний стан — і ми домовимося про вступну консультацію.
-          {{ end }}
+          {{ $contact.subtitle }}
         </p>
       </div>
 
       <!-- Direct messengers -->
       <div class="contact-messenger-actions">
+
         <a
           href="{{ .Site.Params.telegram }}"
           target="_blank"
@@ -30,18 +29,14 @@
           class="contact-messenger-btn contact-messenger-btn--telegram"
         >
           <img
-            src="{{ "icons/telegram_logo.svg" | relURL }}"
+            src="{{ $telegramIcon }}"
             alt=""
             class="contact-messenger-icon"
             aria-hidden="true"
           >
 
           <span>
-            {{ if eq .Site.Language.Lang "en" }}
-              Write on Telegram
-            {{ else }}
-              Написати в Telegram
-            {{ end }}
+            {{ i18n "contact_telegram" }}
           </span>
         </a>
 
@@ -52,20 +47,17 @@
           class="contact-messenger-btn contact-messenger-btn--whatsapp"
         >
           <img
-            src="{{ "icons/whatsapp_logo.svg" | relURL }}"
+            src="{{ $whatsappIcon }}"
             alt=""
             class="contact-messenger-icon"
             aria-hidden="true"
           >
 
           <span>
-            {{ if eq .Site.Language.Lang "en" }}
-              Write on WhatsApp
-            {{ else }}
-              Написати у WhatsApp
-            {{ end }}
+            {{ i18n "contact_whatsapp" }}
           </span>
         </a>
+
       </div>
 
       <!-- Divider -->
@@ -73,22 +65,16 @@
 
       <!-- Compact contact form -->
       <div class="contact-form-block">
+
         <p class="contact-form-eyebrow">
-          {{ if eq .Site.Language.Lang "en" }}
-            Or leave your details and I'll reach out
-          {{ else }}
-            Або залиште свої дані — і я зв’яжуся з вами
-          {{ end }}
+          {{ $contact.form.eyebrow }}
         </p>
 
         <form action="#" method="POST" class="contact-form">
+
           <div class="contact-field">
             <label for="contact-name" class="contact-field-label">
-              {{ if eq .Site.Language.Lang "en" }}
-                Your name
-              {{ else }}
-                Ваше ім'я
-              {{ end }}
+              {{ i18n "contact_name_label" }}
             </label>
 
             <input
@@ -96,18 +82,14 @@
               id="contact-name"
               name="name"
               autocomplete="name"
-              placeholder="{{ if eq .Site.Language.Lang "en" }}Your name{{ else }}Ваше ім'я{{ end }}"
+              placeholder="{{ i18n "contact_name_placeholder" }}"
               required
             >
           </div>
 
           <div class="contact-field">
             <label for="contact-handle" class="contact-field-label">
-              {{ if eq .Site.Language.Lang "en" }}
-                Telegram handle or phone
-              {{ else }}
-                Telegram або телефон
-              {{ end }}
+              {{ i18n "contact_handle_label" }}
             </label>
 
             <input
@@ -115,18 +97,15 @@
               id="contact-handle"
               name="contact"
               autocomplete="tel"
-              placeholder="{{ if eq .Site.Language.Lang "en" }}Telegram handle or phone{{ else }}Telegram або телефон{{ end }}"
+              placeholder="{{ i18n "contact_handle_placeholder" }}"
               required
             >
           </div>
 
           <button type="submit" class="contact-submit">
-            {{ if eq .Site.Language.Lang "en" }}
-              Submit Request
-            {{ else }}
-              Надіслати заявку
-            {{ end }}
+            {{ i18n "contact_submit" }}
           </button>
+
         </form>
       </div>
 

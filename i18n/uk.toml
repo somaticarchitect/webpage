@@ -19,3 +19,24 @@ other = "Обрати курс 10 занять"
 
 [testimonials_navigation]
 other = "Навігація відгуків"
+
+[contact_telegram]
+other = "Написати в Telegram"
+
+[contact_whatsapp]
+other = "Написати у WhatsApp"
+
+[contact_name_label]
+other = "Ваше ім'я"
+
+[contact_name_placeholder]
+other = "Ваше ім'я"
+
+[contact_handle_label]
+other = "Telegram або телефон"
+
+[contact_handle_placeholder]
+other = "Telegram або телефон"
+
+[contact_submit]
+other = "Надіслати заявку"
