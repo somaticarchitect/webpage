@@ -1,17 +1,29 @@
 {{ define "main" }}
+
 <article class="container post-single">
+
   <header class="post-header">
-    {{ with .Params.categories }}
+
+    {{ with .Params.tags }}
       <div class="post-categories">
         {{ range . }}
-          <span class="badge">{{ . }}</span>
+          <span class="badge">
+            {{ . }}
+          </span>
         {{ end }}
       </div>
     {{ end }}
-    <h1 class="post-title">{{ .Title }}</h1>
+
+    <h1 class="post-title">
+      {{ .Title }}
+    </h1>
+
     <div class="post-meta">
-      <span class="reading-time">Час читання: ~{{ .ReadingTime }} хв</span>
+      <span class="reading-time">
+        {{ i18n "article_single_read_time" (dict "Count" .ReadingTime) }}
+      </span>
     </div>
+
   </header>
 
   <div class="post-content">
@@ -20,10 +32,25 @@
 
   <footer class="post-footer">
     <div class="cta-box">
-      <h3>Потрібна індивідуальна діагностика?</h3>
-      <p>Розбір компенсацій та робота з больовими патернами доступні у форматі закритого супроводу на 8 сесій.</p>
-      <a href="/mentorship/" class="btn btn-primary">Подати анкету на супровід</a>
+
+      <h3>
+        {{ i18n "article_single_cta_title" }}
+      </h3>
+
+      <p>
+        {{ i18n "article_single_cta_text" }}
+      </p>
+
+      <a
+        href="{{ site.Home.RelPermalink }}#contact"
+        class="btn btn-primary"
+      >
+        {{ i18n "article_single_cta_button" }}
+      </a>
+
     </div>
   </footer>
+
 </article>
+
 {{ end }}

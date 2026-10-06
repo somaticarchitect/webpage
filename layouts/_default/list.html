@@ -1,39 +1,52 @@
 {{ define "main" }}
+
 <section class="articles-list-page">
   <div class="container">
 
     <!-- Заголовок сторінки -->
     <div class="section-header text-center">
-      <span class="badge">RESEARCH & MATERIALS</span>
 
-      <h1>{{ .Title }}</h1>
+      <span class="badge">
+        {{ i18n "articles_archive_eyebrow" }}
+      </span>
+
+      <h1>
+        {{ .Title }}
+      </h1>
 
       {{ with .Description }}
-      <p class="section-subtitle">{{ . }}</p>
+        <p class="section-subtitle">
+          {{ . }}
+        </p>
       {{ end }}
+
     </div>
 
-    <!-- Канонічне джерело статей та сторінка архіву -->
+    <!-- Канонічне джерело статей -->
     {{ $articlePages := where .Site.RegularPages "Section" "articles" }}
     {{ $articlesPage := .Site.GetPage "section" "articles" }}
 
-    <!-- Динамічний список тегів тільки зі статей -->
+    <!-- Динамічний список тегів -->
     {{ $articleTags := slice }}
+
     {{ range $articlePages }}
       {{ range .Params.tags }}
         {{ $articleTags = $articleTags | append . }}
       {{ end }}
     {{ end }}
+
     {{ $articleTags = sort (uniq $articleTags) }}
 
-    <!-- Фільтри / taxonomy links -->
+    <!-- Фільтри -->
     <div class="article-tags-filter text-center">
 
       {{ with $articlesPage }}
-      <a href="{{ .RelPermalink }}"
-         class="tag-btn {{ if and (eq $.Section "articles") (not $.Data.Term) }}active{{ end }}">
-        {{ if eq $.Site.Language.Lang "en" }}All{{ else }}Усі{{ end }}
-      </a>
+        <a
+          href="{{ .RelPermalink }}"
+          class="tag-btn {{ if and (eq $.Section "articles") (not $.Data.Term) }}active{{ end }}"
+        >
+          {{ i18n "articles_filter_all" }}
+        </a>
       {{ end }}
 
       {{ range $articleTags }}
@@ -41,40 +54,53 @@
         {{ $tagSlug := $tag | urlize }}
 
         {{ with $.Site.GetPage (printf "/tags/%s" $tagSlug) }}
-        <a href="{{ .RelPermalink }}"
-           class="tag-btn {{ if eq $.Data.Term $tagSlug }}active{{ end }}">
-          {{ $tag }}
-        </a>
+          <a
+            href="{{ .RelPermalink }}"
+            class="tag-btn {{ if eq $.Data.Term $tagSlug }}active{{ end }}"
+          >
+            {{ $tag }}
+          </a>
         {{ end }}
+
       {{ end }}
 
     </div>
 
-    <!-- Список статей:
-         - /articles/ показує всі статті секції;
-         - /tags/<tag>/ показує тільки сторінки поточного tag term. -->
+    <!-- Список статей -->
     {{ $pages := .Pages }}
+
     {{ if eq .Section "articles" }}
       {{ $pages = $articlePages }}
     {{ end }}
+
     {{ $pages = sort $pages "Date" "desc" }}
 
     <div class="articles-grid">
+
       {{ range $pages }}
+
+        {{ $primaryTag := "" }}
+
+        {{ with .Params.tags }}
+          {{ if gt (len .) 0 }}
+            {{ $primaryTag = index . 0 }}
+          {{ end }}
+        {{ end }}
+
         <article class="article-card">
 
           <div class="article-card-header">
-            <span class="article-category">
-              {{ with .Params.category }}
+
+            {{ with $primaryTag }}
+              <span class="article-category">
                 {{ . }}
-              {{ else }}
-                Research
-              {{ end }}
-            </span>
+              </span>
+            {{ end }}
 
             <span class="article-read-time">
-              {{ .ReadingTime }} min read
+              {{ i18n "articles_read_time" (dict "Count" .ReadingTime) }}
             </span>
+
           </div>
 
           <h3 class="article-title">
@@ -91,28 +117,29 @@
             {{ end }}
           </p>
 
-          <a href="{{ .RelPermalink }}" class="article-link">
-            {{ if eq $.Site.Language.Lang "en" }}
-              Read article →
-            {{ else }}
-              Читати статтю →
-            {{ end }}
+          <a
+            href="{{ .RelPermalink }}"
+            class="article-link"
+          >
+            {{ i18n "articles_list_read_more" }}
+
+            <span aria-hidden="true">→</span>
           </a>
 
         </article>
+
       {{ else }}
 
         <p class="no-articles text-center">
-          {{ if eq .Site.Language.Lang "en" }}
-            No articles published in this section yet.
-          {{ else }}
-            У цьому розділі поки немає опублікованих статей.
-          {{ end }}
+          {{ i18n "articles_empty" }}
         </p>
 
       {{ end }}
+
     </div>
 
   </div>
 </section>
+
 {{ end }}
+

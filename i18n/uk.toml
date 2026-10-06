@@ -79,3 +79,24 @@ other = "Переглянути всі матеріали"
 
 [articles_read_time]
 other = "{{ .Count }} хв читання"
+
+[articles_archive_eyebrow]
+other = "ДОСЛІДЖЕННЯ ТА МАТЕРІАЛИ"
+
+[articles_list_read_more]
+other = "Читати статтю"
+
+[articles_empty]
+other = "У цьому розділі поки немає опублікованих статей."
+
+[article_single_read_time]
+other = "Час читання: ~{{ .Count }} хв"
+
+[article_single_cta_title]
+other = "Потрібна індивідуальна діагностика?"
+
+[article_single_cta_text]
+other = "Розбір компенсацій та робота з больовими патернами доступні в індивідуальному соматичному форматі."
+
+[article_single_cta_button]
+other = "Записатися на знайомчу консультацію"
