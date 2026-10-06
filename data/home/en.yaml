@@ -20,3 +20,29 @@ hero:
   focus:
     eyebrow: "CURRENT FOCUS"
     title: "Fascial decompression & nervous system retraining"
+
+about:
+  image_alt: "About Method"
+
+  floating:
+    value: "0.1 Hz"
+    label: "Breath-heart synchronization protocol"
+
+  eyebrow: "ABOUT METHOD"
+
+  title: "Restoring resource instead of exhaustion."
+
+  description:
+    - "My clinical background clarified a persistent problem: conventional training creates dysfunction as often as it resolves it. Pumping isolated muscles while ignoring the nervous system's protective responses produces fatigue — not resilience."
+
+    - "The Quantum Physical Culture method works directly with fascial lines, breath mechanics, and autonomic regulation. At its core: synchronizing breath and heart rhythm at 0.1 Hz restores tissue fluidity and fluid-dynamic balance throughout the body — without any mechanical force applied under neurological stress."
+
+  features:
+    - title: "Neurological safety"
+      description: "Movement strictly within a pain-free range without triggering protective spasms or hypervigilance."
+
+    - title: "Tensegrity and wholeness"
+      description: "Balancing tension across the entire fascial web — instead of isolating and overloading individual muscles."
+
+    - title: "Individual screening"
+      description: "Testing baseline condition and neurological reactivity before applying any mechanical load to the body."
