@@ -4,3 +4,15 @@ other = "Schedule 15-min Intro Call"
 
 [hero_secondary_cta]
 other = "Read Knowledge Base ↓"
+
+[services_scope]
+other = "SCOPE:"
+
+[services_outcome]
+other = "OUTCOME:"
+
+[service_single_cta]
+other = "Book Session"
+
+[service_course_cta]
+other = "Apply for Course"

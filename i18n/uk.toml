@@ -4,3 +4,15 @@ other = "Узгодити 15-хв знайомство"
 
 [hero_secondary_cta]
 other = "Читати базу знань ↓"
+
+[services_scope]
+other = "ЩО ВХОДИТЬ:"
+
+[services_outcome]
+other = "РЕЗУЛЬТАТ:"
+
+[service_single_cta]
+other = "Записатися на сесію"
+
+[service_course_cta]
+other = "Обрати курс 10 занять"

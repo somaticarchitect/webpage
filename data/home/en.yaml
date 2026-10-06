@@ -83,3 +83,37 @@ who:
 
       - title: "Esoteric rituals:"
         description: "You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and biomechanics."
+
+services:
+  eyebrow: "SERVICES & FORMATS"
+  title: "Collaboration Formats"
+  subtitle: "Targeted session for immediate relief or a systematic 10-session curriculum for long-term structural balance."
+
+  cards:
+    - tag: "Focus session"
+      title: "Quantum Alignment"
+      tagline: "Targeted single session for immediate somatic decompression and axis recovery."
+      items:
+        - "Full-body biomechanical diagnostic assessment"
+        - "Neurological self-regulation & fascial release"
+        - "Individual movement alignment recommendations"
+      outcome: "Immediate reduction of pain/spasms, restored sense of lightness, and internal bodily coherence."
+      featured: false
+      cta_key: "service_single_cta"
+
+    - tag: "Full pattern rebuilding"
+      title: "Individual 10-Session Course"
+      tagline: "Comprehensive neurological retraining program for sustainable structural change."
+      items:
+        - "10 personalized 90-minute practical sessions"
+        - "Step-by-step postural and gait pattern correction"
+        - "Direct support and exercise adjustments between sessions"
+      outcome: "Elimination of chronic compensation mechanisms, new movement habits, and sustainable bodily strength."
+      featured: true
+      cta_key: "service_course_cta"
+
+  intro:
+    eyebrow: "FIRST STEP"
+    title: "15-Minute Intro Call — Online"
+    description: "Unsure which format fits your current state? Book a short introductory call to discuss your request and assess readiness for somatic practice."
+
