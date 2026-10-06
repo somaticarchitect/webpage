@@ -117,3 +117,38 @@ services:
     title: "15-Minute Intro Call — Online"
     description: "Unsure which format fits your current state? Book a short introductory call to discuss your request and assess readiness for somatic practice."
 
+testimonials:
+  eyebrow: "CLIENT EXPERIENCE"
+  title: "Changes in Sensation and Movement"
+
+  items:
+    - tag: "Lower back spasm after long hours at the laptop"
+      quote: "“After three sessions I noticed something I couldn’t have predicted — I stopped bracing for pain before I even moved. The dull grip in my lower back that I’d carried for two years began to dissolve. Not dramatically, but verifiably.”"
+      author: "Olena K."
+      meta: "Product Manager, Kyiv"
+
+    - tag: "Chronic neck and shoulder tension from design work"
+      quote: "“What surprised me most was how the sessions changed my perception of my own weight. I used to feel heavy and rigid. Now there’s a kind of spaciousness in how I carry myself. My neck stopped pulling by the fourth week.”"
+      author: "Andriy M."
+      meta: "UX Designer, Berlin"
+
+    - tag: "Recurring pelvic imbalance and uneven gait"
+      quote: "“I had seen three physiotherapists before this. They addressed symptoms. Here we worked on the pattern causing them. By session six, the asymmetry my osteopath had flagged for years had measurably reduced.”"
+      author: "Dariya V."
+      meta: "Architect, Warsaw"
+
+    - tag: "Hip mobility & movement confidence"
+      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
+      author: "Client 04"
+      meta: "Testimonial placeholder"
+
+    - tag: "Breathing pattern & thoracic mobility"
+      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
+      author: "Client 05"
+      meta: "Testimonial placeholder"
+
+    - tag: "Balance, gait & body awareness"
+      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
+      author: "Client 06"
+      meta: "Testimonial placeholder"
+

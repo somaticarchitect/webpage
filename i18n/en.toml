@@ -16,3 +16,7 @@ other = "Book Session"
 
 [service_course_cta]
 other = "Apply for Course"
+
+[testimonials_navigation]
+other = "Testimonials navigation"
+

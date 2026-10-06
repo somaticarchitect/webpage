@@ -1,198 +1,57 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $testimonials := $content.testimonials }}
+
 <section class="testimonials-section" id="testimonials">
   <div class="container">
 
     <div class="testimonials-header">
       <span class="testimonials-eyebrow section-eyebrow">
-        CLIENT EXPERIENCE
+        {{ $testimonials.eyebrow }}
       </span>
 
       <h2 class="testimonials-title">
-        Changes in Sensation and Movement
+        {{ $testimonials.title }}
       </h2>
     </div>
 
     <!-- Testimonials carousel -->
     <div class="testimonials-carousel">
+
       <div class="testimonials-viewport">
         <div class="testimonials-track">
 
-          <!-- Testimonial 1 -->
+          {{ range $testimonials.items }}
           <article class="testimonial-card">
+
             <div class="testimonial-tag pill-tag">
-              {{ if eq .Site.Language.Lang "en" }}
-              Lower back spasm after long hours at the laptop
-              {{ else }}
-              Спазм у попереку після тривалої роботи за ноутбуком
-              {{ end }}
+              {{ .tag }}
             </div>
 
             <blockquote class="testimonial-text">
-              {{ if eq .Site.Language.Lang "en" }}
-              “After three sessions I noticed something I couldn’t have predicted — I stopped bracing for pain before I
-              even moved. The dull grip in my lower back that I’d carried for two years began to dissolve. Not
-              dramatically, but verifiably.”
-              {{ else }}
-              «Після трьох сесій я помітила те, чого зовсім не очікувала — я перестала напружуватися в очікуванні болю
-              ще до початку руху. Тупе відчуття стискання в попереку, яке я носила з собою два роки, почало поступово
-              зникати. Не драматично, але відчутно й перевірювано.»
-              {{ end }}
+              {{ .quote }}
             </blockquote>
 
             <div class="testimonial-author">
               <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Olena K.
-                {{ else }}
-                Олена К.
-                {{ end }}
+                {{ .author }}
               </strong>
 
               <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                Product Manager, Kyiv
-                {{ else }}
-                Product Manager, Київ
-                {{ end }}
+                {{ .meta }}
               </span>
             </div>
+
           </article>
-
-
-          <!-- Testimonial 2 -->
-          <article class="testimonial-card">
-            <div class="testimonial-tag pill-tag">
-              {{ if eq .Site.Language.Lang "en" }}
-              Chronic neck and shoulder tension from design work
-              {{ else }}
-              Хронічне напруження шиї та плечей через роботу дизайнером
-              {{ end }}
-            </div>
-
-            <blockquote class="testimonial-text">
-              {{ if eq .Site.Language.Lang "en" }}
-              “What surprised me most was how the sessions changed my perception of my own weight. I used to feel heavy
-              and rigid. Now there’s a kind of spaciousness in how I carry myself. My neck stopped pulling by the fourth
-              week.”
-              {{ else }}
-              «Найбільше мене здивувало те, як сесії змінили моє сприйняття власної ваги. Раніше я відчував себе важким
-              і скутою конструкцією. Тепер у тому, як я несу себе, з’явилося відчуття простору. До четвертого тижня шия
-              перестала постійно тягнути.»
-              {{ end }}
-            </blockquote>
-
-            <div class="testimonial-author">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Andriy M.
-                {{ else }}
-                Андрій М.
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                UX Designer, Berlin
-                {{ else }}
-                UX Designer, Берлін
-                {{ end }}
-              </span>
-            </div>
-          </article>
-
-
-          <!-- Testimonial 3 -->
-          <article class="testimonial-card">
-            <div class="testimonial-tag pill-tag">
-              {{ if eq .Site.Language.Lang "en" }}
-              Recurring pelvic imbalance and uneven gait
-              {{ else }}
-              Повторюваний дисбаланс таза та асиметрична хода
-              {{ end }}
-            </div>
-
-            <blockquote class="testimonial-text">
-              {{ if eq .Site.Language.Lang "en" }}
-              “I had seen three physiotherapists before this. They addressed symptoms. Here we worked on the pattern
-              causing them. By session six, the asymmetry my osteopath had flagged for years had measurably reduced.”
-              {{ else }}
-              «До цього я зверталася до трьох фізіотерапевтів. Вони працювали із симптомами. Тут ми працювали з
-              патерном, який їх спричиняв. До шостої сесії асиметрія, яку мій остеопат відзначав роками, помітно й
-              вимірювано зменшилася.»
-              {{ end }}
-            </blockquote>
-
-            <div class="testimonial-author">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Dariya V.
-                {{ else }}
-                Дарія В.
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                Architect, Warsaw
-                {{ else }}
-                Архітекторка, Варшава
-                {{ end }}
-              </span>
-            </div>
-          </article>
-
-          <!-- Testimonial 4 — temporary demo -->
-          <article class="testimonial-card">
-            <div class="testimonial-tag pill-tag">
-              Hip mobility & movement confidence
-            </div>
-
-            <blockquote class="testimonial-text">
-              “Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”
-            </blockquote>
-
-            <div class="testimonial-author">
-              <strong>Client 04</strong>
-              <span>Testimonial placeholder</span>
-            </div>
-          </article>
-
-
-          <!-- Testimonial 5 — temporary demo -->
-          <article class="testimonial-card">
-            <div class="testimonial-tag pill-tag">
-              Breathing pattern & thoracic mobility
-            </div>
-
-            <blockquote class="testimonial-text">
-              “Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”
-            </blockquote>
-
-            <div class="testimonial-author">
-              <strong>Client 05</strong>
-              <span>Testimonial placeholder</span>
-            </div>
-          </article>
-
-
-          <!-- Testimonial 6 — temporary demo -->
-          <article class="testimonial-card">
-            <div class="testimonial-tag pill-tag">
-              Balance, gait & body awareness
-            </div>
-
-            <blockquote class="testimonial-text">
-              “Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”
-            </blockquote>
-
-            <div class="testimonial-author">
-              <strong>Client 06</strong>
-              <span>Testimonial placeholder</span>
-            </div>
-          </article>
+          {{ end }}
 
         </div>
       </div>
-      <div class="testimonials-dots carousel-dots" aria-label="Testimonials navigation"></div>
+
+      <div
+        class="testimonials-dots carousel-dots"
+        aria-label="{{ i18n "testimonials_navigation" }}"
+      ></div>
+
     </div>
 
   </div>
