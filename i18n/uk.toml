@@ -77,8 +77,5 @@ other = "Сторінки каруселі статей"
 [articles_view_all]
 other = "Переглянути всі матеріали"
 
-[articles_default_category]
-other = "Дослідження"
-
 [articles_read_time]
 other = "{{ .Count }} хв читання"

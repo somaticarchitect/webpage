@@ -76,10 +76,8 @@ other = "Article carousel pages"
 [articles_view_all]
 other = "View all materials"
 
-[articles_default_category]
-other = "Research"
-
 [articles_read_time]
 other = "{{ .Count }} min read"
+
 
 

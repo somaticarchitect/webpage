@@ -9,6 +9,7 @@
     {{ $articlesPage := .Site.GetPage "section" "articles" }}
 
     {{ $articleTags := slice }}
+
     {{ range $pages }}
       {{ range .Params.tags }}
         {{ $articleTags = $articleTags | append . }}
@@ -90,14 +91,6 @@
               {{ end }}
             {{ end }}
 
-            {{ if not $primaryTag }}
-              {{ with .Params.category }}
-                {{ $primaryTag = . }}
-              {{ else }}
-                {{ $primaryTag = i18n "articles_default_category" }}
-              {{ end }}
-            {{ end }}
-
             <article
               class="article-card"
               data-tags="{{ delimit $cardTags " " }}"
@@ -106,9 +99,11 @@
 
               <div class="article-card-header">
 
-                <span class="article-card-tag pill-tag">
-                  {{ $primaryTag }}
-                </span>
+                {{ with $primaryTag }}
+                  <span class="article-card-tag pill-tag">
+                    {{ . }}
+                  </span>
+                {{ end }}
 
                 <span class="article-read-time">
                   {{ i18n "articles_read_time" (dict "Count" .ReadingTime) }}
