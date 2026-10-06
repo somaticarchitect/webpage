@@ -1,5 +1,6 @@
 {{ $content := index site.Data.home site.Language.Lang }}
 {{ $about := $content.about }}
+{{ $checkIcon := "icons/checkmark_round.svg" | relURL }}
 
 <section id="about" class="about-section">
   <div class="about-container">
@@ -57,7 +58,7 @@
         <li class="about-feature-item">
 
           <span class="status-icon" aria-hidden="true">
-            <img src="{{ relURL "icons/checkmark_round.svg"}} " alt="">
+            <img src="{{ $checkIcon }}" alt="">
           </span>
 
           <div class="feature-text">
