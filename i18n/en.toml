@@ -40,3 +40,19 @@ other = "Telegram handle or phone"
 
 [contact_submit]
 other = "Submit Request"
+
+[footer_disclaimer]
+other = "Practices, materials, and consultations are educational and somatic self-regulation tools only. They do not constitute medical service, treatment, diagnosis, or a substitute for medical doctor examination."
+
+[footer_privacy]
+other = "Privacy Policy"
+
+[footer_sitemap]
+other = "Sitemap"
+
+[footer_rights]
+other = "All rights reserved."
+
+[footer_nav_label]
+other = "Footer"
+

@@ -65,3 +65,69 @@
 
   </div>
 </footer>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Top row -->
+    <div class="footer-top">
+
+      <!-- Brand + disclaimer -->
+      <div class="footer-brand">
+        <a href="{{ site.Home.RelPermalink }}" class="footer-logo">
+          <span class="logo-text">QPC.Soma</span>
+        </a>
+
+        <p class="footer-disclaimer">
+          {{ i18n "footer_disclaimer" }}
+        </p>
+      </div>
+
+      <!-- Legal + socials -->
+      <nav
+        class="footer-links-row"
+        aria-label="{{ i18n "footer_nav_label" }}"
+      >
+        <a href="{{ "privacy/" | relLangURL }}">
+          {{ i18n "footer_privacy" }}
+        </a>
+
+        <a href="{{ "sitemap.xml" | relURL }}">
+          {{ i18n "footer_sitemap" }}
+        </a>
+
+        {{ with .Site.Params.threads }}
+        <a
+          href="{{ . }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Threads
+        </a>
+        {{ end }}
+
+        {{ with .Site.Params.youtube }}
+        <a
+          href="{{ . }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
+        </a>
+        {{ end }}
+      </nav>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <!-- Bottom row -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © {{ now.Format "2006" }} QPC.Soma.
+        {{ i18n "footer_rights" }}
+      </p>
+    </div>
+
+  </div>
+</footer>
