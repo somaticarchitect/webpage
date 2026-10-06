@@ -1,0 +1,22 @@
+hero:
+  badge: "CLINICAL BIOMECHANICS · SOMATIC ARCHITECTURE"
+
+  title: "A space for body recovery — for those tired of cookie-cutter fitness"
+
+  subtitle: "Practice at the intersection of biomechanics, fascial conduction, and somatosensory self-regulation of the nervous system. Movement without exhaustion, strain, and pain."
+
+  features:
+    - value: "0.1 Hz"
+      description: "Breath-heart coherence target"
+
+    - value: "10+"
+      description: "Years clinical practice"
+
+    - value: "3 lines"
+      description: "Fascial meridians addressed"
+
+  image_alt: "Somatic Architecture Practice"
+
+  focus:
+    eyebrow: "CURRENT FOCUS"
+    title: "Fascial decompression & nervous system retraining"
