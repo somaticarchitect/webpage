@@ -1,3 +1,6 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $hero := $content.hero }}
+
 <section class="hero-section" id="hero">
   <div class="hero-container">
 
@@ -9,53 +12,31 @@
         <div class="hero-badge">
           <span class="badge-hero">
             <span class="badge-dot"></span>
-            {{ if eq site.Language.Lang "en" }}
-            CLINICAL BIOMECHANICS · SOMATIC ARCHITECTURE
-            {{ else }}
-            КЛІНІЧНА БІОМЕХАНІКА · СОМАТИЧНА АРХІТЕКТУРА
-            {{ end }}
+            {{ $hero.badge }}
           </span>
         </div>
 
         <!-- Title -->
         <h1 class="hero-title">
-          {{ if eq site.Language.Lang "en" }}
-          A space for body recovery — for those tired of cookie-cutter fitness
-          {{ else }}
-          Простір відновлення тіла для тих, хто втомився від шаблонного фітнесу
-          {{ end }}
+          {{ $hero.title }}
         </h1>
 
         <!-- Subtitle -->
         <p class="hero-subtitle">
-          {{ if eq site.Language.Lang "en" }}
-          Practice at the intersection of biomechanics, fascial conduction, and somatosensory self-regulation of the
-          nervous system. Movement without exhaustion, strain, and pain.
-          {{ else }}
-          Практика на стику біомеханіки, фасціальної провідності та соматосенсорної саморегуляції нервової системи. Рух
-          без виснаження, насильства та болю.
-          {{ end }}
+          {{ $hero.subtitle }}
         </p>
 
         <!-- Buttons -->
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary btn-lg btn-full">
             <span>
-              {{ if eq site.Language.Lang "en" }}
-              Schedule 15-min Intro Call
-              {{ else }}
-              Узгодити 15-хв знайомство
-              {{ end }}
+              {{ i18n "hero_primary_cta" }}
             </span>
           </a>
 
           <a href="#articles" class="btn btn-outline btn-lg btn-full">
             <span>
-              {{ if eq site.Language.Lang "en" }}
-              Read Knowledge Base &darr;
-              {{ else }}
-              Читати базу знань &darr;
-              {{ end }}
+              {{ i18n "hero_secondary_cta" }}
             </span>
           </a>
         </div>
@@ -65,67 +46,43 @@
 
         <!-- Metrics -->
         <div class="hero-features-row">
-
+          {{ range $hero.features }}
           <div class="feature-col">
             <strong class="feature-title">
-              {{ if eq site.Language.Lang "en" }}0.1 Hz{{ else }}0.1 Гц{{ end }}
+              {{ .value }}
             </strong>
+
             <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}
-              Breath-heart coherence target
-              {{ else }}
-              Синхронізація дихання та ритму
-              {{ end }}
+              {{ .description }}
             </span>
           </div>
-
-          <div class="feature-col">
-            <strong class="feature-title">
-              {{ if eq site.Language.Lang "en" }}10+{{ else }}10+{{ end }}
-            </strong>
-            <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}
-              Years clinical practice
-              {{ else }}
-              Років клінічної практики
-              {{ end }}
-            </span>
-          </div>
-
-          <div class="feature-col">
-            <strong class="feature-title">
-              {{ if eq site.Language.Lang "en" }}3 lines{{ else }}3 лінії{{ end }}
-            </strong>
-            <span class="feature-desc">
-              {{ if eq site.Language.Lang "en" }}
-              Fascial meridians addressed
-              {{ else }}
-              Фасціальні меридіани
-              {{ end }}
-            </span>
-          </div>
-
+          {{ end }}
         </div>
 
       </div>
     </div>
 
-    <!-- Права колонка: Фото рівно 50% екрана (без закруглень кутів, без відступів) -->
+    <!-- Права колонка -->
     <div class="hero-media">
       <div class="hero-image-wrapper">
+
         <img
           src="{{ with site.Params.images.placeholders.hero_image }}{{ . }}{{ else }}https://placehold.co/900x1200{{ end }}"
-          alt="{{ if eq site.Language.Lang " en" }}Somatic Architecture Practice{{ else }}Соматична практика та
-          біомеханіка{{ end }}" class="hero-image" loading="eager" width="900" height="1200" />
+          alt="{{ $hero.image_alt }}"
+          class="hero-image"
+          loading="eager"
+          width="900"
+          height="1200"
+        />
 
         <!-- Темна сливова плашка поверх фото -->
         <div class="hero-floating-badge">
           <span class="badge-tagline">
-            {{ if eq site.Language.Lang "en" }}CURRENT FOCUS{{ else }}СОМАТИЧНА РЕГУЛЯЦІЯ{{ end }}
+            {{ $hero.focus.eyebrow }}
           </span>
+
           <h4 class="badge-title">
-            {{ if eq site.Language.Lang "en" }}Fascial decompression & nervous system retraining{{ else }}Відновлення
-            природної архітектури тіла{{ end }}
+            {{ $hero.focus.title }}
           </h4>
         </div>
 
