@@ -48,38 +48,39 @@ about:
       description: "Тестування вихідного стану та неврологічної реактивності перед застосуванням будь-якого навантаження на тіло."
 
 who:
-  eyebrow: "WHO THIS IS FOR"
+  eyebrow: "ДЛЯ КОГО ЦЕЙ ПІДХІД"
 
-  title: "Who this somatic approach is for (and who it is not for)"
+  title: "Кому підходить мій підхід, а кому варто обрати інший формат"
 
   fit:
-    title: "My approach is for you if:"
+    title: "Мій підхід підійде вам, якщо:"
     icon: "icons/checkmark_round.svg"
     items:
-      - title: "Scientific approach:"
-        description: "You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness trends."
+      - title: "Науковий підхід:"
+        description: "Ви шукаєте глибоке розуміння біомеханіки та фізичної терапії замість поверхневих фітнес-трендів."
 
-      - title: "Root cause focus:"
-        description: "You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just mask symptoms."
+      - title: "Робота з причиною:"
+        description: "Маєте хронічні затиски, біль у спині чи шиї і прагнете усунути причину, а не лише маскувати симптоми."
 
-      - title: "Systemic practice:"
-        description: "You are ready for neurological self-regulation, somatic discipline, and conscious movement habits."
+      - title: "Системна практика:"
+        description: "Готові до нейром'язового перенавчання, соматичної дисципліни та усвідомленої роботи з тілом."
 
-      - title: "Long-term vitality:"
-        description: "Your goal is internal bodily coherence, structural balance, and effortless movement in daily life."
+      - title: "Довгостроковий результат:"
+        description: "Ваша мета — відновлення внутрішньої когерентності, структурного балансу та легкості руху."
 
   not_fit:
-    title: "This format is NOT for you if:"
+    title: "Цей формат НЕ підійде вам, якщо:"
     icon: "icons/cross_round.svg"
     items:
-      - title: "Magic pills:"
-        description: "You expect a single magic session to instantly fix years of structural compensation without your active participation."
+      - title: "Шукаєте «магічну таблетку»:"
+        description: "Очікуєте, що один сеанс миттєво виправить роки компенсаторних затисків без вашої активної участі."
 
-      - title: "Exhausting workouts:"
-        description: "You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps."
+      - title: "Виснажливий фітнес:"
+        description: "Вам потрібен інтенсивний фітнес, виснажливі кардіонавантаження чи марафони швидкого схуднення."
 
-      - title: "Acute medical emergencies:"
-        description: "You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment."
+      - title: "Гострі медичні стани:"
+        description: "Ви перебуваєте в гострому стані, що потребує термінової медикаментозної чи хірургічної допомоги."
 
-      - title: "Esoteric rituals:"
-        description: "You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and biomechanics."
+      - title: "Містичні ритуали:"
+        description: "Очікуєте езотерики замість чітких законів фізіології, біомеханіки та аналітичного підходу."
+
