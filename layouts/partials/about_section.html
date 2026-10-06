@@ -11,12 +11,7 @@
         <div class="about-image-wrapper">
           <img
             src="{{ with site.Params.images.placeholders.about_image }}{{ . }}{{ else }}https://placehold.co/560x700{{ end }}"
-            alt="{{ $about.image_alt }}"
-            class="about-image"
-            width="560"
-            height="700"
-            loading="lazy"
-          />
+            alt="{{ $about.image_alt }}" class="about-image" width="560" height="700" loading="lazy" />
         </div>
 
         <div class="about-floating-card">
@@ -61,7 +56,9 @@
         {{ range $about.features }}
         <li class="about-feature-item">
 
-          <span class="status-icon" aria-hidden="true">✓</span>
+          <span class="status-icon" aria-hidden="true">
+            <img src="{{ relURL " icons/checkmark_round.svg" }}" alt="">
+          </span>
 
           <div class="feature-text">
 

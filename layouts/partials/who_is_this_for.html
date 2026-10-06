@@ -1,256 +1,88 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $who := $content.who }}
+
 <section class="who-section" id="who-this-is-for">
   <div class="container">
 
     <!-- Заголовок секції -->
     <div class="who-header">
       <span class="who-eyebrow section-eyebrow">
-        {{ if eq .Site.Language.Lang "en" }}
-        WHO THIS IS FOR
-        {{ else }}
-        ДЛЯ КОГО ЦЕЙ ПІДХІД
-        {{ end }}
+        {{ $who.eyebrow }}
       </span>
 
       <h2 class="who-title">
-        {{ if eq .Site.Language.Lang "en" }}
-        Who this somatic approach is for (and who it is not for)
-        {{ else }}
-        Кому підходить мій підхід, а кому варто обрати інший формат
-        {{ end }}
+        {{ $who.title }}
       </h2>
     </div>
 
     <!-- Дві порівняльні картки -->
     <div class="who-grid">
 
-      <!-- Блок: Кому підходить -->
+      <!-- Кому підходить -->
       <div class="who-card who-card-fit">
         <div class="card-header">
           <h3>
-            {{ if eq .Site.Language.Lang "en" }}
-            My approach is for you if:
-            {{ else }}
-            Мій підхід підійде вам, якщо:
-            {{ end }}
+            {{ $who.fit.title }}
           </h3>
         </div>
 
         <ul class="who-list">
-
+          {{ range $who.fit.items }}
           <li class="who-item">
+
             <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
+              <img
+                src="{{ relURL $who.fit.icon }}"
+                alt=""
+              >
             </span>
 
             <div class="who-item-text">
               <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Scientific approach:
-                {{ else }}
-                Науковий підхід:
-                {{ end }}
+                {{ .title }}
               </strong>
 
               <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness
-                trends.
-                {{ else }}
-                Ви шукаєте глибоке розуміння біомеханіки та фізичної терапії замість поверхневих фітнес-трендів.
-                {{ end }}
+                {{ .description }}
               </span>
             </div>
+
           </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Root cause focus:
-                {{ else }}
-                Робота з причиною:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just
-                mask symptoms.
-                {{ else }}
-                Маєте хронічні затиски, біль у спині чи шиї і прагнете усунути причину, а не лише маскувати симптоми.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
-
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Systemic practice:
-                {{ else }}
-                Системна практика:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You are ready for neurological self-regulation, somatic discipline, and conscious movement habits.
-                {{ else }}
-                Готові до нейром'язового перенавчання, соматичної дисципліни та усвідомленої роботи з тілом.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/checkmark_round.svg" }}" alt="">
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Long-term vitality:
-                {{ else }}
-                Довгостроковий результат:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                Your goal is internal bodily coherence, structural balance, and effortless movement in daily life.
-                {{ else }}
-                Ваша мета — відновлення внутрішньої когерентності, структурного балансу та легкості руху.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
+          {{ end }}
         </ul>
       </div>
 
-      <!-- Блок: Кому НЕ підходить -->
+      <!-- Кому не підходить -->
       <div class="who-card who-card-not-fit">
         <div class="card-header">
           <h3>
-            {{ if eq .Site.Language.Lang "en" }}
-            This format is NOT for you if:
-            {{ else }}
-            Цей формат НЕ підійде вам, якщо:
-            {{ end }}
+            {{ $who.not_fit.title }}
           </h3>
         </div>
 
         <ul class="who-list">
-
+          {{ range $who.not_fit.items }}
           <li class="who-item">
+
             <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
+              <img
+                src="{{ relURL $who.not_fit.icon }}"
+                alt=""
+              >
             </span>
 
             <div class="who-item-text">
               <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Magic pills:
-                {{ else }}
-                Шукаєте «магічну таблетку»:
-                {{ end }}
+                {{ .title }}
               </strong>
 
               <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You expect a single magic session to instantly fix years of structural compensation without your active
-                participation.
-                {{ else }}
-                Очікуєте, що один сеанс миттєво виправить роки компенсаторних затисків без вашої активної участі.
-                {{ end }}
+                {{ .description }}
               </span>
             </div>
+
           </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Exhausting workouts:
-                {{ else }}
-                Виснажливий фітнес:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps.
-                {{ else }}
-                Вам потрібен інтенсивний фітнес, виснажливі кардіонавантаження чи марафони швидкого схуднення.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Acute medical emergencies:
-                {{ else }}
-                Гострі медичні стани:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment.
-                {{ else }}
-                Ви перебуваєте в гострому стані, що потребує термінової медикаментозної чи хірургічної допомоги.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
-          <li class="who-item">
-            <span class="who-item-icon" aria-hidden="true">
-              <img src="{{ relURL "icons/cross_round.svg" }}" alt="">
-            </span>
-
-            <div class="who-item-text">
-              <strong>
-                {{ if eq .Site.Language.Lang "en" }}
-                Esoteric rituals:
-                {{ else }}
-                Містичні ритуали:
-                {{ end }}
-              </strong>
-
-              <span>
-                {{ if eq .Site.Language.Lang "en" }}
-                You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and
-                biomechanics.
-                {{ else }}
-                Очікуєте езотерики замість чітких законів фізіології, біомеханіки та аналітичного підходу.
-                {{ end }}
-              </span>
-            </div>
-          </li>
-
+          {{ end }}
         </ul>
       </div>
 

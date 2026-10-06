@@ -46,3 +46,40 @@ about:
 
     - title: "Individual screening"
       description: "Testing baseline condition and neurological reactivity before applying any mechanical load to the body."
+
+who:
+  eyebrow: "WHO THIS IS FOR"
+
+  title: "Who this somatic approach is for (and who it is not for)"
+
+  fit:
+    title: "My approach is for you if:"
+    icon: "icons/checkmark_round.svg"
+    items:
+      - title: "Scientific approach:"
+        description: "You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness trends."
+
+      - title: "Root cause focus:"
+        description: "You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just mask symptoms."
+
+      - title: "Systemic practice:"
+        description: "You are ready for neurological self-regulation, somatic discipline, and conscious movement habits."
+
+      - title: "Long-term vitality:"
+        description: "Your goal is internal bodily coherence, structural balance, and effortless movement in daily life."
+
+  not_fit:
+    title: "This format is NOT for you if:"
+    icon: "icons/cross_round.svg"
+    items:
+      - title: "Magic pills:"
+        description: "You expect a single magic session to instantly fix years of structural compensation without your active participation."
+
+      - title: "Exhausting workouts:"
+        description: "You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps."
+
+      - title: "Acute medical emergencies:"
+        description: "You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment."
+
+      - title: "Esoteric rituals:"
+        description: "You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and biomechanics."
