@@ -112,7 +112,8 @@
 
   margin: 0;
 
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(2.2rem, 3.5vw, 3.2rem);
   font-weight: var(--weight-extrabold);
   line-height: 1.1;

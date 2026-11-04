@@ -15,6 +15,13 @@
   (resources.Get "css/foundation/typography.css")
   (resources.Get "css/foundation/layout.css")
 
+  (resources.Get "css/foundation/fonts.css")
+  (resources.Get "css/foundation/tokens.css")
+  (resources.Get "css/foundation/reset.css")
+  (resources.Get "css/foundation/typography.css")
+  (resources.Get "css/foundation/layout.css")
+
+
   (resources.Get "css/components/badges.css")
   (resources.Get "css/components/buttons.css")
   (resources.Get "css/components/carousel.css")
@@ -35,12 +42,6 @@
   {{ $style := $styles | resources.Concat "css/main.css" }}
 
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap"
-    rel="stylesheet">
 </head>
 
 <body>

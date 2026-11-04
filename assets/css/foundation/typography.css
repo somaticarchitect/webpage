@@ -1,5 +1,7 @@
+
 /* ========================================================
    GLOBAL TYPOGRAPHY
+   WEB-38 · Font family roles
    ======================================================== */
 
 body {
@@ -13,13 +15,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Display headings */
 h1,
-h2,
+h2 {
+  font-family: var(--font-display);
+  color: var(--color-text-main);
+
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: var(--weight-bold);
+}
+
+/* Content and UI headings */
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   color: var(--color-text-main);
 
   line-height: 1.15;
