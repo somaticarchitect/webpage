@@ -1,6 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const carousels = document.querySelectorAll("[data-articles-carousel]");
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
 
     carousels.forEach((carousel) => {
         const section = carousel.closest(".articles-section");
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             viewport.scrollTo({
                 left: getPageWidth() * safeIndex,
-                behavior,
+                behavior: reducedMotion.matches ? "auto" : behavior,
             });
 
             setActiveDot(safeIndex);

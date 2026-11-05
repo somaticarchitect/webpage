@@ -41,6 +41,6 @@
 }
 
 .carousel-dot:focus-visible {
-  outline: 2px solid var(--color-accent-lime);
+  outline: 2px solid var(--color-accent-lime-text);
   outline-offset: 4px;
 }

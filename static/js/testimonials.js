@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carousels = document.querySelectorAll(".testimonials-carousel");
+  const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
 
   carousels.forEach((carousel) => {
     const viewport = carousel.querySelector(".testimonials-viewport");
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollToPage = (index) => {
       viewport.scrollTo({
         left: getPageWidth() * index,
-        behavior: "smooth",
+        behavior: reducedMotion.matches ? "auto" : "smooth",
       });
     };
 
