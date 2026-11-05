@@ -1,93 +1,83 @@
+
 {{ $content := index site.Data.home site.Language.Lang }}
 {{ $hero := $content.hero }}
 
-<section class="hero-section" id="hero">
+{{/* Canonical Hero content is currently approved for UA only. */}}
+{{ if and $hero.eyebrow $hero.authorship $hero.paragraphs }}
+
+{{/* Resolve actual pages; never create a fake destination. */}}
+{{ $privateWorkPage := site.GetPage "/private-work" }}
+{{ $libraryPage := site.GetPage "/library" }}
+
+<section class="hero-section" id="hero" aria-labelledby="hero-title">
   <div class="hero-container">
 
-    <!-- Ліва колонка -->
     <div class="hero-left-col">
       <div class="hero-content">
 
-        <!-- Badge -->
+        <!-- Founder identity -->
         <div class="hero-badge">
           <span class="badge-hero">
-            <span class="badge-dot"></span>
-            {{ $hero.badge }}
+            <span class="badge-dot" aria-hidden="true"></span>
+            {{ $hero.eyebrow }}
           </span>
         </div>
 
-        <!-- Title -->
-        <h1 class="hero-title">
+        <h1 class="hero-title" id="hero-title">
           {{ $hero.title }}
         </h1>
 
-        <!-- Subtitle -->
-        <p class="hero-subtitle">
-          {{ $hero.subtitle }}
+        <p class="hero-authorship">
+          {{ $hero.authorship }}
         </p>
 
-        <!-- Buttons -->
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary btn-lg btn-full">
-            <span>
-              {{ i18n "hero_primary_cta" }}
-            </span>
-          </a>
-
-          <a href="#articles" class="btn btn-outline btn-lg btn-full">
-            <span>
-              {{ i18n "hero_secondary_cta" }}
-            </span>
-          </a>
+        <!-- Canonical introduction -->
+        <div class="hero-body">
+          {{ range $hero.paragraphs }}
+            <p>{{ . }}</p>
+          {{ end }}
         </div>
 
-        <!-- Divider -->
-        <div class="hero-divider"></div>
+        <!-- Primary and secondary actions -->
+        <div class="hero-actions">
 
-        <!-- Metrics -->
-        <div class="hero-features-row">
-          {{ range $hero.features }}
-          <div class="feature-col">
-            <strong class="feature-title">
-              {{ .value }}
-            </strong>
-
-            <span class="feature-desc">
-              {{ .description }}
+          {{ with $privateWorkPage }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="btn btn-primary btn-lg"
+            >
+              {{ $hero.actions.primary.label }}
+            </a>
+          {{ else }}
+            <span class="hero-action-unavailable">
+              {{ $hero.actions.primary.label }}
             </span>
-          </div>
           {{ end }}
+
+          {{ with $libraryPage }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="btn btn-outline btn-lg"
+            >
+              {{ $hero.actions.secondary.label }}
+            </a>
+          {{ else }}
+            <span class="hero-action-unavailable">
+              {{ $hero.actions.secondary.label }}
+            </span>
+          {{ end }}
+
         </div>
 
       </div>
     </div>
 
-    <!-- Права колонка -->
+    <!-- Neutral media slot; authentic portrait pending -->
     <div class="hero-media">
-      <div class="hero-image-wrapper">
-
-        <img
-          src="{{ with site.Params.images.placeholders.hero_image }}{{ . }}{{ else }}https://placehold.co/900x1200{{ end }}"
-          alt="{{ $hero.image_alt }}"
-          class="hero-image"
-          loading="eager"
-          width="900"
-          height="1200"
-        />
-
-        <!-- Темна сливова плашка поверх фото -->
-        <div class="hero-floating-badge">
-          <span class="badge-tagline">
-            {{ $hero.focus.eyebrow }}
-          </span>
-
-          <h4 class="badge-title">
-            {{ $hero.focus.title }}
-          </h4>
-        </div>
-
-      </div>
+      <div class="hero-image-wrapper" aria-hidden="true"></div>
     </div>
 
   </div>
 </section>
+
+{{ end }}
