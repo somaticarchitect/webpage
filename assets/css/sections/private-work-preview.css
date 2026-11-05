@@ -1,0 +1,634 @@
+
+/* ========================================================
+   WEB-56 — HOMEPAGE PRIVATE WORK PREVIEW
+
+   WEB25-D031–D035 — Section geometry
+   WEB26-D003–D005 — Service card design
+   WEB28-D002 — Approved Homepage design
+
+   Scope: Homepage section 02 only.
+   ======================================================== */
+
+
+/* ========================================================
+   01. SECTION & FOCUSED CONTAINER
+   ======================================================== */
+
+.private-work-preview {
+  --private-work-gutter: var(--space-4);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-inline: var(--private-work-gutter);
+  padding-block: 88px 96px;
+
+  background-color: var(--color-bg);
+}
+
+.private-work-preview__container {
+  width: 100%;
+  max-width: 1248px;
+  min-width: 0;
+
+  margin-inline: auto;
+}
+
+
+/* ========================================================
+   02. SECTION HEADING
+   ======================================================== */
+
+.private-work-preview__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------------
+   Eyebrow — Green Capsule
+   -------------------------------------------------------- */
+
+.private-work-preview__eyebrow {
+  display: inline-flex;
+
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.private-work-preview__eyebrow-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  max-width: 100%;
+  padding: var(--space-2) var(--space-4);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  line-height: 16px;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.private-work-preview__eyebrow-dot {
+  display: inline-block;
+  flex: 0 0 6px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-lime);
+}
+
+
+/* --------------------------------------------------------
+   H2 — Featured Section Heading
+   -------------------------------------------------------- */
+
+.private-work-preview__title {
+  width: 100%;
+  max-width: 680px;
+
+  margin: 0 0 14px;
+
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: var(--weight-bold);
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+
+  color: var(--color-text-main);
+}
+
+
+/* --------------------------------------------------------
+   Introductory Paragraph
+   -------------------------------------------------------- */
+
+.private-work-preview__intro {
+  width: 100%;
+  max-width: 720px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: 24px;
+
+  color: var(--color-text-muted);
+}
+
+
+/* ========================================================
+   03. OFFER GRID
+   ======================================================== */
+
+.private-work-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+
+  gap: var(--space-6);
+
+  width: 100%;
+  margin-top: 44px;
+}
+
+
+/* ========================================================
+   04. FULL-CARD OFFER
+   ======================================================== */
+
+.private-work-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  background-color: var(--color-surface-white);
+  color: var(--color-text-main);
+
+  border: 1px solid var(--color-text-dim);
+  border-radius: var(--radius-md);
+
+  box-shadow: none;
+  text-decoration: none;
+}
+
+
+/* --------------------------------------------------------
+   Interactive States — Active Routes Only
+   -------------------------------------------------------- */
+
+.private-work-card[href] {
+  cursor: pointer;
+  transition: border-color var(--motion-fast);
+}
+
+.private-work-card[href]:hover {
+  border-color: var(--color-accent-lime-text);
+}
+
+.private-work-card[href]:active {
+  border-color: var(--color-dark-plum);
+}
+
+.private-work-card[href]:focus-visible {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+
+/* --------------------------------------------------------
+   Pending Route — WEB-40 Dependency
+   -------------------------------------------------------- */
+
+.private-work-card--pending {
+  cursor: default;
+}
+
+
+/* ========================================================
+   05. CARD CONTENT
+   ======================================================== */
+
+.private-work-card__content {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-6);
+
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------------
+   Card Header
+   -------------------------------------------------------- */
+
+.private-work-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: var(--space-2);
+}
+
+.private-work-card__title {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: var(--weight-bold);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+
+  color: var(--color-text-main);
+
+  overflow-wrap: break-word;
+}
+
+.private-work-card__translation {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+
+  color: var(--color-text-neutral);
+}
+
+.private-work-card__descriptor {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+
+  color: var(--color-text-main);
+}
+
+
+/* --------------------------------------------------------
+   Description
+   -------------------------------------------------------- */
+
+.private-work-card__description,
+.private-work-card__details-text {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+
+  color: var(--color-text-neutral);
+}
+
+
+/* ========================================================
+   06. CARD DETAILS
+   ======================================================== */
+
+.private-work-card__details {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+}
+
+.private-work-card__details-title {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.4;
+
+  color: var(--color-text-main);
+}
+
+
+/* ========================================================
+   07. CARD FOOTER
+   ======================================================== */
+
+.private-work-card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: var(--space-4);
+
+  width: 100%;
+  margin-top: auto;
+  padding-top: var(--space-8);
+}
+
+
+/* --------------------------------------------------------
+   Session Format
+   -------------------------------------------------------- */
+
+.private-work-card__format {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+
+  color: var(--color-text-neutral);
+}
+
+
+/* --------------------------------------------------------
+   Price
+   -------------------------------------------------------- */
+
+.private-work-card__price {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+
+  color: var(--color-text-main);
+}
+
+
+/* --------------------------------------------------------
+   Visible CTA Text
+   -------------------------------------------------------- */
+
+.private-work-card__cta {
+  display: inline-block;
+
+  max-width: 100%;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-normal);
+
+  color: var(--color-accent-lime-text);
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  overflow-wrap: break-word;
+}
+
+.private-work-card--pending .private-work-card__cta {
+  color: var(--color-text-dim);
+  text-decoration: none;
+}
+
+
+/* ========================================================
+   08. SHARED CONSULTATION NOTE
+   ======================================================== */
+
+.private-work-preview__note {
+  width: 100%;
+  max-width: 720px;
+
+  margin: var(--space-10) 0 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+
+  color: var(--color-text-muted);
+}
+
+
+/* ========================================================
+   09. RESPONSIVE CONTAINER GUTTERS
+
+   WEB25-D031 — Approved Local Geometry
+
+   320–360:    16px
+   360–375:    16px → 20px
+   375–390:    20px
+   390–768:    20px → 32px
+   768–800:    32px → 24px
+   800–900:    24px
+   900–1024:   24px → 48px
+   1024–1440:  48px → 96px
+   1440+:      centered max-width 1248px
+
+   --------------------------------------------------------
+   Fluid intervals use clamp() with a linear vw rule.
+   No CSS multiplication/division in calc().
+   ======================================================== */
+
+
+/* 360–375px */
+
+@media (min-width: 360px) {
+  .private-work-preview {
+    --private-work-gutter:
+      clamp(16px, calc(26.666667vw - 80px), 20px);
+  }
+}
+
+
+/* 390–768px */
+
+@media (min-width: 390px) {
+  .private-work-preview {
+    --private-work-gutter:
+      clamp(20px, calc(3.174603vw + 7.619048px), 32px);
+  }
+}
+
+
+/* 768–800px */
+
+@media (min-width: 768px) {
+  .private-work-preview {
+    --private-work-gutter:
+      clamp(24px, calc(224px - 25vw), 32px);
+  }
+}
+
+
+/* 800–900px */
+
+@media (min-width: 800px) {
+  .private-work-preview {
+    --private-work-gutter: var(--space-6);
+  }
+}
+
+
+/* 900–1024px */
+
+@media (min-width: 900px) {
+  .private-work-preview {
+    --private-work-gutter:
+      clamp(24px, calc(19.354839vw - 150.193548px), 48px);
+  }
+}
+
+
+/* 1024–1440px */
+
+@media (min-width: 1024px) {
+  .private-work-preview {
+    --private-work-gutter:
+      clamp(48px, calc(11.538462vw - 70.153846px), 96px);
+  }
+}
+
+
+/* 1440px+ */
+
+@media (min-width: 1440px) {
+  .private-work-preview {
+    --private-work-gutter: 96px;
+  }
+}
+
+
+/* ========================================================
+   10. TABLET — 768–1023px
+   ======================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .private-work-preview {
+    padding-block: var(--space-16) 68px;
+  }
+
+  .private-work-preview__title {
+    font-size: 34px;
+  }
+
+  .private-work-preview__intro {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .private-work-preview__grid {
+    margin-top: 36px;
+  }
+
+  .private-work-card {
+    padding: var(--space-6);
+  }
+
+  .private-work-card__title {
+    font-size: 22px;
+  }
+
+  .private-work-card__details-title {
+    font-size: 15px;
+  }
+
+  .private-work-preview__note {
+    margin-top: 36px;
+  }
+}
+
+
+/* ========================================================
+   11. SINGLE-COLUMN GRID — BELOW 960px
+   ======================================================== */
+
+@media (max-width: 959px) {
+  .private-work-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .private-work-card {
+    height: auto;
+  }
+}
+
+
+/* --------------------------------------------------------
+   Tablet Stacked Cards — 768–959px
+   -------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .private-work-preview__grid {
+    row-gap: var(--space-6);
+  }
+}
+
+
+/* ========================================================
+   12. MOBILE — BELOW 768px
+   ======================================================== */
+
+@media (max-width: 767px) {
+  .private-work-preview {
+    padding-block: var(--space-12) 52px;
+  }
+
+  .private-work-preview__title {
+    font-size: 28px;
+  }
+
+  .private-work-preview__intro {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .private-work-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-5);
+    margin-top: 28px;
+  }
+
+  .private-work-card {
+    height: auto;
+    padding: var(--space-5);
+  }
+
+  .private-work-card__title {
+    font-size: 21px;
+  }
+
+  .private-work-card__details-title {
+    font-size: 15px;
+  }
+
+  .private-work-preview__note {
+    margin-top: 28px;
+  }
+}
+
+
+/* ========================================================
+   13. ACCESSIBILITY
+   ======================================================== */
+
+
+/* --------------------------------------------------------
+   Reduced Motion
+   -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .private-work-card[href] {
+    transition: none;
+  }
+}
+
+
+/* --------------------------------------------------------
+   Forced Colors
+   -------------------------------------------------------- */
+
+@media (forced-colors: active) {
+  .private-work-card[href] {
+    border-color: LinkText;
+  }
+
+  .private-work-card[href]:focus-visible {
+    outline-color: Highlight;
+  }
+}

@@ -1,0 +1,127 @@
+
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $preview := $content.private_work_preview }}
+
+{{ with $preview }}
+  <section
+    class="private-work-preview"
+    id="private-work-preview"
+    aria-labelledby="private-work-preview-title"
+  >
+    <div class="private-work-preview__container">
+
+      <!-- Section heading -->
+      <header class="private-work-preview__header">
+
+        <div class="private-work-preview__eyebrow">
+          <span class="private-work-preview__eyebrow-text">
+            <span
+              class="private-work-preview__eyebrow-dot"
+              aria-hidden="true"
+            ></span>
+            {{ .eyebrow }}
+          </span>
+        </div>
+
+        <h2
+          class="private-work-preview__title"
+          id="private-work-preview-title"
+        >
+          {{ .title }}
+        </h2>
+
+        <p class="private-work-preview__intro">
+          {{ .intro }}
+        </p>
+
+      </header>
+
+      <!-- Two equal-priority offers -->
+      <div class="private-work-preview__grid">
+
+        {{ range .offers }}
+          {{ $offer := . }}
+          {{ $targetPath := printf "/private-work/%s" .slug }}
+          {{ $target := site.GetPage $targetPath }}
+
+          <a
+            class="private-work-card{{ if not $target }} private-work-card--pending{{ end }}"
+            {{ with $target }}
+              href="{{ .RelPermalink }}"
+              aria-labelledby="offer-{{ $offer.slug }}-title offer-{{ $offer.slug }}-cta"
+            {{ end }}
+          >
+
+            <div class="private-work-card__content">
+
+              <header class="private-work-card__header">
+
+                <h3
+                  class="private-work-card__title"
+                  id="offer-{{ $offer.slug }}-title"
+                >
+                  {{ $offer.title }}
+                </h3>
+
+                <p class="private-work-card__translation">
+                  {{ $offer.translation }}
+                </p>
+
+                <p class="private-work-card__descriptor">
+                  {{ $offer.descriptor }}
+                </p>
+
+              </header>
+
+              <p class="private-work-card__description">
+                {{ $offer.description }}
+              </p>
+
+              <div class="private-work-card__details">
+
+                <h4 class="private-work-card__details-title">
+                  {{ $offer.details_heading }}
+                </h4>
+
+                {{ range $offer.details }}
+                  <p class="private-work-card__details-text">
+                    {{ . }}
+                  </p>
+                {{ end }}
+
+              </div>
+
+            </div>
+
+            <div class="private-work-card__footer">
+
+              <p class="private-work-card__format">
+                {{ $offer.format }}
+              </p>
+
+              <p class="private-work-card__price">
+                {{ $offer.price }}
+              </p>
+
+              <span
+                class="private-work-card__cta"
+                id="offer-{{ $offer.slug }}-cta"
+              >
+                {{ $offer.cta }}
+              </span>
+
+            </div>
+
+          </a>
+        {{ end }}
+
+      </div>
+
+      <!-- Applies equally to both offers -->
+      <p class="private-work-preview__note">
+        {{ .note }}
+      </p>
+
+    </div>
+  </section>
+{{ end }}

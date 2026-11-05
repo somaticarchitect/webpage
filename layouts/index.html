@@ -1,25 +1,24 @@
+
 {{ define "main" }}
-  <!-- 1. Hero Секція із закликом та швидкою формою -->
+
+  <!-- 01 · Founder Hero -->
   {{ partial "hero.html" . }}
+
+  <!-- 02 · Private Work Preview · WEB-56 -->
+  {{ partial "private_work_preview.html" . }}
+
+  <!-- Legacy sections awaiting their implementation workstreams -->
 
   {{ partial "about_section.html" . }}
 
-  <!-- 2. Секція "Для кого цей метод" (Who this is for) -->
   {{ partial "who_is_this_for.html" . }}
 
-  <!-- 3. Секція "Послуги та Пробне заняття" -->
-  {{ partial "services.html" . }}
-
-  <!-- 4. Відгуки та досвід клієнтів -->
   {{ partial "testimonials.html" . }}
 
-  <!-- 5. Статті та дослідження (Прев'ю матеріалів) -->
   {{ partial "articles_preview.html" . }}
 
-  <!-- 6. Часті запитання (FAQ) -->
   {{ partial "faq.html" . }}
 
-  <!-- 7. Темний блок консультації та форма запису -->
   {{ partial "contact_section.html" . }}
-{{ end }}
 
+{{ end }}
