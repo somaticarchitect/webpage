@@ -138,19 +138,14 @@
 
 .about-title {
   max-width: 650px;
-
   margin: 0;
 
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 2.25vw, 2.6rem);
-  font-weight: var(--weight-extrabold);
+  font-weight: 600;
   line-height: 1.08;
-
   letter-spacing: -0.03em;
-
-  color: var(--color-text-main);
 }
-
 
 /* --------------------------------------------------------
    DESCRIPTION

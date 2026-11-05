@@ -27,7 +27,7 @@
 
   margin: 0;
 
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-size: var(--text-section-title);
   font-weight: var(--weight-bold);
   line-height: 1.08;

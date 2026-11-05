@@ -57,9 +57,12 @@
     /* Focus */
     --color-focus-berry-ring: rgba(123, 82, 126, 0.18);
 
-    /* Typography */
-    --font-heading: 'Syne', sans-serif;
-    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Typography · WEB-38 */
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", Arial, sans-serif;
+
+    /* Legacy component heading role: H3/H4/UI, not display */
+    --font-heading: var(--font-body);
 
     /* Radii */
     --radius-md: 12px;
@@ -108,5 +111,5 @@
     --space-12: 48px;
     --space-14: 56px;
     --space-16: 64px;
-    --space-20: 80px;   
+    --space-20: 80px;
 }
