@@ -1,0 +1,540 @@
+
+/* ========================================================
+   WEB-58 — HOMEPAGE QPC SYSTEM PREVIEW
+
+   WEB25-D041 — Focused container and grid
+   WEB25-D042 — Typography and reading measure
+   WEB25-D043 — Vertical rhythm
+   WEB25-D045 — Responsive breakpoint acceptance
+   WEB27-D004 — Editorial H2, Cormorant 600
+   WEB27-D007 — Green eyebrow capsule
+   WEB26-D008 — Soft Lime editorial CTA
+   WEB28-D001 — Layered Rhythms artwork
+
+   Scope: Homepage section 04 only.
+   ======================================================== */
+
+
+/* ========================================================
+   01. SECTION & CONTAINER
+   ======================================================== */
+
+.qpc-system-preview {
+  --qpc-preview-gutter: var(--space-4);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-inline: var(--qpc-preview-gutter);
+  padding-block: 88px 96px;
+
+  background-color: var(--color-bg);
+}
+
+.qpc-system-preview__container {
+  width: 100%;
+  max-width: 1248px;
+  min-width: 0;
+
+  margin-inline: auto;
+}
+
+
+/* ========================================================
+   02. RESPONSIVE GRID
+   ======================================================== */
+
+.qpc-system-preview__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 56fr)
+    minmax(0, 44fr);
+
+  column-gap: 44px;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ========================================================
+   03. TEXT CONTENT
+   ======================================================== */
+
+.qpc-system-preview__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------------
+   Eyebrow — Green Capsule
+   -------------------------------------------------------- */
+
+.qpc-system-preview__eyebrow {
+  display: inline-flex;
+
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.qpc-system-preview__eyebrow-text {
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-2);
+  max-width: 100%;
+
+  padding: var(--space-2) var(--space-4);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.qpc-system-preview__eyebrow-dot {
+  display: block;
+  flex: 0 0 6px;
+
+  width: 6px;
+  height: 6px;
+
+  background-color: var(--color-accent-lime);
+  border-radius: var(--radius-pill);
+}
+
+
+/* ========================================================
+   04. SECTION HEADING
+   ======================================================== */
+
+.qpc-system-preview__header {
+  width: 100%;
+  min-width: 0;
+
+  margin-bottom: 14px;
+}
+
+.qpc-system-preview__title {
+  width: 100%;
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+
+  color: var(--color-text-main);
+
+  overflow-wrap: break-word;
+}
+
+
+/* ========================================================
+   05. QPC NARRATIVE
+   ======================================================== */
+
+.qpc-system-preview__body {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.qpc-system-preview__paragraph {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 1.56;
+
+  color: var(--color-text-main);
+
+  overflow-wrap: break-word;
+}
+
+
+/* --------------------------------------------------------
+   Inline Emphasis
+
+   Quantum Physical Culture
+   Quantum Gymnastics
+   -------------------------------------------------------- */
+
+.qpc-system-preview__paragraph strong {
+  font-weight: 650;
+  color: inherit;
+}
+
+
+/* ========================================================
+   06. EDITORIAL CTA
+   WEB26-D008 — Soft Lime R1
+   ======================================================== */
+
+.qpc-system-preview__action {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+  margin-top: var(--space-10);
+}
+
+
+/* --------------------------------------------------------
+   Active CTA — Real /qpc Route
+   -------------------------------------------------------- */
+
+.qpc-system-preview__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  max-width: 100%;
+
+  padding: 12px 18px;
+
+  box-sizing: border-box;
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+
+  text-align: center;
+  text-decoration: none;
+
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.qpc-system-preview__cta:hover {
+  background-color: var(--color-border);
+}
+
+.qpc-system-preview__cta:active {
+  background-color: var(--color-accent-lime-bg);
+  border-color: var(--color-dark-plum);
+}
+
+.qpc-system-preview__cta:focus-visible {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+
+/* --------------------------------------------------------
+   Pending CTA — WEB-40 Dependency
+
+   No fake href or inactive interactive control.
+   -------------------------------------------------------- */
+
+.qpc-system-preview__cta-pending {
+  display: inline-block;
+
+  max-width: 100%;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+
+  color: var(--color-text-dim);
+
+  overflow-wrap: break-word;
+  cursor: default;
+}
+
+
+/* ========================================================
+   07. LAYERED RHYTHMS ARTWORK
+   WEB28-D001
+   ======================================================== */
+
+.qpc-system-preview__media {
+  width: 100%;
+  min-width: 0;
+}
+
+.qpc-system-preview__artwork {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  aspect-ratio: 5 / 4;
+
+  min-width: 0;
+  overflow: hidden;
+
+  background-color: var(--color-surface-white);
+  border-radius: var(--radius-lg);
+}
+
+
+/* --------------------------------------------------------
+   SVG Container
+
+   Intrinsic SVG viewBox: 600 × 480.
+   Matches 5:4 artwork aspect ratio.
+   -------------------------------------------------------- */
+
+.qpc-system-preview__svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+
+  overflow: visible;
+}
+
+
+/* --------------------------------------------------------
+   Static Artwork Layers
+
+   Geometry remains in the SVG partial.
+   No motion or transforms added by CSS.
+   -------------------------------------------------------- */
+
+.qpc-system-preview__contours,
+.qpc-system-preview__trajectories,
+.qpc-system-preview__points {
+  pointer-events: none;
+}
+
+
+/* ========================================================
+   08. RESPONSIVE FOCUSED GUTTERS
+   WEB25-D041
+
+   320–360:    16px
+   360–375:    16px -> 20px
+   375–390:    20px
+   390–768:    20px -> 32px
+   768–800:    32px -> 24px
+   800–900:    24px
+   900–1024:   24px -> 48px
+   1024–1440:  48px -> 96px
+   1440+:      centered max-width 1248px
+   ======================================================== */
+
+
+/* 360–375px */
+
+@media (min-width: 360px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter:
+      clamp(16px, calc(26.666667vw - 80px), 20px);
+  }
+}
+
+
+/* 390–768px */
+
+@media (min-width: 390px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter:
+      clamp(20px, calc(3.174603vw + 7.619048px), 32px);
+  }
+}
+
+
+/* 768–800px */
+
+@media (min-width: 768px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter:
+      clamp(24px, calc(224px - 25vw), 32px);
+  }
+}
+
+
+/* 800–900px */
+
+@media (min-width: 800px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter: var(--space-6);
+  }
+}
+
+
+/* 900–1024px */
+
+@media (min-width: 900px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter:
+      clamp(24px, calc(19.354839vw - 150.193548px), 48px);
+  }
+}
+
+
+/* 1024–1440px */
+
+@media (min-width: 1024px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter:
+      clamp(48px, calc(11.538462vw - 70.153846px), 96px);
+  }
+}
+
+
+/* 1440px+ */
+
+@media (min-width: 1440px) {
+  .qpc-system-preview {
+    --qpc-preview-gutter: 96px;
+  }
+}
+
+
+/* ========================================================
+   09. TABLET — 768–1023px
+   ======================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .qpc-system-preview {
+    padding-block: var(--space-16) 68px;
+  }
+
+  .qpc-system-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 36px;
+  }
+
+  .qpc-system-preview__content {
+    max-width: 680px;
+  }
+
+  .qpc-system-preview__title {
+    font-size: 34px;
+  }
+
+  .qpc-system-preview__paragraph {
+    font-size: 15px;
+  }
+
+  .qpc-system-preview__action {
+    margin-top: var(--space-8);
+  }
+
+}
+
+
+/* ========================================================
+   10. MOBILE — BELOW 768px
+   ======================================================== */
+
+@media (max-width: 767px) {
+
+  .qpc-system-preview {
+    padding-block: var(--space-12) 52px;
+  }
+
+  .qpc-system-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 28px;
+  }
+
+  .qpc-system-preview__content {
+    max-width: 680px;
+  }
+
+  .qpc-system-preview__title {
+    font-size: 28px;
+  }
+
+  .qpc-system-preview__paragraph {
+    font-size: 15px;
+  }
+
+  .qpc-system-preview__action {
+    margin-top: var(--space-6);
+  }
+
+}
+
+
+/* ========================================================
+   11. ACCESSIBILITY
+   ======================================================== */
+
+
+/* --------------------------------------------------------
+   Reduced Motion
+
+   Artwork is static. No future motion should bypass
+   the user's reduced-motion preference.
+   -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .qpc-system-preview__svg,
+  .qpc-system-preview__svg * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+
+/* --------------------------------------------------------
+   Forced Colors
+   -------------------------------------------------------- */
+
+@media (forced-colors: active) {
+
+  .qpc-system-preview__cta {
+    color: LinkText;
+    background-color: ButtonFace;
+    border-color: LinkText;
+  }
+
+  .qpc-system-preview__cta:focus-visible {
+    outline-color: Highlight;
+  }
+
+  .qpc-system-preview__artwork {
+    background-color: Canvas;
+    border: 1px solid CanvasText;
+  }
+
+  .qpc-system-preview__svg ellipse,
+  .qpc-system-preview__svg path {
+    stroke: CanvasText;
+    opacity: 1;
+  }
+
+  .qpc-system-preview__svg circle {
+    fill: CanvasText;
+    opacity: 1;
+  }
+
+}
