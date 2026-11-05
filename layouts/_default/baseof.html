@@ -10,17 +10,12 @@
   <!-- Конвеєр ресурсів Hugo (Hugo Pipes) -->
   <!-- CSS bundle -->
   {{ $styles := slice
-  (resources.Get "css/foundation/tokens.css")
-  (resources.Get "css/foundation/reset.css")
-  (resources.Get "css/foundation/typography.css")
-  (resources.Get "css/foundation/layout.css")
 
   (resources.Get "css/foundation/fonts.css")
   (resources.Get "css/foundation/tokens.css")
   (resources.Get "css/foundation/reset.css")
   (resources.Get "css/foundation/typography.css")
   (resources.Get "css/foundation/layout.css")
-
 
   (resources.Get "css/components/badges.css")
   (resources.Get "css/components/buttons.css")
@@ -39,8 +34,6 @@
   (resources.Get "css/sections/footer.css")
 
   (resources.Get "css/foundation/accessibility.css")
-  }}
-
   }}
 
   {{ $style := $styles | resources.Concat "css/main.css" }}
