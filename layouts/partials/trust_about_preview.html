@@ -1,0 +1,134 @@
+
+{{/* =====================================================
+     WEB-57 — TRUST & ABOUT PREVIEW
+
+     Content: WEB-5
+     Geometry: WEB25-D036–D040
+     Route: WEB-4 H05 / WEB-40 dependency
+     ===================================================== */}}
+
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $preview := $content.trust_about_preview }}
+
+{{ with $preview }}
+
+  {{ $aboutPage := site.GetPage "/about" }}
+
+  <section
+    class="trust-about-preview"
+    id="trust-about-preview"
+    aria-labelledby="trust-about-preview-title"
+  >
+
+    <div class="trust-about-preview__container">
+
+      <div class="trust-about-preview__grid">
+
+        <!-- ===========================================
+             TEXT CONTENT — FIRST IN READING ORDER
+             =========================================== -->
+
+        <div class="trust-about-preview__content">
+
+          <!-- Section eyebrow -->
+          <div class="trust-about-preview__eyebrow">
+
+            <span class="trust-about-preview__eyebrow-text">
+
+              <span
+                class="trust-about-preview__eyebrow-dot"
+                aria-hidden="true"
+              ></span>
+
+              {{ .eyebrow }}
+
+            </span>
+
+          </div>
+
+          <!-- Founder identity -->
+          <header class="trust-about-preview__header">
+
+            <h2
+              class="trust-about-preview__title"
+              id="trust-about-preview-title"
+            >
+              {{ .title }}
+            </h2>
+
+            <p class="trust-about-preview__descriptor">
+              {{ .descriptor }}
+            </p>
+
+            <p class="trust-about-preview__role">
+              <em>{{ .role_line }}</em>
+            </p>
+
+          </header>
+
+          <!-- Canonical biography -->
+          <div class="trust-about-preview__biography">
+
+            {{ range .paragraphs }}
+
+              <p class="trust-about-preview__paragraph">
+                {{ . }}
+              </p>
+
+            {{ end }}
+
+          </div>
+
+          <!-- Founder details CTA -->
+          <div class="trust-about-preview__action">
+
+            {{ with $aboutPage }}
+
+              <a
+                class="trust-about-preview__cta"
+                href="{{ .RelPermalink }}"
+              >
+                {{ $preview.action.label }}
+              </a>
+
+            {{ else }}
+
+              <span
+                class="trust-about-preview__cta-pending"
+              >
+                {{ $preview.action.label }}
+              </span>
+
+            {{ end }}
+
+          </div>
+
+        </div>
+
+        <!-- ===========================================
+             PORTRAIT ZONE — ASSET DEFERRED
+
+             Mobile: 5:4
+             Tablet: 3:2
+             Desktop: 4:5
+
+             Ratios governed by WEB25-D039.
+             No invented photo or crop.
+             =========================================== -->
+
+        <div
+          class="trust-about-preview__media"
+          aria-hidden="true"
+        >
+
+          <div class="trust-about-preview__portrait-slot"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+{{ end }}
