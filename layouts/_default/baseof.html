@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.bio }}{{ end }}">
+
+  <!-- CSS bundle: Hugo Pipes. Keep existing catalog styles until WEB-40/42. -->
+  {{ $styles := slice
+
+  (resources.Get "css/foundation/fonts.css")
+  (resources.Get "css/foundation/tokens.css")
+  (resources.Get "css/foundation/reset.css")
+  (resources.Get "css/foundation/typography.css")
+  (resources.Get "css/foundation/layout.css")
+
+  (resources.Get "css/components/badges.css")
+  (resources.Get "css/components/buttons.css")
+  (resources.Get "css/components/carousel.css")
+  (resources.Get "css/components/eyebrow.css")
+
+  (resources.Get "css/sections/header.css")
+  (resources.Get "css/sections/hero.css")
+  (resources.Get "css/sections/private-work-preview.css")
+  (resources.Get "css/sections/trust-about-preview.css")
+  (resources.Get "css/sections/qpc-system-preview.css")
+  (resources.Get "css/sections/qpc-library-preview.css")
+  (resources.Get "css/sections/who_is_this_for.css")
+  (resources.Get "css/sections/services.css")
+  (resources.Get "css/sections/testimonials.css")
+  (resources.Get "css/sections/articles.css")
+  (resources.Get "css/sections/faq.css")
+  (resources.Get "css/sections/contact.css")
+  (resources.Get "css/sections/footer.css")
+
+  (resources.Get "css/foundation/accessibility.css")
+  }}
+
+  {{ $style := $styles | resources.Concat "css/main.css" }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+
+  {{/* WEB-59: homepage-only JS resource via Hugo Pipes. No load on archives. */}}
+  {{ if .IsHome }}
+  <script src="{{ " js/qpc-library-orbit.js" | relURL }}" defer></script>
+  {{ end }}
+
+  {{/* Legacy catalog/testimonials scripts retained for other live UI. */}}
+  <script src="{{ " js/articles.js" | relURL }}" defer></script>
+  <script src="{{ " js/testimonials.js" | relURL }}" defer></script>
+</body>
+
+</html>
