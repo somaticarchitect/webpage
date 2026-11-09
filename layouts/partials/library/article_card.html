@@ -1,0 +1,27 @@
+{{/*
+  WEB-59 / WEB26-C05 — Q3 Soft article card markup.
+  Exactly one semantic link per article; no nested controls.
+  Only source-backed optional metadata. Styling and Orbit JS follow later.
+*/}}
+
+<article class="qpc-library-preview__card">
+  <a
+    class="qpc-library-preview__card-link"
+    href="{{ .RelPermalink }}"
+    aria-label="{{ .Title }} — {{ i18n "articles_list_read_more" }}"
+  >
+    {{ with .Params.category }}
+      <span class="qpc-library-preview__card-category">{{ . }}</span>
+    {{ end }}
+
+    <h3 class="qpc-library-preview__card-title">{{ .Title }}</h3>
+
+    {{ with .Description }}
+      <p class="qpc-library-preview__card-description">{{ . }}</p>
+    {{ end }}
+
+    <span class="qpc-library-preview__card-cta">
+      {{ i18n "articles_list_read_more" }}
+    </span>
+  </a>
+</article>

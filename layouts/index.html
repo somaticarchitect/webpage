@@ -1,4 +1,3 @@
-
 {{ define "main" }}
 
   <!-- 01 · Founder Hero · WEB-55 -->
@@ -13,13 +12,16 @@
   <!-- 04 · QPC System Preview · WEB-58 -->
   {{ partial "qpc_system_preview.html" . }}
 
-  <!-- Legacy sections awaiting implementation -->
+  <!-- 05 · QPC Library Preview · WEB-59 -->
+  {{ partial "qpc_library_preview.html" . }}
+
+  <!-- Legacy sections awaiting their own implementation -->
 
   {{ partial "who_is_this_for.html" . }}
 
   {{ partial "testimonials.html" . }}
 
-  {{ partial "articles_preview.html" . }}
+  {{/* Legacy articles_preview.html replaced by WEB-59, not rendered. */}}
 
   {{ partial "faq.html" . }}
 

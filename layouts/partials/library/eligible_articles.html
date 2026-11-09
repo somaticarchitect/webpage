@@ -1,0 +1,34 @@
+{{/*
+  WEB-59 / WEB-42 — canonical Library article eligibility.
+
+  Source: real Hugo content under /library/articles.
+  Fail closed until WEB-42 approves the editorial front matter contract:
+    publication_status: "published"
+    draft: false
+    date: YYYY-MM-DD  (or publishDate: YYYY-MM-DD)
+
+  No legacy /articles or /blog fallback, no content duplication.
+  Returns: a slice of eligible Hugo Page objects in the current language.
+*/}}
+
+{{ $eligible := slice }}
+{{ $catalog := site.GetPage "/library/articles" }}
+
+{{ with $catalog }}
+  {{ $catalogURL := .RelPermalink }}
+
+  {{ range .RegularPagesRecursive }}
+    {{ $status := default "" .Params.publication_status }}
+    {{ $isApproved := eq $status "published" }}
+    {{ $hasDate := not .PublishDate.IsZero }}
+    {{ $isPublishedDate := and $hasDate (le .PublishDate.Unix now.Unix) }}
+    {{ $matchesLocale := eq .Language.Lang site.Language.Lang }}
+    {{ $hasCanonicalURL := hasPrefix .RelPermalink $catalogURL }}
+
+    {{ if and (not .Draft) $isApproved $isPublishedDate $matchesLocale $hasCanonicalURL }}
+      {{ $eligible = $eligible | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $eligible }}
