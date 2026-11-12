@@ -51,11 +51,11 @@
 
   {{/* WEB-59: homepage-only JS resource via Hugo Pipes. No load on archives. */}}
   {{ if .IsHome }}
-  <script src="{{ " js/qpc-library-orbit.js" | relURL }}" defer></script>
+  <script src="{{ "js/qpc-library-orbit.js" | relURL }}" defer></script>
   {{ end }}
   {{/* Legacy catalog/testimonials scripts retained for other live UI. */}}
-  <script src="{{ " js/articles.js" | relURL }}" defer></script>
-  <script src="{{ " js/testimonials.js" | relURL }}" defer></script>
+  <script src="{{ "js/articles.js" | relURL }}" defer></script>
+  <script src="{{ "js/testimonials.js" | relURL }}" defer></script>
 </body>
 
 </html>
