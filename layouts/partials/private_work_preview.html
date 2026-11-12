@@ -63,9 +63,11 @@
                   {{ $offer.title }}
                 </h3>
 
+                {{ with $offer.translation }}
                 <p class="private-work-card__translation">
-                  {{ $offer.translation }}
+                  {{ . }}
                 </p>
+                {{ end }}
 
                 <p class="private-work-card__descriptor">
                   {{ $offer.descriptor }}
