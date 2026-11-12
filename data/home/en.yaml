@@ -47,43 +47,6 @@ about:
     - title: "Individual screening"
       description: "Testing baseline condition and neurological reactivity before applying any mechanical load to the body."
 
-who:
-  eyebrow: "WHO THIS IS FOR"
-
-  title: "Who this somatic approach is for (and who it is not for)"
-
-  fit:
-    title: "My approach is for you if:"
-    icon: "icons/checkmark_round.svg"
-    items:
-      - title: "Scientific approach:"
-        description: "You want to understand biomechanics and clinical physical therapy rather than follow superficial fitness trends."
-
-      - title: "Root cause focus:"
-        description: "You suffer from chronic tension, back pain, or neck spasms and want to eliminate the cause, not just mask symptoms."
-
-      - title: "Systemic practice:"
-        description: "You are ready for neurological self-regulation, somatic discipline, and conscious movement habits."
-
-      - title: "Long-term vitality:"
-        description: "Your goal is internal bodily coherence, structural balance, and effortless movement in daily life."
-
-  not_fit:
-    title: "This format is NOT for you if:"
-    icon: "icons/cross_round.svg"
-    items:
-      - title: "Magic pills:"
-        description: "You expect a single magic session to instantly fix years of structural compensation without your active participation."
-
-      - title: "Exhausting workouts:"
-        description: "You are looking for aggressive cardio, heavy weightlifting marathons, or rapid weight-loss bootcamps."
-
-      - title: "Acute medical emergencies:"
-        description: "You require urgent surgical intervention, traumatic emergency care, or pharmaceutical treatment."
-
-      - title: "Esoteric rituals:"
-        description: "You expect esoteric rituals or mystical promises instead of clear anatomy, physiological laws, and biomechanics."
-
 services:
   eyebrow: "SERVICES & FORMATS"
   title: "Collaboration Formats"
@@ -116,61 +79,6 @@ services:
     eyebrow: "FIRST STEP"
     title: "15-Minute Intro Call — Online"
     description: "Unsure which format fits your current state? Book a short introductory call to discuss your request and assess readiness for somatic practice."
-
-testimonials:
-  eyebrow: "CLIENT EXPERIENCE"
-  title: "Changes in Sensation and Movement"
-
-  items:
-    - tag: "Lower back spasm after long hours at the laptop"
-      quote: "“After three sessions I noticed something I couldn’t have predicted — I stopped bracing for pain before I even moved. The dull grip in my lower back that I’d carried for two years began to dissolve. Not dramatically, but verifiably.”"
-      author: "Olena K."
-      meta: "Product Manager, Kyiv"
-
-    - tag: "Chronic neck and shoulder tension from design work"
-      quote: "“What surprised me most was how the sessions changed my perception of my own weight. I used to feel heavy and rigid. Now there’s a kind of spaciousness in how I carry myself. My neck stopped pulling by the fourth week.”"
-      author: "Andriy M."
-      meta: "UX Designer, Berlin"
-
-    - tag: "Recurring pelvic imbalance and uneven gait"
-      quote: "“I had seen three physiotherapists before this. They addressed symptoms. Here we worked on the pattern causing them. By session six, the asymmetry my osteopath had flagged for years had measurably reduced.”"
-      author: "Dariya V."
-      meta: "Architect, Warsaw"
-
-    - tag: "Hip mobility & movement confidence"
-      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
-      author: "Client 04"
-      meta: "Testimonial placeholder"
-
-    - tag: "Breathing pattern & thoracic mobility"
-      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
-      author: "Client 05"
-      meta: "Testimonial placeholder"
-
-    - tag: "Balance, gait & body awareness"
-      quote: "“Temporary testimonial content for carousel testing. Replace this text with the final client testimonial.”"
-      author: "Client 06"
-      meta: "Testimonial placeholder"
-
-faq:
-  eyebrow: "FAQ"
-  title: "Questions Before Getting Started"
-
-  items:
-    - question: "How does the 15-minute intro call work and how do I book?"
-      answer: "You leave a request on the website or message directly via Telegram/WhatsApp. We agree on a convenient time for a short 15-minute online call to discuss your request, current symptoms, and determine if this somatic framework is right for you."
-
-    - question: "What do I need to prepare for an online somatic session?"
-      answer: "You need comfortable clothing that allows free movement, a yoga/fitness mat, a stable internet connection, and a device (laptop, tablet, or phone) with a working camera positioned so you are visible full-length."
-
-    - question: "Is this approach suitable for chronic back pain, herniated discs, or protrusions?"
-      answer: "Yes. Somatic practice is specifically designed for safe, gentle neuromuscular retraining and removing compensatory spasms around damaged areas. However, if you are in an acute severe medical emergency or intense inflammation, medical clearance is required first."
-
-    - question: "How does somatic practice differ from regular fitness or stretching?"
-      answer: "We do not force muscles through aggressive stretching or heavy weight resistance. Instead, we work with nervous system regulation, biomechanics, and body awareness to restore natural alignment without trauma or fatigue."
-
-    - question: "How many sessions are needed to feel a lasting result?"
-      answer: "Initial decompression and a sense of lightness are often felt during the very first “Quantum Alignment” session. To permanently rebuild gait patterns, posture, and systemic movement habits, a full 10-session course is recommended."
 
 contact:
   title: "Ready to restore bodily coherence and authentic strength?"

@@ -27,9 +27,7 @@
   (resources.Get "css/sections/trust-about-preview.css")
   (resources.Get "css/sections/qpc-system-preview.css")
   (resources.Get "css/sections/qpc-library-preview.css")
-  (resources.Get "css/sections/who_is_this_for.css")
   (resources.Get "css/sections/services.css")
-  (resources.Get "css/sections/testimonials.css")
   (resources.Get "css/sections/articles.css")
   (resources.Get "css/sections/faq.css")
   (resources.Get "css/sections/contact.css")
@@ -53,9 +51,8 @@
   {{ if .IsHome }}
   <script src="{{ "js/qpc-library-orbit.js" | relURL }}" defer></script>
   {{ end }}
-  {{/* Legacy catalog/testimonials scripts retained for other live UI. */}}
+  {{/* Existing article interactions remain unchanged. */}}
   <script src="{{ "js/articles.js" | relURL }}" defer></script>
-  <script src="{{ "js/testimonials.js" | relURL }}" defer></script>
 </body>
 
 </html>

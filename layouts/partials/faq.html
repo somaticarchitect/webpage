@@ -1,49 +1,41 @@
+{{/*
+  WEB-60 — Homepage FAQ
+  Copy: WEB-5
+  Layout: WEB25-D051–D055
+  Visual: WEB26-D009/D010 (F3 Soft Frame)
+  Native disclosure, independent multi-open.
+  The section is absent when the locale has no FAQ data.
+*/}}
 {{ $content := index site.Data.home site.Language.Lang }}
-{{ $faq := $content.faq }}
-{{ $chevronIcon := "icons/chevron_down.svg" | relURL }}
-
-<section class="faq-section" id="faq">
-  <div class="container">
+{{ with $content.faq }}
+<section class="faq-section" id="faq" aria-labelledby="faq-title">
+  <div class="faq-container">
     <div class="faq-content">
-
-      <!-- FAQ Header -->
-      <div class="faq-header">
-        <span class="faq-eyebrow section-eyebrow">
-          {{ $faq.eyebrow }}
-        </span>
-
-        <h2 class="faq-title">
-          {{ $faq.title }}
-        </h2>
-      </div>
-
-      <!-- FAQ Accordion -->
+      <header class="faq-header">
+        <div class="faq-eyebrow">
+          <span class="faq-eyebrow-text">
+            <span class="faq-eyebrow-dot" aria-hidden="true"></span>
+            {{ .eyebrow }}
+          </span>
+        </div>
+        <h2 class="faq-title" id="faq-title">{{ .title }}</h2>
+      </header>
       <div class="faq-accordion">
-
-        {{ range $faq.items }}
+        {{ range .items }}
         <details class="faq-item">
-
           <summary class="faq-question">
-            <span>
-              {{ .question }}
-            </span>
-
-            <span class="faq-icon" aria-hidden="true">
-              <img src="{{ $chevronIcon }}" alt="">
-            </span>
+            <span class="faq-question-text">{{ .question }}</span>
+            <span class="faq-icon" aria-hidden="true"></span>
           </summary>
-
           <div class="faq-answer">
-            <p>
-              {{ .answer }}
-            </p>
+            {{ range .paragraphs }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
           </div>
-
         </details>
         {{ end }}
-
       </div>
-
     </div>
   </div>
 </section>
+{{ end }}

@@ -102,12 +102,6 @@ defaultContentLanguageInSubdir = false
     weight = 30
 
   [[languages.en.menu.main]]
-    identifier = "faq"
-    name = "FAQ"
-    url = "#faq"
-    weight = 40
-
-  [[languages.en.menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "#contact"

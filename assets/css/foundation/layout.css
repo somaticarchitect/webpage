@@ -16,12 +16,10 @@
   text-align: center;
 }
 
-/* Legacy page/section spacing.
+/* Legacy page spacing.
    Keep existing layout until each route gets
    its approved page-local layout contract. */
 
-.who-section,
-.faq-section,
 .articles-list-page {
   padding: var(--space-20) 0;
 }
