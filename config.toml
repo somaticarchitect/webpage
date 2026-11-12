@@ -31,7 +31,9 @@ defaultContentLanguageInSubdir = false
     tagline = "Somatic Architect & Physical Therapist"
     bio = "Клінічна фізична терапія, біомеханіка, квантова соматика та фреймворк Quantum Physical Culture."
     telegram = "https://t.me/JuliestJu"
+    telegram_verified = false
     whatsapp = "https://wa.me/380932612725"
+    whatsapp_verified = false
     threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
 
@@ -79,7 +81,9 @@ defaultContentLanguageInSubdir = false
     tagline = "Somatic Architect & Physical Therapist"
     bio = "Clinical physical therapy, biomechanics, quantum somatics, and the Quantum Physical Culture framework."
     telegram = "https://t.me/JuliestJu"
+    telegram_verified = false
     whatsapp = "https://wa.me/380932612725"
+    whatsapp_verified = false
     threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
 

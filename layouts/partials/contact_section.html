@@ -1,112 +1,55 @@
 {{ $content := index site.Data.home site.Language.Lang }}
 {{ $contact := $content.contact }}
 
-{{ $telegramIcon := "icons/telegram_logo.svg" | relURL }}
-{{ $whatsappIcon := "icons/whatsapp_logo.svg" | relURL }}
+{{ $channel := "telegram" }}
+{{ if eq site.Language.Lang "en" }}
+  {{ $channel = "whatsapp" }}
+{{ end }}
+
+{{ $url := default "" (index site.Params $channel) }}
+{{ $verifiedKey := printf "%s_verified" $channel }}
+{{ $verified := default false (index site.Params $verifiedKey) }}
+{{ $actionAvailable := and $verified (hasPrefix $url "https://") }}
 
 <section class="contact-section" id="contact">
   <div class="contact-container">
     <div class="contact-content">
 
-      <!-- Intro -->
-      <div class="contact-intro">
+      <header class="contact-intro">
+        <p class="contact-eyebrow">
+          {{ $contact.eyebrow }}
+        </p>
+
         <h2 class="contact-title">
           {{ $contact.title }}
         </h2>
+      </header>
 
-        <p class="contact-subtitle">
-          {{ $contact.subtitle }}
-        </p>
+      <div class="contact-description">
+        {{ range $contact.paragraphs }}
+          <p class="contact-paragraph">
+            {{ . }}
+          </p>
+        {{ end }}
       </div>
 
-      <!-- Direct messengers -->
-      <div class="contact-messenger-actions">
-
-        <a
-          href="{{ .Site.Params.telegram }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-messenger-btn contact-messenger-btn--telegram"
-        >
-          <img
-            src="{{ $telegramIcon }}"
-            alt=""
-            class="contact-messenger-icon"
-            aria-hidden="true"
+      <div class="contact-actions">
+        {{ if $actionAvailable }}
+          <a
+            class="contact-action"
+            href="{{ $url | safeURL }}"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-
-          <span>
-            {{ i18n "contact_telegram" }}
-          </span>
-        </a>
-
-        <a
-          href="{{ .Site.Params.whatsapp }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-messenger-btn contact-messenger-btn--whatsapp"
-        >
-          <img
-            src="{{ $whatsappIcon }}"
-            alt=""
-            class="contact-messenger-icon"
-            aria-hidden="true"
+            {{ $contact.action.label }}
+          </a>
+        {{ else }}
+          <span
+            class="contact-action contact-action--unavailable"
           >
-
-          <span>
-            {{ i18n "contact_whatsapp" }}
+            {{ $contact.action.label }}
           </span>
-        </a>
-
-      </div>
-
-      <!-- Divider -->
-      <div class="contact-divider" aria-hidden="true"></div>
-
-      <!-- Compact contact form -->
-      <div class="contact-form-block">
-
-        <p class="contact-form-eyebrow">
-          {{ $contact.form.eyebrow }}
-        </p>
-
-        <form action="#" method="POST" class="contact-form">
-
-          <div class="contact-field">
-            <label for="contact-name" class="contact-field-label">
-              {{ i18n "contact_name_label" }}
-            </label>
-
-            <input
-              type="text"
-              id="contact-name"
-              name="name"
-              autocomplete="name"
-              placeholder="{{ i18n "contact_name_placeholder" }}"
-              required
-            >
-          </div>
-
-          <div class="contact-field">
-            <label for="contact-handle" class="contact-field-label">
-              {{ i18n "contact_handle_label" }}
-            </label>
-
-            <input
-              type="text"
-              id="contact-handle"
-              name="contact"
-              autocomplete="tel"
-              placeholder="{{ i18n "contact_handle_placeholder" }}"
-              required
-            >
-          </div>
-
-          <button type="submit" class="contact-submit">
-            {{ i18n "contact_submit" }}
-          </button>
-
-        </form>
+        {{ end }}
       </div>
 
     </div>
