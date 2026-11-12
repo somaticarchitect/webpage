@@ -1,0 +1,34 @@
+/* ========================================================
+   MVP · TEXT-ONLY EDITORIAL LAYOUT
+   Placeholder portraits and conceptual QPC artwork are
+   intentionally not rendered in release/mvp.
+   Keep the original section CSS intact for full-site work.
+   ======================================================== */
+
+.hero-container,
+.trust-about-preview__grid,
+.qpc-system-preview__grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-left-col {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.trust-about-preview__content,
+.qpc-system-preview__content {
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .trust-about-preview__content,
+  .qpc-system-preview__content {
+    max-width: 760px;
+  }
+}
