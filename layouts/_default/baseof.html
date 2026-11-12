@@ -7,7 +7,7 @@
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.bio }}{{ end }}">
 
-  <!-- CSS bundle: Hugo Pipes. Keep existing catalog styles until WEB-40/42. -->
+  <!-- MVP CSS bundle: Library preview temporarily excluded. -->
   {{ $styles := slice
 
   (resources.Get "css/foundation/fonts.css")
@@ -26,7 +26,6 @@
   (resources.Get "css/sections/private-work-preview.css")
   (resources.Get "css/sections/trust-about-preview.css")
   (resources.Get "css/sections/qpc-system-preview.css")
-  (resources.Get "css/sections/qpc-library-preview.css")
   (resources.Get "css/sections/services.css")
   (resources.Get "css/sections/articles.css")
   (resources.Get "css/sections/faq.css")
@@ -42,16 +41,14 @@
 
 <body>
   {{ partial "header.html" . }}
+
   <main class="site-main">
     {{ block "main" . }}{{ end }}
   </main>
+
   {{ partial "footer.html" . }}
 
-  {{/* WEB-59: homepage-only JS resource via Hugo Pipes. No load on archives. */}}
-  {{ if .IsHome }}
-  <script src="{{ "js/qpc-library-orbit.js" | relURL }}" defer></script>
-  {{ end }}
-  {{/* Existing article interactions remain unchanged. */}}
+  <!-- Existing article interactions remain unchanged. -->
   <script src="{{ "js/articles.js" | relURL }}" defer></script>
 </body>
 

@@ -1,4 +1,3 @@
-
 {{/* =====================================================
      WEB-58 — QPC SYSTEM PREVIEW
 
@@ -6,17 +5,13 @@
      Geometry: WEB25-D041–D045
      Typography: WEB27-D004
      Artwork: WEB28-D001 — Layered Rhythms
-     CTA: WEB-4 H06 / WEB26-D008
-
-     Homepage section 04 only.
+     MVP: QPC details CTA temporarily omitted.
      ===================================================== */}}
 
 {{ $content := index site.Data.home site.Language.Lang }}
 {{ $preview := $content.qpc_system_preview }}
 
 {{ with $preview }}
-
-  {{ $qpcPage := site.GetPage "/qpc" }}
 
   <section
     class="qpc-system-preview"
@@ -28,13 +23,8 @@
 
       <div class="qpc-system-preview__grid">
 
-        <!-- ===========================================
-             CONTENT — FIRST IN DOCUMENT ORDER
-             =========================================== -->
-
         <div class="qpc-system-preview__content">
 
-          <!-- Section eyebrow -->
           <div class="qpc-system-preview__eyebrow">
 
             <span class="qpc-system-preview__eyebrow-text">
@@ -50,7 +40,6 @@
 
           </div>
 
-          <!-- Section heading -->
           <header class="qpc-system-preview__header">
 
             <h2
@@ -62,63 +51,26 @@
 
           </header>
 
-          <!-- Canonical QPC narrative -->
           <div class="qpc-system-preview__body">
 
             {{ range .paragraphs }}
-
               <p class="qpc-system-preview__paragraph">
                 {{ . | markdownify }}
               </p>
-
-            {{ end }}
-
-          </div>
-
-          <!-- QPC detail CTA -->
-          <div class="qpc-system-preview__action">
-
-            {{ with $qpcPage }}
-
-              <a
-                class="qpc-system-preview__cta"
-                href="{{ .RelPermalink }}"
-              >
-                {{ $preview.action.label }}
-              </a>
-
-            {{ else }}
-
-              <span class="qpc-system-preview__cta-pending">
-                {{ $preview.action.label }}
-              </span>
-
             {{ end }}
 
           </div>
 
         </div>
 
-        <!-- ===========================================
-             STATIC CONCEPTUAL ARTWORK
-
-             WEB28-D001 — Layered Rhythms
-
-             Decorative presentation for now.
-             No animation or interactive controls.
-             =========================================== -->
-
+        <!-- Approved static conceptual artwork -->
         <div
           class="qpc-system-preview__media"
           aria-hidden="true"
         >
-
           <div class="qpc-system-preview__artwork">
-
             {{ partial "graphics/layered_rhythms.html" . }}
-
           </div>
-
         </div>
 
       </div>

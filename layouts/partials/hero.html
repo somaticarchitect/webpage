@@ -1,13 +1,8 @@
-
 {{ $content := index site.Data.home site.Language.Lang }}
 {{ $hero := $content.hero }}
 
 {{/* Canonical Hero content is currently approved for UA only. */}}
 {{ if and $hero.eyebrow $hero.authorship $hero.paragraphs }}
-
-{{/* Resolve actual pages; never create a fake destination. */}}
-{{ $privateWorkPage := site.GetPage "/private-work" }}
-{{ $libraryPage := site.GetPage "/library" }}
 
 <section class="hero-section" id="hero" aria-labelledby="hero-title">
   <div class="hero-container">
@@ -15,7 +10,6 @@
     <div class="hero-left-col">
       <div class="hero-content">
 
-        <!-- Founder identity -->
         <div class="hero-badge">
           <span class="badge-hero">
             <span class="badge-dot" aria-hidden="true"></span>
@@ -31,42 +25,19 @@
           {{ $hero.authorship }}
         </p>
 
-        <!-- Canonical introduction -->
         <div class="hero-body">
           {{ range $hero.paragraphs }}
             <p>{{ . }}</p>
           {{ end }}
         </div>
 
-        <!-- Primary and secondary actions -->
         <div class="hero-actions">
-
-          {{ with $privateWorkPage }}
-            <a
-              href="{{ .RelPermalink }}"
-              class="btn btn-primary btn-lg"
-            >
-              {{ $hero.actions.primary.label }}
-            </a>
-          {{ else }}
-            <span class="hero-action-unavailable">
-              {{ $hero.actions.primary.label }}
-            </span>
-          {{ end }}
-
-          {{ with $libraryPage }}
-            <a
-              href="{{ .RelPermalink }}"
-              class="btn btn-outline btn-lg"
-            >
-              {{ $hero.actions.secondary.label }}
-            </a>
-          {{ else }}
-            <span class="hero-action-unavailable">
-              {{ $hero.actions.secondary.label }}
-            </span>
-          {{ end }}
-
+          <a
+            href="#private-work-preview"
+            class="btn btn-primary btn-lg"
+          >
+            {{ $hero.actions.primary.label }}
+          </a>
         </div>
 
       </div>

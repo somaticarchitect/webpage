@@ -24,7 +24,7 @@ defaultContentLanguageInSubdir = false
   languageCode = "uk-ua"
   languageName = "UA"
   weight = 1
-  title = "QPC.Soma — Квантова Фізична Культура"
+  title = "QPC"
   
   [languages.uk.params]
     author = "Julia"
@@ -74,7 +74,7 @@ defaultContentLanguageInSubdir = false
   languageCode = "en-us"
   languageName = "EN"
   weight = 2
-  title = "QPC.Soma — Quantum Physical Culture"
+  title = "QPC"
   
   [languages.en.params]
     author = "Julia"
