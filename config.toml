@@ -2,6 +2,9 @@ baseURL = "https://somaticarchitect.github.io/webpage/"
 defaultContentLanguage = "uk"
 defaultContentLanguageInSubdir = false
 
+# MVP: Ukrainian-only output; preserve English content for later.
+disableLanguages = ["en"]
+
 [images.placeholders]
   hero_image = "https://placehold.co/600x800"
   about_image = "https://placehold.co/560x700"
