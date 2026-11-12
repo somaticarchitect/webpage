@@ -4,7 +4,6 @@ other = "Записатися в Telegram"
 [header_mobile_menu]
 other = "Відкрити або закрити навігацію"
 
-
 [hero_primary_cta]
 other = "Узгодити 15-хв знайомство"
 
@@ -22,27 +21,6 @@ other = "Записатися на сесію"
 
 [service_course_cta]
 other = "Обрати курс 10 занять"
-
-[contact_telegram]
-other = "Написати в Telegram"
-
-[contact_whatsapp]
-other = "Написати у WhatsApp"
-
-[contact_name_label]
-other = "Ваше ім'я"
-
-[contact_name_placeholder]
-other = "Ваше ім'я"
-
-[contact_handle_label]
-other = "Telegram або телефон"
-
-[contact_handle_placeholder]
-other = "Telegram або телефон"
-
-[contact_submit]
-other = "Надіслати заявку"
 
 [footer_disclaimer]
 other = "Практики, матеріали та консультації мають освітній і сомато-регуляторний характер. Вони не є медичною послугою, лікуванням, діагностикою чи заміною огляду лікаря."

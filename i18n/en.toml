@@ -22,27 +22,6 @@ other = "Book Session"
 [service_course_cta]
 other = "Apply for Course"
 
-[contact_telegram]
-other = "Write on Telegram"
-
-[contact_whatsapp]
-other = "Write on WhatsApp"
-
-[contact_name_label]
-other = "Your name"
-
-[contact_name_placeholder]
-other = "Your name"
-
-[contact_handle_label]
-other = "Telegram handle or phone"
-
-[contact_handle_placeholder]
-other = "Telegram handle or phone"
-
-[contact_submit]
-other = "Submit Request"
-
 [footer_disclaimer]
 other = "Practices, materials, and consultations are educational and somatic self-regulation tools only. They do not constitute medical service, treatment, diagnosis, or a substitute for medical doctor examination."
 
@@ -96,6 +75,3 @@ other = "Compensation analysis and work with pain patterns are available in an i
 
 [article_single_cta_button]
 other = "Book an intro call"
-
-
-
