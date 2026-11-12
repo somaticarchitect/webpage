@@ -40,6 +40,14 @@ disableLanguages = ["en"]
     threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
 
+  [languages.uk.params.social]
+    title = "QPC — Quantum Physical Culture"
+    description = "Рух як спосіб пізнавати себе. Авторська система фізичної культури Юлії Воротченко: рухове навчання та соматична саморегуляція."
+    image = "images/qpc-og-1200x630.jpg"
+    image_alt = "QPC — Рух як спосіб пізнавати себе. Юлія Воротченко, Архітекторка Тіла."
+    image_width = 1200
+    image_height = 630
+
   [[languages.uk.menu.main]]
     identifier = "about"
     name = "Про метод"
@@ -89,6 +97,14 @@ disableLanguages = ["en"]
     whatsapp_verified = false
     threads = "https://www.threads.net/@divinatrix_infausta"
     youtube = "https://www.youtube.com/@your_youtube"
+
+  [languages.en.params.social]
+    title = "QPC — Quantum Physical Culture"
+    description = "Movement as a way to know yourself. Julia Vorotchenko's approach to physical culture, movement education and somatic self-regulation."
+    image = "images/qpc-og-1200x630.jpg"
+    image_alt = "QPC — Movement as a way to know yourself. Julia Vorotchenko, Body Architect."
+    image_width = 1200
+    image_height = 630
 
   [[languages.en.menu.main]]
     identifier = "about"

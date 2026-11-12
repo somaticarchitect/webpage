@@ -1,0 +1,61 @@
+{{- $social := .Site.Params.social -}}
+{{- $title := .Title -}}
+{{- if .IsHome -}}
+  {{- $title = $social.title | default .Site.Title -}}
+{{- else -}}
+  {{- $title = printf "%s | %s" .Title .Site.Title -}}
+{{- end -}}
+{{- with .Params.social_title -}}
+  {{- $title = . -}}
+{{- end -}}
+
+{{- $description := .Description | default .Site.Params.bio -}}
+{{- if .IsHome -}}
+  {{- $description = $social.description | default .Site.Params.bio -}}
+{{- end -}}
+{{- with .Params.social_description -}}
+  {{- $description = . -}}
+{{- end -}}
+
+{{- $imagePath := .Params.social_image | default $social.image -}}
+{{- $imageAlt := .Params.social_image_alt | default $social.image_alt | default $title -}}
+{{- $imageReady := false -}}
+{{- with $imagePath -}}
+  {{- if or (hasPrefix . "https://") (hasPrefix . "http://") -}}
+    {{- $imageReady = true -}}
+  {{- else -}}
+    {{- $imageReady = fileExists (printf "static/%s" (strings.TrimPrefix "/" .)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $locale := "uk_UA" -}}
+{{- if eq .Language.Lang "en" -}}
+  {{- $locale = "en_US" -}}
+{{- end -}}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ $locale }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+
+<meta name="twitter:card" content="{{ if $imageReady }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+
+{{- if $imageReady }}
+  {{- $imageURL := $imagePath | absURL }}
+<meta property="og:image" content="{{ $imageURL }}">
+<meta property="og:image:alt" content="{{ $imageAlt }}">
+<meta name="twitter:image" content="{{ $imageURL }}">
+<meta name="twitter:image:alt" content="{{ $imageAlt }}">
+  {{- if not (or (hasPrefix $imagePath "https://") (hasPrefix $imagePath "http://")) }}
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="{{ .Params.social_image_width | default $social.image_width | default 1200 }}">
+<meta property="og:image:height" content="{{ .Params.social_image_height | default $social.image_height | default 630 }}">
+  {{- end }}
+{{- end }}
