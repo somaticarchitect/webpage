@@ -1,0 +1,253 @@
+/* ========================================================
+   WEB-61 · HOMEPAGE CONTACT PREVIEW
+
+   Geometry: WEB25-D056–D058
+   CTA: WEB25-D059 · Solid Quiet
+   Typography: WEB27-D003/D004
+   Eyebrow: WEB27-D007/D008
+   ======================================================== */
+
+.contact-section {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 48px 16px 52px;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+}
+
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------
+   LAYOUT
+   -------------------------------------------------------- */
+
+.contact-container {
+  width: 100%;
+  max-width: 1248px;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------
+   HEADING
+   -------------------------------------------------------- */
+
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px 12px;
+
+  border-radius: var(--radius-pill);
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.contact-eyebrow::before {
+  content: "";
+  display: block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent-lime);
+}
+
+.contact-title {
+  width: 100%;
+  margin: 0;
+
+  color: var(--color-text-main);
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+
+  overflow-wrap: break-word;
+}
+
+/* --------------------------------------------------------
+   DESCRIPTION
+   -------------------------------------------------------- */
+
+.contact-description {
+  width: 100%;
+  margin: 0;
+}
+
+.contact-paragraph {
+  margin: 0;
+
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.56;
+
+  overflow-wrap: break-word;
+}
+
+.contact-paragraph + .contact-paragraph {
+  margin-top: 14px;
+}
+
+/* --------------------------------------------------------
+   ACTION · SOLID QUIET
+   -------------------------------------------------------- */
+
+.contact-actions {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 100%;
+  min-height: 48px;
+  padding: 12px 22px;
+
+  border: 1px solid #28352f;
+  border-radius: 8px;
+  background-color: #28352f;
+  color: #ffffff;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+
+  overflow-wrap: break-word;
+}
+
+/* Interactive state applies only to a verified link. */
+
+a.contact-action {
+  cursor: pointer;
+  transition: background-color var(--motion-fast);
+}
+
+a.contact-action:hover {
+  background-color: #3b4b42;
+}
+
+a.contact-action:active {
+  background-color: #202c25;
+}
+
+/* D059 focus specification; explicitly overrides the
+   existing dark-surface accessibility selector. */
+
+.contact-section a.contact-action:focus-visible {
+  outline: 3px solid #4a8dba;
+  outline-offset: 3px;
+}
+
+/* Without a verified URL the CTA remains present,
+   but is neither a link nor a button. */
+
+.contact-action--unavailable {
+  cursor: default;
+}
+
+/* --------------------------------------------------------
+   TABLET · 768px–1023px
+   -------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .contact-section {
+    padding: 64px 32px 68px;
+  }
+
+  .contact-intro {
+    margin-bottom: 20px;
+  }
+
+  .contact-title {
+    font-size: 34px;
+  }
+
+  .contact-paragraph + .contact-paragraph {
+    margin-top: 16px;
+  }
+
+  .contact-actions {
+    margin-top: 32px;
+  }
+}
+
+/* --------------------------------------------------------
+   DESKTOP · 1024px+
+   -------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .contact-section {
+    padding: 88px 24px 96px;
+  }
+
+  .contact-intro {
+    margin-bottom: 24px;
+  }
+
+  .contact-title {
+    font-size: 38px;
+  }
+
+  .contact-paragraph {
+    font-size: 16px;
+  }
+
+  .contact-paragraph + .contact-paragraph {
+    margin-top: 18px;
+  }
+
+  .contact-actions {
+    margin-top: 40px;
+  }
+}
+
+/* --------------------------------------------------------
+   REDUCED MOTION
+   -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  a.contact-action {
+    transition: none;
+  }
+}

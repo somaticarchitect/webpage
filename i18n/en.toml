@@ -1,0 +1,77 @@
+[header_telegram_cta]
+other = "Write on Telegram"
+
+[header_mobile_menu]
+other = "Toggle navigation"
+
+[hero_primary_cta]
+other = "Schedule 15-min Intro Call"
+
+[hero_secondary_cta]
+other = "Read Knowledge Base ↓"
+
+[services_scope]
+other = "SCOPE:"
+
+[services_outcome]
+other = "OUTCOME:"
+
+[service_single_cta]
+other = "Book Session"
+
+[service_course_cta]
+other = "Apply for Course"
+
+[footer_disclaimer]
+other = "Practices, materials, and consultations are educational and somatic self-regulation tools only. They do not constitute medical service, treatment, diagnosis, or a substitute for medical doctor examination."
+
+[footer_privacy]
+other = "Privacy Policy"
+
+[footer_sitemap]
+other = "Sitemap"
+
+[footer_rights]
+other = "All rights reserved."
+
+[footer_nav_label]
+other = "Footer"
+
+[articles_filter_label]
+other = "Filter articles by topic"
+
+[articles_filter_all]
+other = "All"
+
+[articles_read_more]
+other = "Read full article"
+
+[articles_carousel_navigation]
+other = "Article carousel pages"
+
+[articles_view_all]
+other = "View all materials"
+
+[articles_read_time]
+other = "{{ .Count }} min read"
+
+[articles_archive_eyebrow]
+other = "RESEARCH & MATERIALS"
+
+[articles_list_read_more]
+other = "Read article"
+
+[articles_empty]
+other = "No articles published in this section yet."
+
+[article_single_read_time]
+other = "Reading time: ~{{ .Count }} min"
+
+[article_single_cta_title]
+other = "Need an individual assessment?"
+
+[article_single_cta_text]
+other = "Compensation analysis and work with pain patterns are available in an individual somatic format."
+
+[article_single_cta_button]
+other = "Book an intro call"

@@ -1,15 +1,21 @@
 {{ define "main" }}
-<div class="container hero-section">
-  <div class="hero-content">
-    <span class="badge">Somatic Architecture & Biomechanics</span>
-    <h1 class="hero-title">{{ .Title }}</h1>
-    <div class="hero-body">
-      {{ .Content }}
-    </div>
-    <div class="hero-actions">
-      <a href="/mentorship/" class="btn btn-primary">Персональний супровід</a>
-      <a href="/blog/" class="btn btn-secondary">База знань</a>
-    </div>
-  </div>
-</div>
+
+  <!-- 01 · Founder Hero -->
+  {{ partial "hero.html" . }}
+
+  <!-- 02 · Private Work Preview -->
+  {{ partial "private_work_preview.html" . }}
+
+  <!-- 03 · Trust & About Preview -->
+  {{ partial "trust_about_preview.html" . }}
+
+  <!-- 04 · QPC System Preview -->
+  {{ partial "qpc_system_preview.html" . }}
+
+  <!-- 05 · Homepage FAQ -->
+  {{ partial "faq.html" . }}
+
+  <!-- 06 · Contact -->
+  {{ partial "contact_section.html" . }}
+
 {{ end }}

@@ -1,0 +1,78 @@
+{{/* =====================================================
+     WEB-57 — TRUST & ABOUT PREVIEW
+
+     Content: WEB-5
+     Geometry: WEB25-D036–D040
+     MVP: Founder details CTA temporarily omitted.
+     ===================================================== */}}
+
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $preview := $content.trust_about_preview }}
+
+{{ with $preview }}
+
+  <section
+    class="trust-about-preview"
+    id="trust-about-preview"
+    aria-labelledby="trust-about-preview-title"
+  >
+
+    <div class="trust-about-preview__container">
+
+      <div class="trust-about-preview__grid">
+
+        <div class="trust-about-preview__content">
+
+          <div class="trust-about-preview__eyebrow">
+
+            <span class="trust-about-preview__eyebrow-text">
+
+              <span
+                class="trust-about-preview__eyebrow-dot"
+                aria-hidden="true"
+              ></span>
+
+              {{ .eyebrow }}
+
+            </span>
+
+          </div>
+
+          <header class="trust-about-preview__header">
+
+            <h2
+              class="trust-about-preview__title"
+              id="trust-about-preview-title"
+            >
+              {{ .title }}
+            </h2>
+
+            <p class="trust-about-preview__descriptor">
+              {{ .descriptor }}
+            </p>
+
+            <p class="trust-about-preview__role">
+              <em>{{ .role_line }}</em>
+            </p>
+
+          </header>
+
+          <div class="trust-about-preview__biography">
+
+            {{ range .paragraphs }}
+              <p class="trust-about-preview__paragraph">
+                {{ . }}
+              </p>
+            {{ end }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+{{ end }}

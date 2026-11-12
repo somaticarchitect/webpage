@@ -1,0 +1,72 @@
+{{/* =====================================================
+     WEB-58 — QPC SYSTEM PREVIEW
+
+     Content: WEB-5
+     Geometry: WEB25-D041–D045
+     Typography: WEB27-D004
+     Artwork: WEB28-D001 — Layered Rhythms
+     MVP: QPC details CTA temporarily omitted.
+     ===================================================== */}}
+
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $preview := $content.qpc_system_preview }}
+
+{{ with $preview }}
+
+  <section
+    class="qpc-system-preview"
+    id="qpc-system-preview"
+    aria-labelledby="qpc-system-preview-title"
+  >
+
+    <div class="qpc-system-preview__container">
+
+      <div class="qpc-system-preview__grid">
+
+        <div class="qpc-system-preview__content">
+
+          <div class="qpc-system-preview__eyebrow">
+
+            <span class="qpc-system-preview__eyebrow-text">
+
+              <span
+                class="qpc-system-preview__eyebrow-dot"
+                aria-hidden="true"
+              ></span>
+
+              {{ .eyebrow }}
+
+            </span>
+
+          </div>
+
+          <header class="qpc-system-preview__header">
+
+            <h2
+              class="qpc-system-preview__title"
+              id="qpc-system-preview-title"
+            >
+              {{ .title }}
+            </h2>
+
+          </header>
+
+          <div class="qpc-system-preview__body">
+
+            {{ range .paragraphs }}
+              <p class="qpc-system-preview__paragraph">
+                {{ . | markdownify }}
+              </p>
+            {{ end }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+{{ end }}

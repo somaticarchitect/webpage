@@ -1,0 +1,515 @@
+
+/* ========================================================
+   WEB-57 — HOMEPAGE TRUST & ABOUT PREVIEW
+
+   WEB25-D036 — Focused container & responsive grid
+   WEB25-D037 — Editorial typography
+   WEB25-D038 — Vertical rhythm
+   WEB25-D039 — Adaptive portrait-zone ratios
+   WEB25-D040 — Responsive transition
+   WEB27-D004 — Editorial H2, Cormorant 600
+   WEB27-D007 — Green eyebrow capsule
+   WEB26-D008 — Soft Lime editorial CTA
+
+   Scope: Homepage section 03 only.
+   ======================================================== */
+
+
+/* ========================================================
+   01. SECTION & FOCUSED CONTAINER
+   ======================================================== */
+
+.trust-about-preview {
+  --trust-about-gutter: var(--space-4);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-inline: var(--trust-about-gutter);
+  padding-block: 88px 96px;
+
+  background-color: var(--color-surface-white);
+}
+
+.trust-about-preview__container {
+  width: 100%;
+  max-width: 1248px;
+  min-width: 0;
+
+  margin-inline: auto;
+}
+
+
+/* ========================================================
+   02. RESPONSIVE GRID
+   ======================================================== */
+
+.trust-about-preview__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 56fr)
+    minmax(0, 44fr);
+
+  column-gap: 44px;
+  align-items: center;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ========================================================
+   03. TEXT CONTENT
+   ======================================================== */
+
+.trust-about-preview__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------------
+   Eyebrow — Green Capsule
+   -------------------------------------------------------- */
+
+.trust-about-preview__eyebrow {
+  display: inline-flex;
+
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.trust-about-preview__eyebrow-text {
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-2);
+  max-width: 100%;
+
+  padding: var(--space-2) var(--space-4);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.trust-about-preview__eyebrow-dot {
+  display: block;
+  flex: 0 0 6px;
+
+  width: 6px;
+  height: 6px;
+
+  background-color: var(--color-accent-lime);
+  border-radius: var(--radius-pill);
+}
+
+
+/* ========================================================
+   04. FOUNDER IDENTITY
+   ======================================================== */
+
+.trust-about-preview__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* --------------------------------------------------------
+   H2 — Editorial Heading
+   -------------------------------------------------------- */
+
+.trust-about-preview__title {
+  width: 100%;
+  margin: 0 0 12px;
+
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+
+  color: var(--color-text-main);
+  overflow-wrap: break-word;
+}
+
+
+/* --------------------------------------------------------
+   Professional Descriptor
+   -------------------------------------------------------- */
+
+.trust-about-preview__descriptor {
+  margin: 0 0 10px;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 22px;
+
+  color: var(--color-text-main);
+  overflow-wrap: break-word;
+}
+
+
+/* --------------------------------------------------------
+   Professional Role — Italic
+   -------------------------------------------------------- */
+
+.trust-about-preview__role {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: var(--weight-regular);
+  line-height: 22px;
+
+  color: var(--color-text-muted);
+}
+
+.trust-about-preview__role em {
+  font-style: italic;
+}
+
+
+/* ========================================================
+   05. BIOGRAPHY
+   ======================================================== */
+
+.trust-about-preview__biography {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
+  width: 100%;
+  min-width: 0;
+  margin-top: 14px;
+}
+
+.trust-about-preview__paragraph {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 25px;
+
+  color: var(--color-text-main);
+  overflow-wrap: break-word;
+}
+
+
+/* ========================================================
+   06. FOUNDER CTA
+   WEB26-D008 — V3 Soft Lime / R1 Balanced
+   ======================================================== */
+
+.trust-about-preview__action {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+  margin-top: var(--space-10);
+}
+
+
+/* --------------------------------------------------------
+   Active CTA — Real /about Route
+   -------------------------------------------------------- */
+
+.trust-about-preview__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 18px;
+
+  box-sizing: border-box;
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.trust-about-preview__cta:hover {
+  background-color: var(--color-border);
+}
+
+.trust-about-preview__cta:active {
+  background-color: var(--color-accent-lime-bg);
+  border-color: var(--color-dark-plum);
+}
+
+.trust-about-preview__cta:focus-visible {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+
+/* --------------------------------------------------------
+   Pending CTA — WEB-40 Route Dependency
+
+   Non-interactive text, not a fake button.
+   -------------------------------------------------------- */
+
+.trust-about-preview__cta-pending {
+  display: inline-block;
+
+  max-width: 100%;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+
+  color: var(--color-text-dim);
+
+  cursor: default;
+}
+
+
+/* ========================================================
+   07. PORTRAIT MEDIA ZONE
+   WEB25-D039 — Adaptive Editorial
+   ======================================================== */
+
+.trust-about-preview__media {
+  width: 100%;
+  min-width: 0;
+}
+
+.trust-about-preview__portrait-slot {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  background-color: var(--color-surface-muted);
+  border-radius: var(--radius-lg);
+}
+
+/*
+   Authentic portrait is deferred.
+
+   No external placeholder URL.
+   No image crop or object-position assumptions.
+   The slot is decorative until real media exists.
+*/
+
+
+/* ========================================================
+   08. RESPONSIVE FOCUSED GUTTERS
+
+   WEB25-D036 — Local approved anchors
+
+   320–360:    16px
+   360–375:    16px → 20px
+   375–390:    20px
+   390–768:    20px → 32px
+   768–800:    32px → 24px
+   800–900:    24px
+   900–1024:   24px → 48px
+   1024–1440:  48px → 96px
+   1440+:      centered max-width 1248px
+
+   The values are local to this section.
+   ======================================================== */
+
+
+/* 360–375px */
+
+@media (min-width: 360px) {
+  .trust-about-preview {
+    --trust-about-gutter:
+      clamp(16px, calc(26.666667vw - 80px), 20px);
+  }
+}
+
+
+/* 390–768px */
+
+@media (min-width: 390px) {
+  .trust-about-preview {
+    --trust-about-gutter:
+      clamp(20px, calc(3.174603vw + 7.619048px), 32px);
+  }
+}
+
+
+/* 768–800px */
+
+@media (min-width: 768px) {
+  .trust-about-preview {
+    --trust-about-gutter:
+      clamp(24px, calc(224px - 25vw), 32px);
+  }
+}
+
+
+/* 800–900px */
+
+@media (min-width: 800px) {
+  .trust-about-preview {
+    --trust-about-gutter: var(--space-6);
+  }
+}
+
+
+/* 900–1024px */
+
+@media (min-width: 900px) {
+  .trust-about-preview {
+    --trust-about-gutter:
+      clamp(24px, calc(19.354839vw - 150.193548px), 48px);
+  }
+}
+
+
+/* 1024–1440px */
+
+@media (min-width: 1024px) {
+  .trust-about-preview {
+    --trust-about-gutter:
+      clamp(48px, calc(11.538462vw - 70.153846px), 96px);
+  }
+}
+
+
+/* 1440px+ */
+
+@media (min-width: 1440px) {
+  .trust-about-preview {
+    --trust-about-gutter: 96px;
+  }
+}
+
+
+/* ========================================================
+   09. TABLET — 768–1023px
+   ======================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .trust-about-preview {
+    padding-block: var(--space-16) 68px;
+  }
+
+  .trust-about-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 36px;
+  }
+
+  .trust-about-preview__content {
+    max-width: 660px;
+  }
+
+  .trust-about-preview__title {
+    font-size: 34px;
+  }
+
+  .trust-about-preview__paragraph {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .trust-about-preview__action {
+    margin-top: var(--space-8);
+  }
+
+  .trust-about-preview__portrait-slot {
+    aspect-ratio: 3 / 2;
+  }
+
+}
+
+
+/* ========================================================
+   10. MOBILE — BELOW 768px
+   ======================================================== */
+
+@media (max-width: 767px) {
+
+  .trust-about-preview {
+    padding-block: var(--space-12) 52px;
+  }
+
+  .trust-about-preview__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 28px;
+  }
+
+  .trust-about-preview__content {
+    max-width: 660px;
+  }
+
+  .trust-about-preview__title {
+    font-size: 28px;
+  }
+
+  .trust-about-preview__paragraph {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .trust-about-preview__action {
+    margin-top: var(--space-6);
+  }
+
+  .trust-about-preview__portrait-slot {
+    aspect-ratio: 5 / 4;
+  }
+
+}
+
+
+/* ========================================================
+   11. ACCESSIBILITY
+   ======================================================== */
+
+@media (forced-colors: active) {
+
+  .trust-about-preview__cta {
+    color: LinkText;
+    background-color: ButtonFace;
+    border-color: LinkText;
+  }
+
+  .trust-about-preview__cta:focus-visible {
+    outline-color: Highlight;
+  }
+
+  .trust-about-preview__portrait-slot {
+    border: 1px solid CanvasText;
+  }
+
+}

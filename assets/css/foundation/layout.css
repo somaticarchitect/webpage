@@ -1,0 +1,63 @@
+/* ========================================================
+   GLOBAL LAYOUT
+   ======================================================== */
+
+.container {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0 auto;
+  padding: 0 var(--space-12);
+
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Legacy page spacing.
+   Keep existing layout until each route gets
+   its approved page-local layout contract. */
+
+.articles-list-page {
+  padding: var(--space-20) 0;
+}
+
+
+/* --------------------------------------------------------
+   SECTION HEADER
+   -------------------------------------------------------- */
+
+.section-header {
+  margin-bottom: var(--space-12);
+}
+
+.section-header h2 {
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-4);
+
+  font-size: var(--text-section-title);
+}
+
+.section-subtitle {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+}
+
+
+/* --------------------------------------------------------
+   MOBILE
+   -------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 var(--space-5);
+  }
+
+}

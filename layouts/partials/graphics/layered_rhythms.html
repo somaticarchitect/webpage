@@ -1,0 +1,160 @@
+
+<!-- =====================================================
+     WEB28-D001 — LAYERED RHYTHMS
+
+     Static conceptual QPC illustration.
+
+     3 elliptical contours
+     4 flowing trajectories
+     4 decorative points
+
+     Uses existing QPC design tokens.
+     No animation, labels or physiological claims.
+     ===================================================== -->
+
+<svg
+  class="qpc-system-preview__svg"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 600 480"
+  width="100%"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+
+  <!-- ===========================================
+       LAYER 01 — CONCENTRIC CONTOURS
+       =========================================== -->
+
+  <g class="qpc-system-preview__contours">
+
+    <ellipse
+      cx="300"
+      cy="240"
+      rx="218"
+      ry="145"
+      transform="rotate(-18 300 240)"
+      stroke="var(--color-text-muted)"
+      stroke-width="2"
+      opacity="0.55"
+    />
+
+    <ellipse
+      cx="300"
+      cy="240"
+      rx="171"
+      ry="111"
+      transform="rotate(-18 300 240)"
+      stroke="var(--color-accent-lime-text)"
+      stroke-width="2"
+      opacity="0.75"
+    />
+
+    <ellipse
+      cx="300"
+      cy="240"
+      rx="121"
+      ry="78"
+      transform="rotate(-18 300 240)"
+      stroke="var(--color-accent-berry)"
+      stroke-width="2"
+      opacity="0.65"
+    />
+
+  </g>
+
+
+  <!-- ===========================================
+       LAYER 02 — FLOW TRAJECTORIES
+       =========================================== -->
+
+  <g
+    class="qpc-system-preview__trajectories"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+
+    <path
+      d="
+        M 40 290
+        C 128 150, 182 345, 290 228
+        S 460 116, 564 196
+      "
+      stroke="var(--color-accent-lime)"
+      stroke-width="3"
+      opacity="0.9"
+    />
+
+    <path
+      d="
+        M 36 354
+        C 160 245, 211 393, 316 270
+        S 465 180, 568 286
+      "
+      stroke="var(--color-accent-lime-text)"
+      stroke-width="2.5"
+      opacity="0.7"
+    />
+
+    <path
+      d="
+        M 74 164
+        C 184 106, 231 225, 324 198
+        S 462 277, 542 362
+      "
+      stroke="var(--color-accent-berry)"
+      stroke-width="2"
+      opacity="0.65"
+    />
+
+    <path
+      d="
+        M 102 388
+        C 185 302, 245 122, 349 156
+        S 460 350, 515 105
+      "
+      stroke="var(--color-text-muted)"
+      stroke-width="1.5"
+      opacity="0.45"
+    />
+
+  </g>
+
+
+  <!-- ===========================================
+       LAYER 03 — DECORATIVE POINTS
+       =========================================== -->
+
+  <g class="qpc-system-preview__points">
+
+    <circle
+      cx="102"
+      cy="241"
+      r="5"
+      fill="var(--color-accent-lime)"
+    />
+
+    <circle
+      cx="229"
+      cy="322"
+      r="4"
+      fill="var(--color-accent-lime-text)"
+    />
+
+    <circle
+      cx="391"
+      cy="149"
+      r="5"
+      fill="var(--color-accent-berry)"
+    />
+
+    <circle
+      cx="501"
+      cy="253"
+      r="4"
+      fill="var(--color-text-muted)"
+    />
+
+  </g>
+
+</svg>

@@ -1,0 +1,77 @@
+[header_telegram_cta]
+other = "Записатися в Telegram"
+
+[header_mobile_menu]
+other = "Відкрити або закрити навігацію"
+
+[hero_primary_cta]
+other = "Узгодити 15-хв знайомство"
+
+[hero_secondary_cta]
+other = "Читати базу знань ↓"
+
+[services_scope]
+other = "ЩО ВХОДИТЬ:"
+
+[services_outcome]
+other = "РЕЗУЛЬТАТ:"
+
+[service_single_cta]
+other = "Записатися на сесію"
+
+[service_course_cta]
+other = "Обрати курс 10 занять"
+
+[footer_disclaimer]
+other = "Практики, матеріали та консультації мають освітній і сомато-регуляторний характер. Вони не є медичною послугою, лікуванням, діагностикою чи заміною огляду лікаря."
+
+[footer_privacy]
+other = "Політика конфіденційності"
+
+[footer_sitemap]
+other = "Карта сайту"
+
+[footer_rights]
+other = "Усі права захищено."
+
+[footer_nav_label]
+other = "Навігація у футері"
+
+[articles_filter_label]
+other = "Фільтр статей за темою"
+
+[articles_filter_all]
+other = "Усі"
+
+[articles_read_more]
+other = "Читати повністю"
+
+[articles_carousel_navigation]
+other = "Сторінки каруселі статей"
+
+[articles_view_all]
+other = "Переглянути всі матеріали"
+
+[articles_read_time]
+other = "{{ .Count }} хв читання"
+
+[articles_archive_eyebrow]
+other = "ДОСЛІДЖЕННЯ ТА МАТЕРІАЛИ"
+
+[articles_list_read_more]
+other = "Читати статтю"
+
+[articles_empty]
+other = "У цьому розділі поки немає опублікованих статей."
+
+[article_single_read_time]
+other = "Час читання: ~{{ .Count }} хв"
+
+[article_single_cta_title]
+other = "Потрібна індивідуальна діагностика?"
+
+[article_single_cta_text]
+other = "Розбір компенсацій та робота з больовими патернами доступні в індивідуальному соматичному форматі."
+
+[article_single_cta_button]
+other = "Записатися на знайомчу консультацію"

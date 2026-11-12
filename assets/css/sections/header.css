@@ -1,0 +1,104 @@
+/* ========================================================
+   QPC · MVP HEADER
+   Brand + verified Telegram action only.
+   ======================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+  background-color: var(--color-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+
+  width: 100%;
+  min-height: 72px;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+
+  min-width: 0;
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 1 auto;
+
+  min-width: 0;
+  margin-left: auto;
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  max-width: 100%;
+  min-width: 0;
+  padding: 8px 14px;
+
+  font-weight: var(--weight-medium);
+  line-height: 1.25;
+  text-align: center;
+  border-radius: var(--radius-pill);
+}
+
+.header-cta svg {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.header-cta span {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* --------------------------------------------------------
+   MOBILE · 320px+
+   -------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .header-container {
+    min-height: 64px;
+    padding-inline: var(--space-5);
+    gap: var(--space-2);
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+  }
+
+  .header-cta {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,634 @@
+/* ========================================================
+   WEB-59 — HOMEPAGE QPC LIBRARY PREVIEW
+
+   WEB25-D046 — Focused container & conditional cards
+   WEB25-D047 — Canonical Library typography
+   WEB25-D048 — Section vertical rhythm
+   WEB25-D081 — Cormorant Garamond H2 override
+   WEB25-D082/D083 — Responsive manual carousel
+   WEB26-D008 — Soft Lime R1 CTA
+   WEB26-D012 — C05 Q3 Soft article card
+   WEB26-D017/D020 — Orbit Trail & canonical palette
+
+   Scope: Homepage section 05 only.
+   Inventory, positions, swipe and focus management: WEB-59 JS.
+   ======================================================== */
+
+
+/* ========================================================
+   01. SECTION AND CONTAINER
+   WEB25-D046/D048 — local Homepage Library geometry
+   ======================================================== */
+
+.qpc-library-preview {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 88px 48px 96px;
+}
+
+.qpc-library-preview__container {
+  width: 100%;
+  max-width: 1248px;
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.qpc-library-preview__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 730px;
+  min-width: 0;
+}
+
+
+/* ========================================================
+   02. EYEBROW — GREEN CAPSULE
+   WEB25-D047
+   ======================================================== */
+
+.qpc-library-preview__eyebrow {
+  display: inline-flex;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.qpc-library-preview__eyebrow-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  max-width: 100%;
+  padding: var(--space-2) var(--space-4);
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 16px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.qpc-library-preview__eyebrow-dot {
+  display: block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+
+  background-color: var(--color-accent-lime);
+  border-radius: var(--radius-pill);
+}
+
+
+/* ========================================================
+   03. EDITORIAL H2 AND NARRATIVE
+   WEB25-D047 / D081
+   ======================================================== */
+
+.qpc-library-preview__header {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 14px;
+}
+
+.qpc-library-preview__title {
+  margin: 0;
+
+  color: var(--color-text-main);
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+
+  overflow-wrap: break-word;
+}
+
+.qpc-library-preview__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.qpc-library-preview__paragraph {
+  margin: 0;
+
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: 1.56;
+
+  overflow-wrap: break-word;
+}
+
+.qpc-library-preview__paragraph strong {
+  color: inherit;
+  font-weight: 650;
+}
+
+
+/* ========================================================
+   04. CTA — SOFT LIME R1
+   WEB26-D008 / WEB25-D048
+   ======================================================== */
+
+.qpc-library-preview__action {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.qpc-library-preview__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 18px;
+
+  background-color: var(--color-accent-lime-bg);
+  color: var(--color-accent-lime-text);
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.qpc-library-preview__cta:hover {
+  background-color: var(--color-border);
+}
+
+.qpc-library-preview__cta:active {
+  background-color: var(--color-accent-lime-bg);
+  border-color: var(--color-dark-plum);
+}
+
+.qpc-library-preview__cta:focus-visible {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+/* No Library route yet: text, not a fake interactive button. */
+.qpc-library-preview__cta-pending {
+  display: inline-block;
+  max-width: 100%;
+
+  color: var(--color-text-dim);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+
+  overflow-wrap: break-word;
+  cursor: default;
+}
+
+
+/* ========================================================
+   05. CONDITIONAL ARTICLE STRIP
+
+   Exists in HTML only for N > 0.
+   Progressive enhancement:
+   - By default, all real cards remain visible in a grid.
+   - JS adds .is-enhanced after focus/position setup.
+   - Only enhanced strips clip and translate slides.
+
+   JS sets --qpc-library-shift as a pixel length.
+   The enhanced viewport includes 7px of focus clearance.
+   ======================================================== */
+
+.qpc-library-preview__articles {
+  width: 100%;
+  min-width: 0;
+  margin-top: 44px;
+}
+
+.qpc-library-preview__viewport {
+  width: 100%;
+  min-width: 0;
+}
+
+.qpc-library-preview__track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.qpc-library-preview__card {
+  display: flex;
+  min-width: 0;
+}
+
+/* JS may enable the carousel only after it has established
+   valid positions and made offscreen anchors nonfocusable. */
+.qpc-library-preview__articles.is-enhanced .qpc-library-preview__viewport {
+  box-sizing: border-box;
+  width: calc(100% + 14px);
+  margin-inline: -7px;
+  padding: 7px;
+
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.qpc-library-preview__articles.is-enhanced .qpc-library-preview__track {
+  display: flex;
+  transform: translate3d(var(--qpc-library-shift, 0px), 0, 0);
+  transition: transform 180ms ease-out;
+}
+
+.qpc-library-preview__articles.is-enhanced .qpc-library-preview__card {
+  flex: 0 0 calc((100% - 36px) / 3);
+}
+
+.qpc-library-preview__articles.is-enhanced
+  .qpc-library-preview__viewport.is-dragging .qpc-library-preview__track {
+  transition: none;
+}
+
+/* ========================================================
+   06. ARTICLE CARD — C05 Q3 SOFT
+   WEB26-D012 / D013
+
+   The single anchor owns the entire interactive surface.
+   No artificial min-height, text truncation or mock cover.
+   ======================================================== */
+
+.qpc-library-preview__card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 24px;
+
+  background-color: var(--color-surface-white);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  text-decoration: none;
+
+  transition: border-color var(--motion-fast);
+}
+
+.qpc-library-preview__card-link:hover {
+  border-color: var(--color-accent-lime-text);
+}
+
+.qpc-library-preview__card-link:active {
+  border-color: var(--color-dark-plum);
+}
+
+.qpc-library-preview__card-link:focus-visible {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+/* Optional taxonomy from a real article only. */
+.qpc-library-preview__card-category {
+  display: inline-block;
+  max-width: 100%;
+
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+
+  overflow-wrap: break-word;
+}
+
+/* Keep H3 sizing governed by the existing global typography
+   until the separate WEB-28 card-type refinement is approved. */
+.qpc-library-preview__card-title {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  overflow-wrap: break-word;
+}
+
+.qpc-library-preview__card-description {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+
+  color: var(--color-text-neutral);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  overflow-wrap: break-word;
+}
+
+.qpc-library-preview__card-cta {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: auto;
+  padding-top: var(--space-2);
+
+  color: var(--color-accent-lime-text);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  overflow-wrap: break-word;
+}
+
+
+/* ========================================================
+   07. ORBIT TRAIL — C05 D017 / D020
+
+   Expected JS-generated children:
+     .qpc-library-preview__orbit-capsule
+     button.qpc-library-preview__orbit-button
+       span.qpc-library-preview__orbit-focus
+         span.qpc-library-preview__orbit-dot
+
+   Button hit area: 44x44; visual focus wrapper: 30x30.
+   --qpc-library-orbit-offset is a JS-set pixel length.
+   ======================================================== */
+
+.qpc-library-preview__orbit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+  max-width: 100%;
+  height: 44px;
+  margin: 24px auto 0;
+}
+
+/* Preserve the HTML hidden attribute despite display:flex. */
+.qpc-library-preview__orbit[hidden] {
+  display: none !important;
+  margin-top: 0;
+}
+
+.qpc-library-preview__orbit::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: calc(50% - 0.5px);
+  left: 22px;
+  right: 22px;
+  height: 1px;
+
+  background-color: var(--color-border);
+  pointer-events: none;
+}
+
+.qpc-library-preview__orbit-button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.qpc-library-preview__orbit-focus {
+  display: grid;
+  place-items: center;
+
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.qpc-library-preview__orbit-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+
+  background-color: var(--color-text-muted);
+  border-radius: 50%;
+  transition: background-color var(--motion-fast);
+}
+
+.qpc-library-preview__orbit-button:hover:not([aria-current="true"])
+  .qpc-library-preview__orbit-dot {
+  background-color: var(--color-accent-lime-text);
+}
+
+.qpc-library-preview__orbit-button[aria-current="true"]
+  .qpc-library-preview__orbit-dot {
+  opacity: 0;
+}
+
+/* Move one capsule between button centers: no layout shift. */
+.qpc-library-preview__orbit-capsule {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 4px);
+  left: 9px;
+
+  width: 26px;
+  height: 8px;
+  background-color: var(--color-dark-plum);
+  border-radius: 4px;
+  pointer-events: none;
+
+  transform: translateX(var(--qpc-library-orbit-offset, 0px));
+  transition: transform 180ms ease-out;
+}
+
+/* Focus belongs to the inner 30x30 visual wrapper; the
+   44x44 button remains the semantic hit target. */
+.qpc-library-preview__orbit-button:focus-visible {
+  outline: none;
+}
+
+.qpc-library-preview__orbit-button:focus-visible
+  .qpc-library-preview__orbit-focus {
+  outline: 3px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+
+/* ========================================================
+   08. TABLET — 768–1023px
+   Two cards only through 899px; three from 900px.
+   ======================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .qpc-library-preview {
+    padding: 64px 32px 68px;
+  }
+
+  .qpc-library-preview__title {
+    font-size: 34px;
+  }
+
+  .qpc-library-preview__paragraph {
+    font-size: 15px;
+  }
+
+  .qpc-library-preview__action {
+    margin-top: 32px;
+  }
+
+  .qpc-library-preview__articles {
+    margin-top: 36px;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+  .qpc-library-preview__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qpc-library-preview__articles.is-enhanced .qpc-library-preview__card {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+}
+
+
+/* ========================================================
+   09. MOBILE — BELOW 768px
+   ======================================================== */
+
+@media (max-width: 767px) {
+  .qpc-library-preview {
+    padding: 48px 16px 52px;
+  }
+
+  .qpc-library-preview__title {
+    font-size: 28px;
+  }
+
+  .qpc-library-preview__paragraph {
+    font-size: 15px;
+  }
+
+  .qpc-library-preview__action {
+    margin-top: 24px;
+  }
+
+  .qpc-library-preview__articles {
+    margin-top: 28px;
+  }
+
+  .qpc-library-preview__track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .qpc-library-preview__articles.is-enhanced .qpc-library-preview__card {
+    flex-basis: 100%;
+  }
+
+  .qpc-library-preview__orbit {
+    margin-top: 20px;
+  }
+}
+
+/* Orbit visibility is controlled by the JS position count and the
+   HTML hidden attribute at every breakpoint; do not force-hide on desktop. */
+
+
+/* ========================================================
+   10. ACCESSIBILITY
+   ======================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .qpc-library-preview__articles.is-enhanced .qpc-library-preview__track,
+  .qpc-library-preview__track,
+  .qpc-library-preview__orbit-capsule,
+  .qpc-library-preview__orbit-dot,
+  .qpc-library-preview__card-link {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .qpc-library-preview__eyebrow-text,
+  .qpc-library-preview__card-link {
+    border: 1px solid CanvasText;
+  }
+
+  .qpc-library-preview__eyebrow-dot,
+  .qpc-library-preview__orbit-dot {
+    background-color: ButtonText;
+  }
+
+  .qpc-library-preview__cta {
+    background-color: ButtonFace;
+    color: LinkText;
+    border-color: LinkText;
+  }
+
+  .qpc-library-preview__card-link:hover {
+    border-color: Highlight;
+  }
+
+  .qpc-library-preview__cta:focus-visible,
+  .qpc-library-preview__card-link:focus-visible,
+  .qpc-library-preview__orbit-button:focus-visible
+    .qpc-library-preview__orbit-focus {
+    outline-color: Highlight;
+  }
+
+  .qpc-library-preview__orbit::before {
+    background-color: CanvasText;
+  }
+
+  .qpc-library-preview__orbit-capsule {
+    background-color: Highlight;
+    forced-color-adjust: none;
+  }
+
+  .qpc-library-preview__orbit-button:hover:not([aria-current="true"])
+    .qpc-library-preview__orbit-dot {
+    background-color: Highlight;
+  }
+}

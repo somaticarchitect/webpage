@@ -1,0 +1,98 @@
+hero:
+  badge: "CLINICAL BIOMECHANICS · SOMATIC ARCHITECTURE"
+
+  title: "A space for body recovery — for those tired of cookie-cutter fitness"
+
+  subtitle: "Practice at the intersection of biomechanics, fascial conduction, and somatosensory self-regulation of the nervous system. Movement without exhaustion, strain, and pain."
+
+  features:
+    - value: "0.1 Hz"
+      description: "Breath-heart coherence target"
+
+    - value: "10+"
+      description: "Years clinical practice"
+
+    - value: "3 lines"
+      description: "Fascial meridians addressed"
+
+  image_alt: "Somatic Architecture Practice"
+
+  focus:
+    eyebrow: "CURRENT FOCUS"
+    title: "Fascial decompression & nervous system retraining"
+
+about:
+  image_alt: "About Method"
+
+  floating:
+    value: "0.1 Hz"
+    label: "Breath-heart synchronization protocol"
+
+  eyebrow: "ABOUT METHOD"
+
+  title: "Restoring resource instead of exhaustion."
+
+  description:
+    - "My clinical background clarified a persistent problem: conventional training creates dysfunction as often as it resolves it. Pumping isolated muscles while ignoring the nervous system's protective responses produces fatigue — not resilience."
+
+    - "The Quantum Physical Culture method works directly with fascial lines, breath mechanics, and autonomic regulation. At its core: synchronizing breath and heart rhythm at 0.1 Hz restores tissue fluidity and fluid-dynamic balance throughout the body — without any mechanical force applied under neurological stress."
+
+  features:
+    - title: "Neurological safety"
+      description: "Movement strictly within a pain-free range without triggering protective spasms or hypervigilance."
+
+    - title: "Tensegrity and wholeness"
+      description: "Balancing tension across the entire fascial web — instead of isolating and overloading individual muscles."
+
+    - title: "Individual screening"
+      description: "Testing baseline condition and neurological reactivity before applying any mechanical load to the body."
+
+services:
+  eyebrow: "SERVICES & FORMATS"
+  title: "Collaboration Formats"
+  subtitle: "Targeted session for immediate relief or a systematic 10-session curriculum for long-term structural balance."
+
+  cards:
+    - tag: "Focus session"
+      title: "Quantum Alignment"
+      tagline: "Targeted single session for immediate somatic decompression and axis recovery."
+      items:
+        - "Full-body biomechanical diagnostic assessment"
+        - "Neurological self-regulation & fascial release"
+        - "Individual movement alignment recommendations"
+      outcome: "Immediate reduction of pain/spasms, restored sense of lightness, and internal bodily coherence."
+      featured: false
+      cta_key: "service_single_cta"
+
+    - tag: "Full pattern rebuilding"
+      title: "Individual 10-Session Course"
+      tagline: "Comprehensive neurological retraining program for sustainable structural change."
+      items:
+        - "10 personalized 90-minute practical sessions"
+        - "Step-by-step postural and gait pattern correction"
+        - "Direct support and exercise adjustments between sessions"
+      outcome: "Elimination of chronic compensation mechanisms, new movement habits, and sustainable bodily strength."
+      featured: true
+      cta_key: "service_course_cta"
+
+  intro:
+    eyebrow: "FIRST STEP"
+    title: "15-Minute Intro Call — Online"
+    description: "Unsure which format fits your current state? Book a short introductory call to discuss your request and assess readiness for somatic practice."
+
+contact:
+  eyebrow: "Personal contact"
+  title: "Let's start a conversation"
+
+  paragraphs:
+    - "If you're considering working with me individually, send me a few words about what you're looking for and what interests you."
+    - "This begins a personal exchange, not an automatic booking. If you're getting in touch for the first time, we'll have a preliminary online conversation before starting individual work to see whether the format is a good fit for both of us."
+
+  action:
+    label: "Message me on WhatsApp"
+
+articles:
+  eyebrow: "RESEARCH"
+  title: "Research and Field Materials"
+  subtitle: "Biomechanics explained in plain language."
+

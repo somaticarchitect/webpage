@@ -1,0 +1,222 @@
+/* ========================================================
+   FOOTER
+   ======================================================== */
+
+.site-footer {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-dark-plum);
+  color: var(--color-surface-muted);
+
+  border-top: 1px solid var(--color-border-on-dark);
+}
+
+.footer-container {
+  width: 100%;
+
+  margin: 0;
+  padding: 72px 40px 56px;
+}
+
+
+/* --------------------------------------------------------
+   TOP ROW
+   -------------------------------------------------------- */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+
+  gap: var(--space-20);
+
+  width: 100%;
+}
+
+
+/* --------------------------------------------------------
+   BRAND
+   -------------------------------------------------------- */
+
+.footer-brand {
+  width: 100%;
+  max-width: 620px;
+}
+
+.footer-logo {
+  display: inline-flex;
+
+  margin: 0 0 var(--space-6);
+
+  text-decoration: none;
+}
+
+.footer-logo .logo-text {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-bg);
+}
+
+.footer-disclaimer {
+  max-width: 620px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+
+  color: var(--color-text-on-dark-faint);
+}
+
+
+/* --------------------------------------------------------
+   LINKS ROW
+   -------------------------------------------------------- */
+
+.footer-links-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  gap: 34px;
+
+  margin: var(--space-2) 0 0;
+}
+
+.footer-links-row a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-tight);
+
+  color: var(--color-text-on-dark-faint);
+
+  text-decoration: none;
+
+  transition: color var(--motion-fast);
+}
+
+.footer-links-row a:hover {
+  color: var(--color-bg);
+}
+
+
+/* --------------------------------------------------------
+   DIVIDER
+   -------------------------------------------------------- */
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 56px 0 28px;
+
+  background-color: var(--color-border-on-dark);
+}
+
+/* --------------------------------------------------------
+   BOTTOM
+   -------------------------------------------------------- */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.footer-copyright {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+
+  color: var(--color-text-on-dark-faint);
+}
+
+
+/* ========================================================
+   TABLET
+   ======================================================== */
+
+@media (max-width: 1024px) {
+
+  .footer-container {
+    padding: var(--space-16) var(--space-8) var(--space-12);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-12);
+  }
+
+  .footer-links-row {
+    justify-content: flex-start;
+
+    margin-top: 0;
+  }
+
+  .footer-divider {
+    margin-top: var(--space-12);
+  }
+
+}
+
+
+/* ========================================================
+   MOBILE
+   ======================================================== */
+
+@media (max-width: 640px) {
+
+  .footer-container {
+    padding: var(--space-14) var(--space-5) var(--space-10);
+  }
+
+  .footer-logo {
+    margin-bottom: var(--space-5);
+  }
+
+  .footer-logo .logo-text {
+    font-size: 1.7rem;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.92rem;
+    line-height: var(--leading-normal);
+  }
+
+  .footer-links-row {
+    align-items: flex-start;
+
+    gap: 20px 26px;
+  }
+
+  .footer-links-row a {
+    font-size: 0.9rem;
+  }
+
+  .footer-divider {
+    margin: var(--space-10) 0 var(--space-6);
+  }
+
+  .footer-copyright {
+    font-size: 0.88rem;
+  }
+
+}

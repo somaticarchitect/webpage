@@ -1,0 +1,126 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $services := $content.services }}
+
+<section class="services-section" id="services">
+  <div class="services-container">
+
+    <!-- Заголовок секції -->
+    <div class="services-header">
+      <span class="services-eyebrow section-eyebrow">
+        {{ $services.eyebrow }}
+      </span>
+
+      <h2 class="services-title">
+        {{ $services.title }}
+      </h2>
+
+      <p class="services-subtitle">
+        {{ $services.subtitle }}
+      </p>
+    </div>
+
+    <!-- Сітка послуг -->
+    <div class="services-grid">
+
+      {{ range $services.cards }}
+      <div class="service-card{{ if .featured }} service-card-featured{{ end }}">
+
+        <div class="service-card-header">
+          <span class="service-duration pill-tag">
+            {{ .tag }}
+          </span>
+
+          <h3>
+            {{ .title }}
+          </h3>
+
+          <p class="service-tagline">
+            {{ .tagline }}
+          </p>
+        </div>
+
+        <div class="service-body">
+
+          <div class="service-block">
+            <h4>
+              {{ i18n "services_scope" }}
+            </h4>
+
+            <ul>
+              {{ range .items }}
+              <li>
+                {{ . }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+
+          <div class="service-block">
+            <h4>
+              {{ i18n "services_outcome" }}
+            </h4>
+
+            <p>
+              {{ .outcome }}
+            </p>
+          </div>
+
+        </div>
+
+        <div class="service-footer">
+          <a
+            href="#contact"
+            class="btn service-cta {{ if .featured }}service-cta--primary{{ else }}service-cta--outline{{ end }}"
+          >
+            {{ i18n .cta_key }}
+          </a>
+        </div>
+
+      </div>
+      {{ end }}
+
+    </div>
+
+    <!-- Перший крок -->
+    <div class="services-intro">
+
+      <div class="services-intro-content">
+        <span class="services-intro-eyebrow section-eyebrow">
+          {{ $services.intro.eyebrow }}
+        </span>
+
+        <h3>
+          {{ $services.intro.title }}
+        </h3>
+
+        <p>
+          {{ $services.intro.description }}
+        </p>
+      </div>
+
+      <div class="services-intro-actions">
+
+        <a
+          href="{{ site.Params.telegram }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn services-intro-button services-intro-button--telegram"
+        >
+          Telegram
+        </a>
+
+        <a
+          href="{{ site.Params.whatsapp }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn services-intro-button services-intro-button--whatsapp"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

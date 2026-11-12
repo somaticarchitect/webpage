@@ -1,0 +1,57 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $contact := $content.contact }}
+
+{{ $channel := "telegram" }}
+{{ if eq site.Language.Lang "en" }}
+  {{ $channel = "whatsapp" }}
+{{ end }}
+
+{{ $url := default "" (index site.Params $channel) }}
+{{ $verifiedKey := printf "%s_verified" $channel }}
+{{ $verified := default false (index site.Params $verifiedKey) }}
+{{ $actionAvailable := and $verified (hasPrefix $url "https://") }}
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <div class="contact-content">
+
+      <header class="contact-intro">
+        <p class="contact-eyebrow">
+          {{ $contact.eyebrow }}
+        </p>
+
+        <h2 class="contact-title">
+          {{ $contact.title }}
+        </h2>
+      </header>
+
+      <div class="contact-description">
+        {{ range $contact.paragraphs }}
+          <p class="contact-paragraph">
+            {{ . }}
+          </p>
+        {{ end }}
+      </div>
+
+      <div class="contact-actions">
+        {{ if $actionAvailable }}
+          <a
+            class="contact-action"
+            href="{{ $url | safeURL }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ $contact.action.label }}
+          </a>
+        {{ else }}
+          <span
+            class="contact-action contact-action--unavailable"
+          >
+            {{ $contact.action.label }}
+          </span>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</section>

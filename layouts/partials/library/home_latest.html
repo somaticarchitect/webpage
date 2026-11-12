@@ -1,0 +1,26 @@
+{{/*
+  WEB-59 — Homepage article selection.
+
+  Keep editorial eligibility separate from Homepage presentation:
+  1. Current-language eligible Library articles only.
+  2. Newest to oldest by Hugo PublishDate (explicit date/publishDate front matter).
+  3. Deterministic URL tie-break for identical dates.
+  4. Maximum 3 articles; never fill with placeholders.
+
+  Returns: a slice of Hugo Page objects.
+*/}}
+
+{{ $eligible := partial "library/eligible_articles.html" . }}
+{{ $sortable := slice }}
+{{ $latest := slice }}
+
+{{ range $eligible }}
+  {{ $key := printf "%020d|%s" .PublishDate.Unix .RelPermalink }}
+  {{ $sortable = $sortable | append (dict "key" $key "page" .) }}
+{{ end }}
+
+{{ range first 3 (sort $sortable "key" "desc") }}
+  {{ $latest = $latest | append .page }}
+{{ end }}
+
+{{ return $latest }}

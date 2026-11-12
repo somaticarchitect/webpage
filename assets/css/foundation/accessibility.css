@@ -1,0 +1,56 @@
+
+/* ========================================================
+   ACCESSIBILITY FOUNDATIONS
+   WEB-38
+   ======================================================== */
+
+/* --------------------------------------------------------
+   KEYBOARD FOCUS
+   -------------------------------------------------------- */
+
+:where(
+  a[href],
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex]:not([tabindex="-1"])
+):focus-visible {
+  outline: 2px solid var(--color-accent-lime-text);
+  outline-offset: 3px;
+}
+
+/* Contrast-safe focus on existing dark surfaces */
+
+:is(
+  .site-footer,
+  .services-intro
+) :where(
+  a[href],
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex]:not([tabindex="-1"])
+):focus-visible {
+  outline-color: var(--color-accent-lime);
+}
+
+/* --------------------------------------------------------
+   REDUCED MOTION
+   -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0s;
+    --motion-lift-sm: none;
+    --motion-lift-md: none;
+  }
+
+  .articles-viewport,
+  .testimonials-viewport {
+    scroll-behavior: auto;
+  }
+}

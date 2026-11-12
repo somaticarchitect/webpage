@@ -1,0 +1,49 @@
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $hero := $content.hero }}
+
+{{/* Canonical Hero content is currently approved for UA only. */}}
+{{ if and $hero.eyebrow $hero.authorship $hero.paragraphs }}
+
+<section class="hero-section" id="hero" aria-labelledby="hero-title">
+  <div class="hero-container">
+
+    <div class="hero-left-col">
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="badge-hero">
+            <span class="badge-dot" aria-hidden="true"></span>
+            {{ $hero.eyebrow }}
+          </span>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          {{ $hero.title }}
+        </h1>
+
+        <p class="hero-authorship">
+          {{ $hero.authorship }}
+        </p>
+
+        <div class="hero-body">
+          {{ range $hero.paragraphs }}
+            <p>{{ . }}</p>
+          {{ end }}
+        </div>
+
+        <div class="hero-actions">
+          <a
+            href="#private-work-preview"
+            class="btn btn-primary btn-lg"
+          >
+            {{ $hero.actions.primary.label }}
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{ end }}

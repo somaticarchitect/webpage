@@ -1,0 +1,47 @@
+
+/* ========================================================
+   GLOBAL TYPOGRAPHY
+   WEB-38 · Font family roles
+   ======================================================== */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--leading-normal);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings */
+h1,
+h2 {
+  font-family: var(--font-display);
+  color: var(--color-text-main);
+
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: var(--weight-bold);
+}
+
+/* Content and UI headings */
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: var(--weight-bold);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  transition: color var(--motion-fast);
+}

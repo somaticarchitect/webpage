@@ -1,20 +1,57 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{ .Site.Language.Lang }}">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.bio }}{{ end }}">
-  <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- MVP CSS bundle: Library preview temporarily excluded. -->
+  {{ $styles := slice
+
+  (resources.Get "css/foundation/fonts.css")
+  (resources.Get "css/foundation/tokens.css")
+  (resources.Get "css/foundation/reset.css")
+  (resources.Get "css/foundation/typography.css")
+  (resources.Get "css/foundation/layout.css")
+
+  (resources.Get "css/components/badges.css")
+  (resources.Get "css/components/buttons.css")
+  (resources.Get "css/components/carousel.css")
+  (resources.Get "css/components/eyebrow.css")
+
+  (resources.Get "css/sections/header.css")
+  (resources.Get "css/sections/hero.css")
+  (resources.Get "css/sections/private-work-preview.css")
+  (resources.Get "css/sections/trust-about-preview.css")
+  (resources.Get "css/sections/qpc-system-preview.css")
+  (resources.Get "css/sections/services.css")
+  (resources.Get "css/sections/articles.css")
+  (resources.Get "css/sections/faq.css")
+  (resources.Get "css/sections/contact.css")
+  (resources.Get "css/sections/footer.css")
+
+  (resources.Get "css/sections/mvp-visuals.css")
+
+  (resources.Get "css/foundation/accessibility.css")
+  }}
+
+  {{ $style := $styles | resources.Concat "css/main.css" }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
+
 <body>
   {{ partial "header.html" . }}
+
   <main class="site-main">
     {{ block "main" . }}{{ end }}
   </main>
+
   {{ partial "footer.html" . }}
+
+  <!-- Existing article interactions remain unchanged. -->
+  <script src="{{ "js/articles.js" | relURL }}" defer></script>
 </body>
+
 </html>

@@ -1,0 +1,600 @@
+/* ========================================================
+   SERVICES & ONBOARDING
+   ======================================================== */
+
+.services-section {
+  width: 100%;
+
+  padding: 120px 0;
+
+  background-color: var(--color-surface-white);
+}
+
+.services-container {
+  width: 100%;
+
+  padding: 0 var(--space-12);
+
+  box-sizing: border-box;
+}
+
+
+/* --------------------------------------------------------
+   SECTION HEADER
+   -------------------------------------------------------- */
+
+.services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  max-width: 760px;
+
+  margin-bottom: var(--space-14);
+
+  text-align: left;
+}
+
+.services-title {
+  max-width: 720px;
+
+  margin-top: 14px;
+  margin-bottom: 18px;
+
+  font-family: var(--font-display);
+  font-size: var(--text-section-title);
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-text-main);
+}
+
+.services-subtitle {
+  max-width: 680px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+
+  color: var(--color-text-muted);
+}
+
+
+/* --------------------------------------------------------
+   SERVICES GRID
+   -------------------------------------------------------- */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+
+  width: 100%;
+
+  margin-bottom: 28px;
+}
+
+
+/* --------------------------------------------------------
+   SERVICE CARD
+   -------------------------------------------------------- */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 36px 40px 34px;
+
+  background-color: var(--color-surface-white);
+
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-card);
+}
+
+.service-card-featured {
+  border-color: var(--color-accent-berry-subtle);
+}
+
+
+/* --------------------------------------------------------
+   SERVICE CARD HEADER
+   -------------------------------------------------------- */
+
+.service-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 26px;
+}
+
+.service-duration {
+  margin-bottom: var(--space-4);
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.16;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-text-main);
+}
+
+.service-tagline {
+  max-width: 92%;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.55;
+
+  color: var(--color-text-neutral);
+}
+
+
+/* --------------------------------------------------------
+   SERVICE BODY
+   -------------------------------------------------------- */
+
+.service-body {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-6);
+
+  margin-bottom: 30px;
+}
+
+.service-block {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.service-block h4 {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-text-dim);
+}
+
+.service-block ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin: 0;
+  padding-left: 18px;
+
+  color: var(--color-text-neutral);
+}
+
+.service-block li {
+  padding-left: 2px;
+
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.5;
+
+  color: var(--color-text-neutral);
+}
+
+.service-block li::marker {
+  color: var(--color-text-neutral);
+
+  font-size: 0.78em;
+}
+
+.service-block p {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.55;
+
+  color: var(--color-text-neutral);
+}
+
+
+/* --------------------------------------------------------
+   SERVICE FOOTER / CTA
+   -------------------------------------------------------- */
+
+.service-footer {
+  margin-top: auto;
+}
+
+.service-cta {
+  width: 100%;
+  min-height: 46px;
+
+  padding: 11px 24px;
+
+  font-size: 0.93rem;
+  line-height: var(--leading-tight);
+}
+
+.service-cta--outline {
+  background-color: transparent;
+  color: var(--color-text-main);
+
+  border-color: var(--color-border-card);
+}
+
+.service-cta--outline:hover {
+  background-color: var(--color-bg);
+
+  border-color: var(--color-text-main);
+}
+
+.service-cta--primary {
+  background-color: var(--color-accent-berry);
+  color: var(--color-surface-white);
+
+  box-shadow: var(--shadow-accent);
+}
+
+.service-cta--primary:hover {
+  background-color: var(--color-accent-berry-hover);
+
+  transform: var(--motion-lift-sm);
+}
+
+
+/* ========================================================
+   INTRO / FIRST STEP
+   ======================================================== */
+
+.services-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+
+  gap: 72px;
+
+  min-height: 260px;
+
+  padding: var(--space-12) var(--space-14);
+
+  background-color: var(--color-dark-plum);
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-dark-plum-border);
+  border-radius: var(--radius-xl);
+}
+
+
+/* --------------------------------------------------------
+   INTRO CONTENT
+   -------------------------------------------------------- */
+
+.services-intro-content {
+  max-width: 760px;
+}
+
+.services-intro-eyebrow {
+  margin: 0 0 var(--space-4);
+}
+
+.services-intro-content h3 {
+  max-width: 680px;
+
+  margin: 0 0 var(--space-4);
+
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  font-weight: var(--weight-bold);
+  line-height: 1.12;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-surface-white);
+}
+
+.services-intro-content p {
+  max-width: 660px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+
+  color: var(--color-text-on-dark);
+}
+
+
+/* --------------------------------------------------------
+   INTRO ACTIONS
+   -------------------------------------------------------- */
+
+.services-intro-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+
+  width: 240px;
+
+  flex-shrink: 0;
+}
+
+.services-intro-button {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 13px 24px;
+
+  line-height: var(--leading-tight);
+  border-radius: var(--radius-pill);
+}
+
+
+/* --------------------------------------------------------
+   TELEGRAM
+   -------------------------------------------------------- */
+
+.services-intro-button--telegram {
+  background-color: var(--color-accent-berry);
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-accent-berry);
+}
+
+.services-intro-button--telegram:hover {
+  background-color: var(--color-accent-berry-hover);
+
+  border-color: var(--color-accent-berry-hover);
+
+  transform: var(--motion-lift-sm);
+}
+
+
+/* --------------------------------------------------------
+   WHATSAPP
+   -------------------------------------------------------- */
+
+.services-intro-button--whatsapp {
+  background-color: transparent;
+  color: var(--color-surface-white);
+
+  border: 1px solid var(--color-dark-plum-border);
+}
+
+.services-intro-button--whatsapp:hover {
+  background-color: var(--color-dark-plum-card);
+
+  border-color: var(--color-accent-berry);
+}
+
+
+/* ========================================================
+   TABLET / MOBILE
+   ======================================================== */
+
+@media (max-width: 900px) {
+
+  .services-intro {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-8);
+
+    min-height: auto;
+
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .services-intro-content {
+    max-width: none;
+  }
+
+  .services-intro-actions {
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
+
+
+/* ========================================================
+   SERVICES — MOBILE
+   ======================================================== */
+
+@media (max-width: 600px) {
+
+  .services-section {
+    width: 100%;
+
+    padding: var(--space-20) 0 var(--space-16);
+  }
+
+  .services-container {
+    width: 100%;
+
+    padding: 0 var(--space-5);
+  }
+
+
+  /* --------------------------------------------------------
+     HEADER
+     -------------------------------------------------------- */
+
+  .services-header {
+    max-width: none;
+
+    margin-bottom: 36px;
+  }
+
+  .services-title {
+    max-width: none;
+
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-4);
+
+    font-size: 2rem;
+    line-height: 1.08;
+  }
+
+  .services-subtitle {
+    max-width: none;
+
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+  }
+
+
+  /* --------------------------------------------------------
+     TOP TWO CARDS
+     -------------------------------------------------------- */
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-5);
+  }
+
+  .service-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 28px 24px;
+
+    border-radius: var(--radius-lg);
+  }
+
+  .service-card-header {
+    margin-bottom: 22px;
+  }
+
+  .service-duration {
+    margin-bottom: 14px;
+  }
+
+  .service-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .service-tagline {
+    max-width: none;
+
+    font-size: var(--text-sm);
+    line-height: 1.55;
+  }
+
+  .service-body {
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-6);
+  }
+
+  .service-block {
+    gap: var(--space-2);
+  }
+
+  .service-block h4 {
+    font-size: 0.76rem;
+  }
+
+  .service-block ul {
+    gap: 6px;
+
+    padding-left: 18px;
+  }
+
+  .service-block li,
+  .service-block p {
+    font-size: var(--text-sm);
+    line-height: 1.55;
+  }
+
+  .service-cta {
+    width: 100%;
+    min-height: 48px;
+
+    padding: var(--space-3) var(--space-5);
+  }
+
+
+  /* --------------------------------------------------------
+     LOWER INTRO CARD
+     -------------------------------------------------------- */
+
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    min-height: auto;
+
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .services-intro-content {
+    max-width: none;
+  }
+
+  .services-intro-eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .services-intro-content h3 {
+    max-width: none;
+
+    margin: 0 0 14px;
+
+    font-size: 2rem;
+    line-height: 1.08;
+  }
+
+  .services-intro-content p {
+    max-width: none;
+
+    font-size: 0.98rem;
+    line-height: var(--leading-normal);
+  }
+
+  .services-intro-actions {
+    width: 100%;
+    max-width: 360px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-intro-button {
+    width: 100%;
+    min-height: 50px;
+  }
+
+}

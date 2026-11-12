@@ -1,0 +1,77 @@
+{{/*
+  WEB-59 — Homepage QPC Library Preview.
+  Copy: WEB-5 (data/home/<lang>.yaml).
+  Real article inventory: library/home_latest.html.
+  Route: resolved via Hugo; no fake /library link.
+  N=0: canonical introduction and CTA text only (no empty carousel).
+
+  The WEB-26 card geometry, responsive carousel and Orbit Trail CSS/JS
+  are intentionally separate implementation steps.
+*/}}
+
+{{ $content := index site.Data.home site.Language.Lang }}
+{{ $preview := $content.qpc_library_preview }}
+
+{{ with $preview }}
+  {{ $copy := . }}
+  {{ $articles := partial "library/home_latest.html" $ }}
+  {{ $libraryPage := site.GetPage "/library" }}
+
+  <section
+    class="qpc-library-preview"
+    id="qpc-library-preview"
+    aria-labelledby="qpc-library-preview-title"
+  >
+    <div class="qpc-library-preview__container">
+      <div class="qpc-library-preview__intro">
+        <div class="qpc-library-preview__eyebrow">
+          <span class="qpc-library-preview__eyebrow-text">
+            <span class="qpc-library-preview__eyebrow-dot" aria-hidden="true"></span>
+            {{ $copy.eyebrow }}
+          </span>
+        </div>
+
+        <header class="qpc-library-preview__header">
+          <h2 class="qpc-library-preview__title" id="qpc-library-preview-title">
+            {{ $copy.title }}
+          </h2>
+        </header>
+
+        <div class="qpc-library-preview__body">
+          {{ range $copy.paragraphs }}
+            <p class="qpc-library-preview__paragraph">{{ . | markdownify }}</p>
+          {{ end }}
+        </div>
+
+        <div class="qpc-library-preview__action">
+          {{ with $libraryPage }}
+            <a class="qpc-library-preview__cta" href="{{ .RelPermalink }}">
+              {{ $copy.action.label }}
+            </a>
+          {{ else }}
+            <span class="qpc-library-preview__cta-pending">
+              {{ $copy.action.label }}
+            </span>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ if gt (len $articles) 0 }}
+        <div class="qpc-library-preview__articles" data-qpc-library-carousel>
+          <div class="qpc-library-preview__viewport">
+            <div class="qpc-library-preview__track">
+              {{ range $articles }}
+                {{ partial "library/article_card.html" . }}
+              {{ end }}
+            </div>
+          </div>
+
+          {{ if gt (len $articles) 1 }}
+            {{/* The JS controller populates and reveals controls only for P > 1. */}}
+            <div class="qpc-library-preview__orbit" data-qpc-library-orbit hidden></div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
