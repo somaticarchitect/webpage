@@ -81,11 +81,15 @@ services:
     description: "Unsure which format fits your current state? Book a short introductory call to discuss your request and assess readiness for somatic practice."
 
 contact:
-  title: "Ready to restore bodily coherence and authentic strength?"
-  subtitle: "Write a short message about your current physical state and we'll schedule your introductory call."
+  eyebrow: "Personal contact"
+  title: "Let's start a conversation"
 
-  form:
-    eyebrow: "Or leave your details and I'll reach out"
+  paragraphs:
+    - "If you're considering working with me individually, send me a few words about what you're looking for and what interests you."
+    - "This begins a personal exchange, not an automatic booking. If you're getting in touch for the first time, we'll have a preliminary online conversation before starting individual work to see whether the format is a good fit for both of us."
+
+  action:
+    label: "Message me on WhatsApp"
 
 articles:
   eyebrow: "RESEARCH"
