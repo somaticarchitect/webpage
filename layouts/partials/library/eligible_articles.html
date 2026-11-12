@@ -1,14 +1,9 @@
 {{/*
   WEB-59 / WEB-42 — canonical Library article eligibility.
-
-  Source: real Hugo content under /library/articles.
-  Fail closed until WEB-42 approves the editorial front matter contract:
-    publication_status: "published"
-    draft: false
-    date: YYYY-MM-DD  (or publishDate: YYYY-MM-DD)
-
-  No legacy /articles or /blog fallback, no content duplication.
-  Returns: a slice of eligible Hugo Page objects in the current language.
+  Production: only published canonical /library/articles content.
+  Local Hugo server: additionally includes explicitly marked draft QA fixtures
+  from the EXISTING content/articles directory when --buildDrafts is enabled.
+  No QA fixture is eligible for a regular (non-server) build.
 */}}
 
 {{ $eligible := slice }}
@@ -26,6 +21,21 @@
     {{ $hasCanonicalURL := hasPrefix .RelPermalink $catalogURL }}
 
     {{ if and (not .Draft) $isApproved $isPublishedDate $matchesLocale $hasCanonicalURL }}
+      {{ $eligible = $eligible | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Strictly local QA-only inventory; requires hugo server --buildDrafts. */}}
+{{ if hugo.IsServer }}
+  {{ range site.RegularPages }}
+    {{ if and
+      (eq .Section "articles")
+      (eq .Params.qpc_fixture true)
+      (eq .Params.publication_status "fixture")
+      (.Draft)
+      (eq .Language.Lang site.Language.Lang)
+    }}
       {{ $eligible = $eligible | append . }}
     {{ end }}
   {{ end }}
