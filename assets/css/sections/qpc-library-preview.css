@@ -572,13 +572,8 @@
   }
 }
 
-/* There are no positional controls if all three cards fit.
-   JS also keeps Orbit hidden whenever P <= 1. */
-@media (min-width: 900px) {
-  .qpc-library-preview__orbit {
-    display: none !important;
-  }
-}
+/* Orbit visibility is controlled by the JS position count and the
+   HTML hidden attribute at every breakpoint; do not force-hide on desktop. */
 
 
 /* ========================================================
